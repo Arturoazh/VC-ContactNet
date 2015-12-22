@@ -1,12 +1,14 @@
-(function () {
-	'use strict';
+(function(){
+	"use strict";
 
-	angular
-	.module('virtual-center')
-	.controller('homeController', controller)
+  angular
+  	.module('virtual-center')
+    .controller('homeController', controller);
 
-	/* ngInject */
-	function controller ($scope) {
-	}
-	
-}());
+  /* ngInject */
+  function controller($scope){
+
+  }
+
+})();
+

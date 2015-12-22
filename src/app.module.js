@@ -7,17 +7,16 @@
   *
   * @description
   *
-  * # Virtual Center APP
+  * # Virtual Center Config
   *   
   *
   */
 
   angular
   	.module('virtual-center', [
-  		'ngRoute', 
+  		'ui.router', 
 	    'ngSanitize', 
 	    'ngAnimate',
-	    'ngTouch',
 	    'ngAria',
 	    'ngMaterial',
   	]);
