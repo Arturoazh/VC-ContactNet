@@ -6,8 +6,9 @@
     .controller('homeController', controller);
 
   /* ngInject */
-  function controller($scope){
-
+  function controller($scope, $cnMocks){
+  	console.log($cnMocks);
+  	$scope.contactNets = $cnMocks.contactNets;
   }
 
 })();
