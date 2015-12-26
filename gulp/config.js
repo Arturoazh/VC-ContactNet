@@ -9,6 +9,9 @@ module.exports = {
   htmlFiles: [
     'src/**/*.html'
   ],
+  otherFiles: [
+    'src/**/*.json'
+  ],
   outputDir: 'app/',
   connect: require('gulp-connect')
 };

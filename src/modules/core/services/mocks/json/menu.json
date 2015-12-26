@@ -1,0 +1,25 @@
+{
+	"MENU": {
+		"0":{
+			"name": "contactNet",
+			"views":{
+				"0": {
+					"name": "Canales",
+					"uri": "/channels"
+				},
+				"1": {
+					"name": "Listado",
+					"uri": "/list"
+				},
+				"2": {
+					"name": "Enrutamiento",
+					"uri": "/routing"
+				}
+			}
+		},
+		"1":{
+			"name": "contactos",
+			"uri": "/contacts"
+		}
+	}
+}

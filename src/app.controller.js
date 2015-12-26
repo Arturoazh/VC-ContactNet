@@ -6,22 +6,26 @@
     .controller('appController', controller);
 
   /* ngInject */
-  function controller($scope, $mdSidenav, $log, $cnMocks){
+  function controller($scope, $mdSidenav, $cnMenu){
 
-	$scope.toggleLeft = buildToggler('left');
+		$scope.toggleLeft = buildToggler('left');
+		$scope.menu = {};
 
-	function buildToggler() {
-		var args = arguments;
-		return function() {
-			$mdSidenav(args[0])
-			.toggle()
-			.then(function () {
-				$log.debug("toggle " + args[0] + " is done");
-			});
+		function buildToggler() {
+			var args = arguments;
+			return function() {
+				$mdSidenav(args[0])
+				.toggle();
+			}
 		}
-	}
 
-	$scope.menu = $cnMocks.menu;
+
+		$cnMenu.get().then(function(){
+			console.log("arguments", arguments[0]);
+			$scope.menu = arguments[0];	
+		})
+		
+
   }
 
 })();
