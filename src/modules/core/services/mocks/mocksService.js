@@ -78,8 +78,8 @@
 		* @name $cnMocks#set
 		*
 		* @param {string} bbdd Table used to set de data
-		* @param {string} id Id to set the element
 		* @param {object} data Element data
+		* @param {string} id Id to set the element
 		*
 		* @return {promise} element
 		*/
@@ -89,7 +89,12 @@
 
 			//Timeout to simulate server latency
 			$timeout(function(){
-				deferred.resolve(scope.bbdd[args[0]][args[1]] = args[2]);
+				if(args[2] === undefined){
+					var id = random(1000,9999);
+					args[1].id = id;
+					deferred.resolve(scope.bbdd[args[0]][id] = args[1]);
+				}else
+					deferred.resolve(scope.bbdd[args[0]][args[2]] = args[1]);
 			}, random(300, 500) );
 
 			return deferred.promise;
