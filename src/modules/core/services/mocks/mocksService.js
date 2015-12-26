@@ -18,6 +18,7 @@
   /* ngInject */
   function service($http, $q, $timeout){
 
+  	var listJsons = ['menu', 'listContactNets', 'contactNetId', 'channels', 'routing'];
 		var scope = this;
 
 		scope.bbdd = {};
@@ -106,20 +107,16 @@
 		}
 
 		function init(){
-			$http.get('modules/core/services/mocks/json/menu.json').success(function(){
-				scope.bbdd.menu = arguments[0];
-			});
-			$http.get('modules/core/services/mocks/json/contactNets.json').success(function(){
-				scope.bbdd.contactNets = arguments[0];
-			});
-			$http.get('modules/core/services/mocks/json/routing.json').success(function(){
-				scope.bbdd.routing = arguments[0];
-			});
-			$http.get('modules/core/services/mocks/json/channels.json').success(function(){
-				scope.bbdd.channels = arguments[0];
-			});
-		}
 
+			for (var i = 0; i < listJsons.length; i++) {
+				(function (e) {
+					var args = arguments;
+					$http.get('modules/core/services/mocks/json/'+args[0]+'.json').success(function(){
+						scope.bbdd[args[0]] = arguments[0];
+					});
+				}(listJsons[i]));
+			};
+		}
 
 		return scope;
 

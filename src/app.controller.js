@@ -19,7 +19,6 @@
 			}
 		}
 
-
 		$cnMenu.get().then(function(){
 			console.log("arguments", arguments[0]);
 			$scope.menu = arguments[0];	

@@ -1,32 +1,9 @@
-[
-{
-	"id": 464, 
-	"description": "Cola IO Edu 2",
-	"queueType": "BOTH", 
-	"isACD": 1, 
-	"modificable": true,
-	"channels": { 
-		"1": 1, 
-		"2": 2, 
-		"3": 3
-	} 
-},{
-	"id": 465, 
-	"description": "Cola IO Edu 3",
-	"queueType": "BOTH", 
-	"isACD": 1, 
-	"modificable": true,
-	"channels": { 
-		"1": 1, 
-		"2": 2, 
-		"3": 3
-	} 
-},{
+[{
 	"id": 463,
 	"description": "Cola IO Edu",
 	"queueType": "BOTH",
 	"isACD": true,
-	"arrDestination": [{ // Array de tipos de destinos a los que se puede entregar la conversación. Campo de solo lectura no modificable por la interfaz de usuario.
+	"arrDestination": [{
 		"Agent_Id": 1,
 		"User_Id_fk": 9,
 		"PINCode": "", 
@@ -93,7 +70,7 @@
 		"ACDDescription": "OFFLINE", 
 		"StatusType": "OFFLINE"
 	}],
-	"campaign": { // Objeto asociado a una campaña de MKT. Campo en desuso y de momento no modificable desde la interfaz de usuario.
+	"campaign": {
 		"id": 19,
 		"dialerId": -1,
 		"description": "Cola IO Edu", "model": [],
@@ -101,9 +78,9 @@
 		"status": 1,
 		"modificable": true
 	},
-	"contactTemplateId": 1, // Identificador de la plantilla de ficha de contacto.
-	"attrs": [], // Campo auxiliary en caso que el ContactNET tenga una parametrización AdHoc. Campo de solo lectura no modificable por la interfaz de usuario.
-	"agents": [{ // Array de objetos Agents que pertenecen al ContactNET.
+	"contactTemplateId": 1,
+	"attrs": [],
+	"agents": [{
 		"id": 138226,
 		"name": "vbiosca@telecoming.com",
 		"namePeople": "Victor Biosca",
@@ -118,11 +95,11 @@
 		"ha1": null,
 		"stakeholderCompanyId": 3,
 		"thumbnail": "/home/downloads/getagentimage?id=10",
-		"channels": [{ // Array de canals que éste agente puede atender en el
+		"channels": [{
 			"channelId": 1,
 			"reserved": 0,
 			"active": 0,
-			"weight": 0, // Peso del agente en ese canal.
+			"weight": 0,
 			"maxConcurrency": 1, 
 			"actualConcurrency": 0,
 			"stats": {
@@ -186,11 +163,11 @@
 		"channelsCount": [], 
 		"lastStatusDuration": 0
 	}],
-	"agentsBySupervisors": [{ // Array que relaciona los supervisors que monitorizan a cada agente.
-		"supervisorId": 5, // Identificador del supervisor
-		"agentIds": [138226] // Array de agentes.
+	"agentsBySupervisors": [{
+		"supervisorId": 5,
+		"agentIds": [138226]
 	}],
-	"supervisors": [{ // Array de supervisores que monitorizan el ContactNET
+	"supervisors": [{
 		"id": 5,
 		"name": "apcinr@telecoming.com",
 		"namePeople": "Desarrollo NO BORRAR",
@@ -211,16 +188,16 @@
 		"lastStatusDuration": 0
 	}],
 	"modificable": true,
-	"status": [{ // Array de Estados en Pausa asociados al ContactNET. Dado que desde la gestión de ContactNET, también se realiza el CRUD de estados es importante tener en cuenta que un id -1 indica Alta nueva, checked a 1 indica que ese estado debe estar asociado al ContactNET (0 no asociado) y si viniera el campo deleted con valor true se estaría indicando que debe eliminarse ese estado de pausa de la BBDD.
-		"id": 33, // Identificador de BBDD
+	"status": [{
+		"id": 33,
 		"idMultiple": "",
-		"label": "Fumar", // Descripción del Estaso de Pausa
+		"label": "Fumar",
 		"value": 33,
-		"modificable": false, // Indica si el usuario puede o no modificarlo
+		"modificable": false,
 		"iconNode": "",
-		"checked": 1 // Indica si ese estado de pausa pertenece al ContactNET.
+		"checked": 1
 	}],
-	"qualifications": [{ // Array de Cualificaciones asociadas al ContactNET. Dado que desde la gestión de ContactNET, también se realiza el CRUD de cualificaciones es importante tener en cuenta que un id -1 indica Alta nueva, checked a 1 indica que esa cualificación debe estar asociado al ContactNET (0 no asociado) y si viniera el campo deleted con valor true se estaría indicando que debe eliminarse esa cualifcación de la BBDD. Las cualificaciones tienen, además de una descripción, un identificador que establece si es POSITIVA o NEGATIVA.
+	"qualifications": [{
 		"id": 14,
 		"idMultiple": "", 
 		"label": "Good1", 
@@ -229,7 +206,7 @@
 		"iconNode": "", 
 		"checked": 1	
 	}],
-	"categories": [{ // Array de Categorías asociadas al ContactNET. Dado que desde la gestión de ContactNET, también se realiza el CRUD de cualificaciones es importante tener en cuenta que un id -1 indica Alta nueva, checked a 1 indica que esa categoría debe estar asociado al ContactNET (0 no asociado) y si viniera el campo deleted con valor true se estaría indicando que debe eliminarse esa categoría de la BBDD.
+	"categories": [{
 		"id": 1,
 		"idMultiple": "", 
 		"label": "Alta Orange", 
@@ -239,31 +216,31 @@
 		"checked": 1	
 	}],
 	"hasSkills": 0,
-	"skills": [], // Array de Skills asociados al ContactNET. Dado que desde la gestión de ContactNET, también se realiza el CRUD de skills es importante tener en cuenta que un id -1 indica Alta nueva, checked a 1 indica que ese skill debe estar asociado al ContactNET (0 no asociado) y si viniera el campo deleted con valor true se estaría indicando que debe eliminarse ese skill de la BBDD. Los skills tienen, además de un peso (de tipo numérico).
+	"skills": [],
 	"channels": { "1": 1,
 		"2": 2,
 		"3": 3 
 	},
-	"urlNotification": null, // URL del Sistema de BackOffice externo para lanzar Screen PopUp.
-	"urlType": "NONE", // Comportamiento a la hora de mostrar el Screen PopUp ('NONE', 'IFRAME', 'POPUP', 'TAB')
+	"urlNotification": null,
+	"urlType": "NONE",
 	"urlSizeWidth": 800,
 	"urlSizeHeight": 600,
-	"thumbnail": "", // Imagen descriptiva del ContactNET.
-	"stakeholderOwnerId": 3, // Compañía a la que pertenece el ContactNET (sólo lectura)
-	"voiceChannelParams": { // Objeto de los parámetros de voz necesarios en ContactNET
-		"moh": "1", //Identificador de la música en Espera
-		"advertFrequency": 10, //Frecuencia de Avisos.
-		"automaticQueueBuffer": 1, //Comportamiento del cálculo del tamaño en cola y tiempo de espera en cola: 1 -> automático, 0 -> manual 
-		"timeout": 30, //Tiempo de espera en cola.
-		"maxlength": 6, //Tamaño en cola.
-		"wrapupTime": 5, //Tiempo de pausa Administrativa
-		"strategy": "ROUND_ROBIN", //Estretegia de entrega.
-		"canHangUp": true, //Establece si el agente puede colgar la llamada (éste parámetro sólo se tiene en cuenta si el agente tiene SoftPhone integrado).
-		"joinEmpty": "YES", //Establece comportamiento de espera en cola según la disponibilidad de agente ('YES', 'NO', 'STRICT', 'LOOSE')
-		"averageTalkingTime": 0, //Tiempo medio de conversación.
-		"tmWarning": 30, //Tiempo medio de espera excedido para interpreter Warning. 
-		"tmCritical": 60, //Tiempo medio de espera excedido para interpreter Critical. 
-		"outgoingConfiguration": { //Objeto que establece la configuración para llamadas salientes.
+	"thumbnail": "",
+	"stakeholderOwnerId": 3,
+	"voiceChannelParams": {
+		"moh": "1",
+		"advertFrequency": 10,
+		"automaticQueueBuffer": 1,
+		"timeout": 30,
+		"maxlength": 6,
+		"wrapupTime": 5,
+		"strategy": "ROUND_ROBIN",
+		"canHangUp": true,
+		"joinEmpty": "YES",
+		"averageTalkingTime": 0,
+		"tmWarning": 30,
+		"tmCritical": 60,
+		"outgoingConfiguration": {
 			"id": 2776,
 			"channelId": 1,
 			"autoWizard": 1,
@@ -273,7 +250,7 @@
 			"leaves": [],
 			"serviceTypeId": 1,
 			"callmonitoringnodes": [],
-			"outgoingConfig": [{ // Array de element de tipo key value que parametrizan la configuración
+			"outgoingConfig": [{
 				"ConfigName": "PARAM_AGENT_FIRST", 
 				"ConfigValue": "1",
 				"ConfigModificable": true	
@@ -331,18 +308,18 @@
 				"ConfigModificable": true	
 			}]
 		},
-		"notifications": null, // Array de objetos de tipo QueueNotificationVO que establecen las notificaciones a llamante mientras espera en cola
-		"survey": null, // Array de objetos Encuesta (QueueSurveyVO)
+		"notifications": null,
+		"survey": null
 	},
-	"chatChannelParams": { // Objeto de los parámetros de chat necesarios en ContactNET
-		"tmFirstMessage": 120, // Tiempo medio de espera del primer chat. 
-		"tmNextMessage": 120, // Tiempo medio de espera de los siguientes. 
-		"timeOut": 300, // Tiempo máximo de espera.
+	"chatChannelParams": {
+		"tmFirstMessage": 120,
+		"tmNextMessage": 120,
+		"timeOut": 300,
 		"tmWarning": 30,
 		"tmCritical": 60,
 		"strategy": "RANDOM",
-		"survey": null, // Array de objetos Encuesta (QueueSurveyVO) 
-		"autoReplies": [{// Array de objetos Autorespuesta (QueueAutoReplyVO)
+		"survey": null,
+		"autoReplies": [{
 			"id": 2,
 			"label": "Mensaje de Bienvenida", 
 			"message": {
@@ -357,7 +334,7 @@
 			"action": "" 
 		}]
 	},
-	"twitterChannelParams": { // Objeto de los parámetros de twitter necesarios en ContactNET
+	"twitterChannelParams": {
 		"autoReplies": [], 
 		"tmFirstMessage": 0, 
 		"tmNextMessage": 0,
@@ -367,7 +344,7 @@
 		"strategy": null, 
 		"survey": null
 	},
-	"emailChannelParams": { // Objeto de los parámetros de eMail necesarios en ContactNET
+	"emailChannelParams": {
 		"footer": "", 
 		"autoReplies": [], 
 		"tmFirstMessage": 120, 
@@ -392,14 +369,14 @@
 			"action": "" 
 		}]
 	},
-	"voiceChannelStats": { // Objeto con parametros estadísticos del canal de voz (sólo lectura)
+	"voiceChannelStats": {
 		"averageTimeWait": 0, 
 		"averageTmc": 0, 
 		"totalCallsAnswered": 0, 
 		"totalCalls": 0, 
 		"totalCallsLost": 0
 	},
-	"chatChannelStats": { // Objeto con parametros estadísticos del canal de chat (sólo lectura)
+	"chatChannelStats": {
 		"averageDelayTimeSinceFirstMessage": 0, 
 		"averageDelayTime": 0, 
 		"averageConversationTime": 0, 
@@ -407,7 +384,7 @@
 		"totalConversations": 0, 
 		"totalLostConversations": 0
 	},
-	"emailChannelStats": { // Objeto con parametros estadísticos del canal de email (sólo lectura)
+	"emailChannelStats": {
 		"averageDelayTimeSinceFirstMessage": 0, 
 		"averageDelayTime": 0, 
 		"averageConversationTime": 0, 
@@ -415,7 +392,7 @@
 		"totalConversations": 0, 
 		"totalLostConversations": 0
 	},
-	"twitterChannelStats": { // Objeto con parametros estadísticos del canal de twitter (sólo lectura)
+	"twitterChannelStats": {
 		"averageDelayTimeSinceFirstMessage": 0, 
 		"averageDelayTime": 0, 
 		"averageConversationTime": 0, 
@@ -423,12 +400,6 @@
 		"totalConversations": 0, 
 		"totalLostConversations": 0
 	},
-	"pendingConversations": [], // Array de elementos de tipo conversación (sólo lectura) 
-	"channelsCount": [] // Agregado de solo lectura que indica el total de conversación por canal.
-
+	"pendingConversations": [],
+	"channelsCount": []
 }]
-
-
-
-
-
