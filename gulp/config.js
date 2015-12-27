@@ -10,7 +10,8 @@ module.exports = {
     'src/**/*.html'
   ],
   otherFiles: [
-    'src/**/*.json'
+    'src/**/*.json',
+    'src/**/*.svg'
   ],
   outputDir: 'app/',
   connect: require('gulp-connect')
