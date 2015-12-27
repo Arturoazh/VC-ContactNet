@@ -50,13 +50,7 @@
               transition: none;
               padding: 0;
             }
-            .preview{
-              background-repeat: no-repeat;
-              background-size: auto 100%;
-              background-position: center center;
-            }
           }
-          
           .split {
             padding: 10px;
           }
@@ -161,34 +155,6 @@
       right: 0;
     }
 
-  }
-
-}
-
-
-.md-sidenav-right{
-  background-color: #ececec;
-
-  h2{
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .mobile-container{ height: 500px; overflow-y: scroll; }
-
-  .skinData{ 
-    font-size: 0.8rem; border-top: 1px solid rgba(0,0,0,0.25);  
-    
-    span{ overflow: hidden; text-overflow: ellipsis; }
-  }
-
-  .activity{
-
-    md-list-item{
-      background-color: white;
-      .md-avatar{ background-position: center center;  background-size: cover;  border-radius: 50%; }
-
-    }
   }
 }
 

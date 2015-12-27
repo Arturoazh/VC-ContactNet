@@ -1,0 +1,15 @@
+body {
+	background: rgba(0,0,0,.04)
+}
+
+[role="main"] {
+	>md-sidenav {
+		transition: none!important;
+		background: transparent;
+		// >md-toolbar { background: transparent; }
+		// >md-content { background: transparent; }
+	}
+	>md-backdrop {
+		z-index: -1;
+	}
+}

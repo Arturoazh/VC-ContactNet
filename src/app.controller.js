@@ -11,6 +11,11 @@
 		$scope.toggleLeft = buildToggler('left');
 		$scope.menu = {};
 
+
+		$scope.isOpenLeft = function(){
+      return $mdSidenav('left').isOpen();
+    };
+
 		function buildToggler() {
 			var args = arguments;
 			return function() {
