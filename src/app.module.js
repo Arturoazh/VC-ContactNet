@@ -19,6 +19,7 @@
 	    'ngAnimate',
 	    'ngAria',
 	    'ngMaterial',
+      'rulesAndRouting'
   	]);
 
 })();
