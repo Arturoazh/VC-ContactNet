@@ -6,10 +6,11 @@
     .controller('appController', controller);
 
   /* ngInject */
-  function controller($scope, $mdSidenav, $cnMenu){
+  function controller($rootScope, $scope, $timeout, $mdSidenav, $cnMenu, $cnNavigate, $location){
 
 		$scope.toggleLeft = buildToggler('left');
 		$scope.menu = {};
+		$scope.cnNavigate = $cnNavigate;
 
 
 		$scope.isOpenLeft = function(){
@@ -28,7 +29,14 @@
 			console.log("arguments", arguments[0]);
 			$scope.menu = arguments[0];	
 		})
-		
+
+		// $rootScope.$on('$viewContentLoaded', function () {
+		// 	$timeout(function () {
+		// 		var body = document.body
+	 //      if(body.classList.contains('disable-hover'))
+	 //        body.classList.remove('disable-hover');
+		// 	}, 650);
+		// });
 
   }
 

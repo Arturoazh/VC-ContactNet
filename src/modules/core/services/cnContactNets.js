@@ -22,6 +22,7 @@
 
 		var scope = this;
 
+		scope.contactNets = [];
 		scope.get = get;
 		scope.getById = getById;
 
@@ -56,4 +57,4 @@
 
   }
 
-})();
+}());

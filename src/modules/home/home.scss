@@ -2,10 +2,11 @@
 
   md-content{
     position: relative;
-    background: rgba(0,0,0,.04);
+    background: 0 0;
+    z-index: 1;
+    // background: rgba(0,0,0,.04);
 
     > section {
-      padding:2em;
       max-width: 75%;
       position: relative;
 
@@ -159,7 +160,11 @@
 }
 
 
-
+.fabButtonCreate {
+  position: absolute;
+  right: 1em;
+  top: 75px;
+}
 
 
 

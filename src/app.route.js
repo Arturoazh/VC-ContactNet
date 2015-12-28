@@ -9,13 +9,18 @@
   function config($stateProvider, $urlRouterProvider){
 
 		$stateProvider
-			.state('home', {
-				url: "/home",
+			.state('contactnets', {
+				url: "/contactnets",
 				templateUrl: "modules/home/home.html",
 				controller: "homeController"
+			})
+			.state('channels', {
+				url: "/channels",
+				templateUrl: "modules/channels/channels.html",
+				controller: "channelsController"
 			});
 
-		$urlRouterProvider.otherwise("/home");
+		$urlRouterProvider.otherwise("/contactnets");
 			
   }
 

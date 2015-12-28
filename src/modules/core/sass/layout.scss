@@ -1,8 +1,5 @@
 body {
-	background: rgba(0,0,0,.04)
-}
-
-[role="main"] {
+	background: rgba(0,0,0,.04);
 	>md-sidenav {
 		transition: none!important;
 		background: transparent;
@@ -10,6 +7,98 @@ body {
 		// >md-content { background: transparent; }
 	}
 	>md-backdrop {
-		z-index: -1;
+		z-index: -1!important;
+		display: none!important;
 	}
+}
+
+[role="main"] {
+	z-index: 2;
+	background: transparent;
+	overflow: visible;
+	>[role="view"] {
+		overflow: visible;
+		background: 0 0;
+	}
+}
+
+@media (min-width: 768px){
+	.masthead {
+    position: relative;
+    margin-bottom: -115px;
+    min-height: 340px;
+    height: 340px;
+    z-index: 1;
+    >md-tabs {
+    	max-width: 75%;
+    	left: 50%;
+    	transform: translate(-50%);
+    	padding: 30px 0 0;
+    	.md-tab {
+    		text-transform: none;
+    	}
+    }	
+    .sectionTitle {
+	    width: 100%;
+	    max-width: 75%;
+	    margin: 0 auto;
+	    font-weight: 400;
+    }
+  }	
+}
+
+// .well[ui-view]{
+//  height: 65px; 
+// }
+
+// .ui-view-container {
+//   position: relative;
+// }
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-transition:all .5s ease-in-out;
+	-moz-transition:all .5s ease-in-out;
+	-o-transition:all .5s ease-in-out;
+	transition:all .5s ease-in-out;
+}
+
+[ui-view].ng-enter {
+  opacity: 0;
+  -webkit-transition-delay: 650ms;
+  -moz-transition-delay: 650ms;
+  transition-delay: 650ms;
+  -webkit-transform:translate(0, 100px);
+  -moz-transform:translate(0, 100px);
+  transform:translate(0, 100px);
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  -webkit-transform:translate(0, 0);
+  -moz-transform:translate(0, 0);
+  transform:translate(0, 0);
+}
+
+[ui-view].ng-leave {
+  opacity: 1;
+  /*padding-left: 0px;*/  
+   -webkit-transform:translate(0, 0);
+  -moz-transform:translate(0, 0);
+  transform:translate(0, 0);
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+  /*padding-left: 100px;*/
+    -webkit-transform:translate(0, 100px);
+  -moz-transform:translate(0, 100px);
+  transform:translate(0, 100px);
+}
+
+.disable-hover {
+  pointer-events: none;
 }

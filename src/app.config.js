@@ -9,14 +9,17 @@
   function config($mdThemingProvider, $mdIconProvider){
 
 		$mdThemingProvider.theme('default')
-	    .primaryPalette('blue-grey')
-	    .accentPalette('deep-orange')
+	    .primaryPalette('grey')
+	    .accentPalette('blue')
 	    .warnPalette('red');
 
 
 	  $mdIconProvider
-       .icon('add', 'assets/icons/add.svg')
-       .icon('menu', 'assets/icons/menu.svg');
+      .icon('add', 'assets/icons/add.svg')
+      .icon('menu', 'assets/icons/menu.svg')
+      .icon('contactnets', 'assets/icons/people.svg')
+      .icon('channels', 'assets/icons/contact-phone.svg')
+      .icon('rules', 'assets/icons/playlist-play.svg');
 			
   }
 
