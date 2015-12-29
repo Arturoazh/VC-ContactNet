@@ -1,4 +1,13 @@
-#contactNets{
+$grayText: #616161;
+$smokeText: #9b9b9b;
+$blueVC: #3cace1;
+
+
+.empty-section{
+  background-color: white;
+}
+
+#timeline{
 
   md-content{
     position: relative;
@@ -10,6 +19,45 @@
 
     > section {
       position: relative;
+
+      .empty-section{
+        text-align: center;
+
+        .planet-size-icon{
+          margin-top: 30px;
+        }
+
+        .channels-section{
+          margin-top: 30px;
+          margin-bottom: 30px;
+
+          .big-icon{
+            margin: 0 auto 20px;
+          }
+
+          p{
+            margin:0 auto;
+          }
+          a{
+            font-size: 12px;
+            color: $blueVC;
+            border: none;
+          }
+          span{
+            color: $smokeText;
+          }
+        }
+
+        h3{
+          font-weight: 300;
+          font-size: 20px;
+        }
+        p{
+          font-size: 14px;
+          color: $grayText;
+        }
+
+      }
 
       .search-container{
         padding: 1em 1em; max-width: 1000px; margin: 20px auto 0;

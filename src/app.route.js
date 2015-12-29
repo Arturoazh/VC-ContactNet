@@ -18,6 +18,11 @@
 				url: "/channels",
 				templateUrl: "modules/channels/channels.html",
 				controller: "channelsController"
+			})
+			.state('rules', {
+				url: "/rules",
+				templateUrl: "modules/rules/rules.html",
+				controller: "rulesController"
 			});
 
 		$urlRouterProvider.otherwise("/contactnets");

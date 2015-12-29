@@ -3,7 +3,7 @@
 
 		<section flex>
 
-				<div class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets track by $index" ng-class="{'open-item': v.openCard}">
+				<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets track by $index" ng-class="{'open-item': v.openCard}">
 					<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cnContactNetInfo="{{v}}" cn-open-contact-nets>
 						<div flex>ASDGGGG | {{v.description}}</div>
 						<span flex></span>
@@ -61,6 +61,48 @@
 						</div>
 					</div>
 
+				</div>
+
+
+				<div ng-if="!contactNetsService.contactNets.length" class="md-whiteframe-z1 empty-section" layout-padding layout="row" layout-align="center">
+					<div flex="80" layout="column">
+						<md-icon class="planet-size-icon" style="color:#417505;" md-svg-icon="channels" aria-label="rules"></md-icon>
+
+						<div flex layout="column">
+							<h3>No hay ningun Canal guardado, puedes <span class="blueVC-color">crear el primero ahora</span></h3>
+							<p>
+								Recuerda que necesitarás al menos tener creada una regla por cada canal que acrives en el ContactNet
+								<br> 
+								A continuación le recordamos los canales que tiene contratados
+							</p>
+						</div>
+
+						<div flex class="channels-section" layout="row" layout-align="space-between">
+							<div flex="15" layout="column" >
+								<md-icon class="big-icon" md-svg-icon="phone" aria-label="phone"></md-icon>								
+								<p>Voz</p>
+								<a class="blueVC-color">Contratar</a>
+							</div>
+
+							<div flex="15" layout="column" >
+								<md-icon class="big-icon greenVC-color" md-svg-icon="message" aria-label="message"></md-icon>								
+								<p>Chat</p>
+							</div>
+
+							<div flex="15" layout="column" >
+								<md-icon class="big-icon greenVC-color" md-svg-icon="mail" aria-label="mail"></md-icon>								
+								<p>Mail</p>
+							</div>
+
+							<div flex="15" layout="column" >
+								<md-icon class="big-icon" md-svg-icon="mail" aria-label="mail"></md-icon>								
+								<p>Twitter</p>
+								<span class="md-caption">Próximamente<span>
+							</div>
+						</div>	
+
+					</div>
+									
 				</div>
 
 		</section>

@@ -1,3 +1,7 @@
+$blueVC: #3cace1;
+$greenVC: #6b9e30;
+
+
 body {
 	background: rgba(0,0,0,.04);
 	>md-sidenav {
@@ -117,3 +121,24 @@ body {
 .disable-hover {
   pointer-events: none;
 }
+
+
+.planet-size-icon{
+  width: 130px;
+  height: 130px;
+}
+
+.big-icon{
+  width: 52px;
+  height: 52px;
+}
+
+.blueVC-color{
+  color: $blueVC;
+}
+
+.greenVC-color{
+  color: $greenVC;
+}
+
+

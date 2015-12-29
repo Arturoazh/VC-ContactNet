@@ -18,9 +18,9 @@
       .icon('add', 'assets/icons/add.svg')
       .icon('menu', 'assets/icons/menu.svg')
       .icon('more_vert', 'assets/icons/more_vert.svg')
-      .icon('contactnets', 'assets/icons/people.svg')
-      .icon('channels', 'assets/icons/contact-phone.svg')
-      .icon('rules', 'assets/icons/playlist-play.svg')
+      .icon('contactnets', 'assets/icons/contactnets.svg')
+      .icon('channels', 'assets/icons/channels.svg')
+      .icon('rules', 'assets/icons/rules.svg')
       .icon('mail', 'assets/icons/mail.svg')
       .icon('message', 'assets/icons/message.svg')
       .icon('phone', 'assets/icons/phone.svg');
