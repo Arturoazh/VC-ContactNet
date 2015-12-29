@@ -30,13 +30,17 @@
 			$scope.menu = arguments[0];	
 		})
 
-		// $rootScope.$on('$viewContentLoaded', function () {
-		// 	$timeout(function () {
-		// 		var body = document.body
-	 //      if(body.classList.contains('disable-hover'))
-	 //        body.classList.remove('disable-hover');
-		// 	}, 650);
-		// });
+		$rootScope.$on('$stateChangeSuccess', function () {
+			console.log('af', arguments);
+			switch(arguments[1].url) {
+				case '/contactnets':
+					$scope.selectedIndex = 0;
+				break;
+				case '/channels':
+					$scope.selectedIndex = 1;
+				break;
+			}
+		});
 
   }
 

@@ -18,10 +18,13 @@
 <body ng-controller="appController" layout layout="column" role="application" ng-cloak>
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2 md-closed" md-is-locked-open="$mdMedia('gt-xs') && isOpenLeft()" md-component-id="left">
-      <md-content layout-padding>
+      <md-content layout-padding flex>
         <ul>
           <li ng-repeat="(k,v) in menu">
-            <md-button ng-click="open = !open">
+            <md-button ng-show="v.href" ng-href="{{v.href}}" ng-click="open = !open">
+              {{v.name}}
+            </md-button>            
+            <md-button ng-show="!v.href" ng-click="open = !open">
               {{v.name}}
             </md-button>
             <ul ng-show="v.views && open">
@@ -29,6 +32,9 @@
                   <md-button cn-navigate="{{vv.uri}}">
                     {{vv.name}}
                   </md-button>
+                  <md-button ng-show="v.href" ng-href="{{v.href}}" ng-click="open = !open">
+                    {{v.name}}
+                  </md-button> 
                 </li>
               </ul>
           </li>
@@ -48,7 +54,7 @@
         </h1>
 
         <md-tabs md-selected="selectedIndex" flex class="topTabs md-hue-2">
-          <md-tab ng-repeat="(k,v) in menu[0].views" ng-click="cnNavigate.path(v.uri)">
+          <md-tab ng-repeat="(k,v) in menu[2].views[5].views" ng-click="cnNavigate.path(v.uri)">
             <md-tab-label layout="row">
               <md-icon md-svg-icon="{{v.uri}}" aria-label="{{v.name}} Icon"></md-icon>
               <md-button class="md-button disable-hover" md-no-ink aria-label="{{v.name}} Button">
@@ -71,7 +77,6 @@
 
       <md-content role="view" layout layout="column" ng-class="route" flex ui-view></md-content>
   </md-content>
-
 
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>

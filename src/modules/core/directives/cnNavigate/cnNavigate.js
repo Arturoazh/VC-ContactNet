@@ -26,8 +26,6 @@
 
       element.on('click', elementClick);
 
-      console.log('asdgasdg');
-
       function elementClick(){
         $cnNavigate.path(attr.cnNavigate);
         scope.$apply();
