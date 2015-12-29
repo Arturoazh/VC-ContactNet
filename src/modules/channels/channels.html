@@ -6,6 +6,35 @@
 				<div class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets track by $index" ng-class="{'open-item': v.openCard}">
 					<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cnContactNetInfo="{{v}}" cn-open-contact-nets>
 						<div flex>ASDGGGG | {{v.description}}</div>
+						<span flex></span>
+						<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
+						<md-icon md-svg-icon="mail" aria-label="Open Chat" class="md-hue-3"></md-icon>
+						<md-icon md-svg-icon="message" aria-label="Open Chat" class="md-hue-3"></md-icon>
+
+						<md-menu class="md-secondary" >
+		          <md-button aria-label="Open menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+		            <md-icon md-menu-origin md-svg-icon="more_vert"></md-icon>
+		          </md-button>
+		          <md-menu-content width="4" >
+		            <md-menu-item >
+		              <md-button ng-click="">
+		                  <div layout="row">
+		                  	<md-icon md-menu-align-target md-svg-icon="mail"></md-icon>
+		                    <p flex>Editar</p>
+		                  </div>
+		              </md-button>
+		            </md-menu-item>
+		            <md-menu-item >
+		              <md-button ng-click="">
+		                  <div layout="row">
+		                  	<md-icon md-menu-align-target md-svg-icon="mail"></md-icon>
+		                    <p flex>Eliminar</p>
+		                  </div>
+		              </md-button>
+		            </md-menu-item>
+		          </md-menu-content>
+		        </md-menu>
+
 					</md-list-item>
 
 					<md-progress-linear md-mode="indeterminate" ng-if="v.openCard && !v.contactNetInfo"></md-progress-linear>
@@ -37,13 +66,6 @@
 		</section>
 
 	</md-content>
-
-	<md-button class="md-fab fabButtonCreate md-hue-2" aria-label="contactNetsService.contactNets" cn-create-contact-net>
-    <md-icon md-svg-icon="add"></md-icon>
-    <md-tooltip md-direction="top">
-      Add
-    </md-tooltip>
-  </md-button>
 
 </div>
 

@@ -21,6 +21,9 @@
 	    	element.on('click', elementClick);
 
 	    	function elementClick(){
+	    		if(arguments[0].target.localName === 'button')
+	    			return;
+
 	    		var cncontactnetinfo = JSON.parse(attr.cncontactnetinfo);
 		  		angular.forEach($cnContactNets.contactNets, function () {
 		  			var argsForEach = arguments;

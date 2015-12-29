@@ -4,10 +4,10 @@
     position: relative;
     background: 0 0;
     z-index: 1;
+    padding:10px;
     // background: rgba(0,0,0,.04);
 
     > section {
-      max-width: 75%;
       position: relative;
 
       .search-container{
@@ -80,6 +80,20 @@
           font-size: 0.85rem;
           border-bottom: 1px solid rgba(0,0,0,0.01);
           background-color: #FFF;
+          padding: 0 16px;
+
+          >md-icon{
+            margin-top: 5px;
+            padding: 8px;
+
+            &:last-of-type{
+              margin-right: 64px;
+            }
+          }
+
+          md-icon{
+            pointer-events:none;
+          }
 
           div span span {
             -webkit-clip-path : circle(20px at 50% 16%);
@@ -163,7 +177,7 @@
 .fabButtonCreate {
   position: absolute;
   right: 1em;
-  top: 75px;
+  bottom: -35px;
 }
 
 

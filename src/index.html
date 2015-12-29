@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 	<!-- <link rel="icon" type="image/png" href=".ico"> -->
 	<title>Virtual Center</title>
-	<link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,700,400italic' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
 
@@ -35,20 +35,19 @@
         </ul>
       </md-content>
     </md-sidenav>
-  <md-content role="main" flex layout="column">
-    <md-toolbar class="masthead">
+  <md-content role="main" flex layout="column" layout-align="start center">
+    <md-toolbar class="masthead md-hue-2">
         <div class="md-toolbar-tools">
           <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
             <md-icon md-svg-icon="menu" aria-label="Alarm Icon"></md-icon>
           </md-button>
-          <h2>
-            <span>Virtual center</span>
-          </h2>
         </div>
-        <h1 layout layout-align="start center" class="sectionTitle">
+
+        <h1 layout layout-align="start center" class="sectionTitle md-headline">
           Contact Nets
         </h1>
-        <md-tabs md-selected="selectedIndex" flex>
+
+        <md-tabs md-selected="selectedIndex" flex class="topTabs md-hue-2">
           <md-tab ng-repeat="(k,v) in menu[0].views" ng-click="cnNavigate.path(v.uri)">
             <md-tab-label layout="row">
               <md-icon md-svg-icon="{{v.uri}}" aria-label="{{v.name}} Icon"></md-icon>
@@ -60,7 +59,16 @@
            <!-- <md-tab label="Canales" ng-click="cnNavigate.path('channels')"></md-tab>
            <md-tab label="Reglas" ng-click="cnNavigate.path('rules')"></md-tab>   -->
         </md-tabs>
-      </md-toolbar>  
+
+        <md-button class="md-fab fabButtonCreate" aria-label="contactNetsService.contactNets" cn-create-contact-net>
+          <md-icon md-svg-icon="add"></md-icon>
+          <md-tooltip md-direction="top">
+            Add
+          </md-tooltip>
+        </md-button>
+
+      </md-toolbar>
+
       <md-content role="view" layout="column" ng-class="route" flex ui-view></md-content>
   </md-content>
 
