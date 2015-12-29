@@ -31,7 +31,6 @@
 		})
 
 		$rootScope.$on('$stateChangeSuccess', function () {
-			console.log('af', arguments);
 			switch(arguments[1].url) {
 				case '/contactnets':
 					$scope.selectedIndex = 0;

@@ -3,7 +3,7 @@
 
   angular
   	.module('virtual-center')
-    .controller('homeController', controller);
+    .controller('contactNetsController', controller);
 
   /* ngInject */
   function controller($scope, $cnContactNets){

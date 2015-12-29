@@ -15,10 +15,10 @@
 	<link href='css/styles.min.css' rel='stylesheet' type='text/css'>
 </head>
 
-<body ng-controller="appController" layout layout="column" role="application" ng-cloak>
+<body ng-controller="appController" layout layout="column" role="application" ng-cloak ng-show="menu">
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2 md-closed" md-is-locked-open="$mdMedia('gt-xs') && isOpenLeft()" md-component-id="left">
-      <md-content layout-padding flex>
+      <md-content flex>
         <ul>
           <li ng-repeat="(k,v) in menu">
             <md-button ng-show="v.href" ng-href="{{v.href}}" ng-click="open = !open">
@@ -62,8 +62,6 @@
               </md-button>
             </md-tab-label>
           </md-tab> 
-           <!-- <md-tab label="Canales" ng-click="cnNavigate.path('channels')"></md-tab>
-           <md-tab label="Reglas" ng-click="cnNavigate.path('rules')"></md-tab>   -->
         </md-tabs>
 
         <md-button class="md-fab fabButtonCreate" aria-label="contactNetsService.contactNets" cn-create-contact-net>

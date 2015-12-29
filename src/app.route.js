@@ -11,8 +11,8 @@
 		$stateProvider
 			.state('contactnets', {
 				url: "/contactnets",
-				templateUrl: "modules/home/home.html",
-				controller: "homeController"
+				templateUrl: "modules/contactNets/contactNets.html",
+				controller: "contactNetsController"
 			})
 			.state('channels', {
 				url: "/channels",
