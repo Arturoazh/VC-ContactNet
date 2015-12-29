@@ -15,7 +15,7 @@
 	<link href='css/styles.min.css' rel='stylesheet' type='text/css'>
 </head>
 
-<body ng-controller="appController" layout="row" role="application" ng-cloak>
+<body ng-controller="appController" layout layout="column" role="application" ng-cloak>
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2 md-closed" md-is-locked-open="$mdMedia('gt-xs') && isOpenLeft()" md-component-id="left">
       <md-content layout-padding>
@@ -35,7 +35,7 @@
         </ul>
       </md-content>
     </md-sidenav>
-  <md-content role="main" flex layout="column" layout-align="start center">
+  <md-content role="main" layout="column" flex>
     <md-toolbar class="masthead md-hue-2">
         <div class="md-toolbar-tools">
           <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
@@ -51,7 +51,7 @@
           <md-tab ng-repeat="(k,v) in menu[0].views" ng-click="cnNavigate.path(v.uri)">
             <md-tab-label layout="row">
               <md-icon md-svg-icon="{{v.uri}}" aria-label="{{v.name}} Icon"></md-icon>
-              <md-button md-no-ink class="md-button" aria-label="{{v.name}} Button">
+              <md-button class="md-button disable-hover" md-no-ink aria-label="{{v.name}} Button">
                 <span> {{v.name}}</span>
               </md-button>
             </md-tab-label>
@@ -69,7 +69,7 @@
 
       </md-toolbar>
 
-      <md-content role="view" layout="column" ng-class="route" flex ui-view></md-content>
+      <md-content role="view" layout layout="column" ng-class="route" flex ui-view></md-content>
   </md-content>
 
 
