@@ -5,7 +5,7 @@
 
 			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets track by $index" ng-class="{'open-item': v.openCard}">
 				<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cnContactNetInfo="{{v}}" cn-open-contact-nets>
-					<div flex>ASDGGGG | {{v.description}}</div>
+					<div flex>{{v.description}}</div>
 					<span flex></span>
 					<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
 					<md-icon md-svg-icon="mail" aria-label="Open Chat" class="md-hue-3"></md-icon>
@@ -19,7 +19,7 @@
 	            <md-menu-item >
 	              <md-button ng-click="">
 	                  <div layout="row">
-	                  	<md-icon md-menu-align-target md-svg-icon="mail"></md-icon>
+	                  	<md-icon md-menu-align-target md-svg-icon="mode-edit"></md-icon>
 	                    <p flex>Editar</p>
 	                  </div>
 	              </md-button>
