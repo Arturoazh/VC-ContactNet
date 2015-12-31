@@ -10,7 +10,7 @@
     	
     	var directive = {
 	        restrict: 'EA',
-	        scope: true,
+	        scope: false,
 	        link: link,
 	        templateUrl: 'modules/contactNets/directives/cnContactNetChatCardChannelConfiguration/cnContactNetChatCardChannelConfiguration.html',
         	controller: controller
