@@ -23,7 +23,10 @@
       .icon('rules', 'assets/icons/rules.svg')
       .icon('mail', 'assets/icons/mail.svg')
       .icon('message', 'assets/icons/message.svg')
-      .icon('phone', 'assets/icons/phone.svg');
+      .icon('phone', 'assets/icons/phone.svg')
+      .icon('shape', 'assets/icons/shape.svg')
+      .icon('insert', 'assets/icons/insert-drive-file.svg')
+      .icon('mode-edit', 'assets/icons/mode-edit.svg');
 			
   }
 

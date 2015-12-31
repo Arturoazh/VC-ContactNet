@@ -19,14 +19,21 @@
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2 md-closed" md-is-locked-open="$mdMedia('gt-xs') && isOpenLeft()" md-component-id="left">
       <md-content flex>
-        <ul>
-          <li ng-repeat="(k,v) in menu">
-            <md-button ng-show="v.href" ng-href="{{v.href}}" ng-click="open = !open">
-              {{v.name}}
-            </md-button>            
-            <md-button ng-show="!v.href" ng-click="open = !open">
-              {{v.name}}
-            </md-button>
+        <ul layout="column" flex class="layoutMenu">
+          <li ng-repeat="(k,v) in menu" layout="column" layout-align="center center">
+            <div layout="row" ng-show="v.href" layout-align="center center">
+              <md-icon md-svg-icon="{{v.icon}}" aria-label="Alarm Icon"></md-icon>
+              <md-button ng-href="{{v.href}}" ng-click="open = !open" flex>
+                {{v.name}}
+              </md-button>    
+            </div>
+            <div layout="row" ng-show="!v.href" layout-align="center center">
+              <md-icon md-svg-icon="{{v.icon}}" aria-label="Alarm Icon"></md-icon>
+              <md-button ng-click="open = !open" flex>
+                {{v.name}}
+              </md-button>
+              <div ng-class="{'arrowDown': open, 'arrowUp' : !open}"></div>
+            </div>
             <ul ng-show="v.views && open">
                 <li ng-repeat="(kk,vv) in v.views">
                   <md-button cn-navigate="{{vv.uri}}">
@@ -73,7 +80,7 @@
 
       </md-toolbar>
 
-      <md-content role="view" layout layout="column" ng-class="route" flex ui-view></md-content>
+      <section role="view" layout layout="column" ng-class="route" flex ui-view></section>
   </md-content>
 
 

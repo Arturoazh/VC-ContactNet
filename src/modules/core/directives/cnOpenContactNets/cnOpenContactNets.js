@@ -34,6 +34,7 @@
 		  				}else {
 		  					$cnContactNets.contactNets[argsForEach[1]].openCard = !$cnContactNets.contactNets[argsForEach[1]].openCard;
 			  				$cnContactNets.getById().then(function () {
+			  					console.log(arguments[0]);
 			  					$cnContactNets.contactNets[argsForEach[1]].contactNetInfo = arguments[0];
 								});
 		  				};

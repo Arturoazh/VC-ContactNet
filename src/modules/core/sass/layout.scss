@@ -28,6 +28,38 @@ body {
   }
 }
 
+.layoutMenu {
+  padding: 0; 
+  margin: 0;
+  >li {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    // text-align: left;
+    >div {
+      width: 75%;
+      >* {
+        text-align: left;
+        text-transform: none;
+      }
+    }
+    .arrowDown {
+      width: 0; 
+      height: 0; 
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      
+      border-top: 7px solid black;
+    }
+    .arrowUp {
+      width: 0; 
+      height: 0; 
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      
+      border-bottom: 7px solid black;
+    }
+  }
+}
+
 [role="main"] {
 	z-index: 2;
 	background: transparent;

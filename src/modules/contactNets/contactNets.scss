@@ -1,6 +1,8 @@
 $grayText: #616161;
 $smokeText: #9b9b9b;
 $blueVC: #3cace1;
+$cnBackgroundCardsOpen: #ececec;
+$cnBackgroundCards : #FFF;
 
 
 .empty-section{
@@ -13,12 +15,13 @@ $blueVC: #3cace1;
     position: relative;
     background: 0 0;
     z-index: 1;
-    max-width: 75%;
+    max-width: 85%;
     margin: 0 auto;
     padding:10px;
 
     > section {
       position: relative;
+      max-width: 90%;
 
       .empty-section{
         text-align: center;
@@ -59,15 +62,9 @@ $blueVC: #3cace1;
 
       }
 
-      .search-container{
-        padding: 1em 1em; max-width: 1000px; margin: 20px auto 0;
-
-        >div{
-          background-color: white;
-        }
-      }
       >.md-item{
         transition: all 300ms;
+        background: $cnBackgroundCards;
 
         &:first-child{
           margin-top: 10px;
@@ -83,7 +80,7 @@ $blueVC: #3cace1;
 
         .item-card{
         	transition: all, 0.3s, ease;
-          background-color: white;
+          // background-color: white;
           visibility: hidden;
           &, & > * {
             max-height: 0;
@@ -92,7 +89,7 @@ $blueVC: #3cace1;
           }
 
           >div{
-            height: 360px;
+            // height: 360px;
             &.ng-hide{
               height: 0px;
               display: inherit !important;
@@ -108,15 +105,17 @@ $blueVC: #3cace1;
 
         &.open-item{
            margin: 30px 0px;
+           background: $cnBackgroundCardsOpen;
 
           @media (min-width:600px){
             margin: 30px -10px;
+            background: $cnBackgroundCardsOpen;
           }
 
           .item-card{
             visibility: visible;
             &, & > * {
-              max-height: 700px;
+              max-height: 2000px;
               opacity: 1;
             }
             .card{
@@ -128,7 +127,7 @@ $blueVC: #3cace1;
         md-list-item{
           font-size: 0.85rem;
           border-bottom: 1px solid rgba(0,0,0,0.01);
-          background-color: #FFF;
+          // background-color: #FFF;
           padding: 0 16px;
 
           >md-icon{
@@ -218,7 +217,6 @@ $blueVC: #3cace1;
     &:after{
       right: 0;
     }
-
   }
 }
 
@@ -230,7 +228,11 @@ $blueVC: #3cace1;
   z-index: 125125125;
 }
 
+.openInnerCard {
+  margin: 10px -30px;
+}
 
-
-
-
+.md-item {
+  transition: all 300ms;
+  background: $cnBackgroundCards;
+}

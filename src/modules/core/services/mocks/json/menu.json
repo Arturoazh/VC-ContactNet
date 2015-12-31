@@ -2,14 +2,17 @@
 	"MENU": {
 		"0":{
 			"name": "Nueva Configuración",
-			"href": "https://multichannel.virtualcenter360.es/ivr/flowchart"
+			"href": "https://multichannel.virtualcenter360.es/ivr/flowchart",
+			"icon": "insert"
 		},
 		"1":{
 			"name": "Activar Numeración",
-			"href": "https://multichannel.virtualcenter360.es/ivr/configuration"
+			"href": "https://multichannel.virtualcenter360.es/ivr/configuration",
+			"icon": "mode-edit"
 		},
 		"2":{
 			"name": "Repositorio",
+			"icon": "shape",
 			"views": {
 				"0": {
 					"name": "Destinos",

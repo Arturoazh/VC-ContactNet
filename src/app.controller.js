@@ -38,6 +38,9 @@
 				case '/channels':
 					$scope.selectedIndex = 1;
 				break;
+				case '/rules':
+					$scope.selectedIndex = 2;
+				break;
 			}
 		});
 
