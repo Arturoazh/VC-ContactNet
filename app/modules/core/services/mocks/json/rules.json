@@ -1,0 +1,36 @@
+[{
+	"id": "11216",
+	"name": "Telecoming MAIL",
+	"networkElement": "",
+	"contactnetId": -1,
+	"campaignId": -1,
+	"networkElementId": -1,
+	"channelId": 3,
+	"autoWizard": 1,
+	"configTypeId": "IN",
+	"modificable": false
+},
+{
+	"id": "11231",
+	"name": "Nueva regla creada para el canal mail",
+	"networkElement": "",
+	"contactnetId": -1,
+	"campaignId": -1,
+	"networkElementId": -1,
+	"channelId": 3,
+	"autoWizard": 1,
+	"configTypeId": "IN",
+	"modificable": false
+},
+{
+	"id": "Esta es una regla creada para el canal chat",
+	"name": "Telecoming MAIL",
+	"networkElement": "",
+	"contactnetId": -1,
+	"campaignId": -1,
+	"networkElementId": -1,
+	"channelId": 2,
+	"autoWizard": 1,
+	"configTypeId": "IN",
+	"modificable": false
+}]

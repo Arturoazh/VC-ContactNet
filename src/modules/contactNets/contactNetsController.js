@@ -13,7 +13,7 @@
   	$cnContactNets.get().then(function () {
   		$cnContactNets.contactNets = arguments[0];
       // $cnContactNets.contactNets = [];
-  		// console.log('contactNets', arguments[0]);
+
   	});
 
   }
