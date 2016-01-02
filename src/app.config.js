@@ -16,6 +16,8 @@
 
 	  $mdIconProvider
       .icon('add', 'assets/icons/add.svg')
+      .icon('arrow_downward', 'assets/icons/arrow_downward.svg')
+      .icon('arrow_upward', 'assets/icons/arrow_upward.svg')
       .icon('menu', 'assets/icons/menu.svg')
       .icon('more_vert', 'assets/icons/more_vert.svg')
       .icon('contactnets', 'assets/icons/contactnets.svg')

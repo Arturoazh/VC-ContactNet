@@ -12,6 +12,8 @@
 		$scope.menu = {};
 		$scope.cnNavigate = $cnNavigate;
 
+		$rootScope.addNew = function(){};
+
 
 		$scope.isOpenLeft = function(){
       return $mdSidenav('left').isOpen();

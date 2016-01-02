@@ -6,15 +6,28 @@
     .controller('rulesController', controller);
 
   /* ngInject */
-  function controller($scope, $cnContactNets){
+  function controller($rootScope, $scope, $cnContactNets, $cnRules, $filter){
 
-  	$scope.contactNetsService = $cnContactNets;
+  	$scope.contactNets = [];
+    $scope.$cnRules = $cnRules;
 
-  	$cnContactNets.get().then(function () {
-  		$cnContactNets.contactNets = arguments[0];
-      $cnContactNets.contactNets = [];
-  		// console.log('contactNets', arguments[0]);
+    $rootScope.addNew = addNew;
+    $scope.save = save;
+
+  	$cnRules.get().then(function () {
+      $scope.$cnRules.rules = arguments[0];
   	});
+
+    
+
+    function addNew(){
+      console.log("ejemplo");
+    }
+
+    function save(){
+      console.log(arguments[0]);
+    }
+
 
   }
 
