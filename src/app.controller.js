@@ -11,6 +11,7 @@
 		$scope.toggleLeft = buildToggler('left');
 		$scope.menu = {};
 		$scope.cnNavigate = $cnNavigate;
+		$scope.environment = {};
 
 		$rootScope.addNew = function(){};
 
@@ -33,15 +34,19 @@
 		})
 
 		$rootScope.$on('$stateChangeSuccess', function () {
+			console.log(arguments);
 			switch(arguments[1].url) {
 				case '/contactnets':
 					$scope.selectedIndex = 0;
+					$scope.environment.actualSection = 'ContactNets';
 				break;
 				case '/channels':
 					$scope.selectedIndex = 1;
+					$scope.environment.actualSection = 'Canales';
 				break;
 				case '/rules':
 					$scope.selectedIndex = 2;
+					$scope.environment.actualSection = 'Reglas';
 				break;
 			}
 		});
