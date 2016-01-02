@@ -221,6 +221,38 @@ $cnBackgroundCards : #FFF;
   }
 }
 
+.cardContainer {
+  > div {
+    &:first-child {
+      border-bottom: 1px solid white;
+      >div {
+        &:first-child {
+          md-icon {
+            height: 18px;
+            width: 18px;
+          }
+          input {
+            background: transparent;
+            outline: 0;
+            border: 0;
+            padding-left: 10px;
+          }
+        }
+        >div {
+          >span {
+            white-space: nowrap;
+            &:first-child {
+              min-width: 22px;
+              border-radius: 50% 50%;
+              border: 1px solid gray;
+              text-align: center;
+            }
+          }
+        }
+      }
+    } 
+  }
+}
 
 .fabButtonCreate {
   position: absolute;

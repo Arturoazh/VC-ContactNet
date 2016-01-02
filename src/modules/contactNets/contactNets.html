@@ -42,21 +42,24 @@
 				<div class="item-card" ng-if="v.contactNetInfo" layout="column">
 					<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="!loadingCards.length">
 
-						<div flex layout="column" layout-align="space-between">
-							<div layout layout="row" layout-align="start center" layout-padding layout-margin>
-					      <input placeholder="Nombre del ContactNet" ng-model="v.description">
-					      <div flex layout="row" layout-align="end">
-					      	<div flex layout="row">
-					      		<span flex="10">1</span>
-					      		<span flex>Configurar Canales</span>
+						<div class="cardContainer" flex layout="column" layout-align="space-between">
+							<div layout layout="row" layout-align="start center" layout-margin>
+								<div flex layout="row" layout-align="center center">
+									<md-icon class="md-hue-3" md-svg-icon="mode-edit"></md-icon>
+									<input placeholder="Nombre del ContactNet" ng-model="v.description" flex>
+								</div>
+					      <div flex="70" layout="row" layout-align="end center">
+					      	<div flex layout="row" layout-align="center center">
+					      		<span layout-margin>1</span>
+					      		<span>Configurar Canales</span>
 					      	</div>
-					      	<div flex layout="row">
-					      		<span flex="10">2</span>
-					      		<span flex>Estrategia</span>
+					      	<div flex layout="row" layout-align="center center">
+					      		<span layout-margin>2</span>
+					      		<span>Estrategia</span>
 					      	</div>
-					      	<div flex layout="row">
-					      		<span flex="10">3</span>
-					      		<span flex>BackOffice</span>
+					      	<div flex layout="row" layout-align="center center">
+					      		<span layout-margin>3</span>
+					      		<span>BackOffice</span>
 					      	</div>
 					      </div>
 							</div>
