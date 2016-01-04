@@ -1,20 +1,17 @@
 <!-- <div class="md-item md-whiteframe-z1" ng-model="yo.openCard" ng-class="{'openInnerCard md-whiteframe-z3': yo.openCard}"> -->
-	<md-list-item class="item" flex aria-label="row" md-ink-ripple ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard">
-		<div layout layout="row" flex layout-align="start center">
-			<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
-			<span layout-margin flex>Voz</span>
-		</div>
-		<span flex></span>
-		<md-switch style="margin: 0;" ng-model="data.cb1" aria-label="Switch 1">
+<!-- ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard" -->
+	<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard">
+		<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
+		<span layout-margin flex>Voz</span>
+		<md-switch class="md-secondary" ng-model="data.cb1" aria-label="Switch 1">
 	  </md-switch>
 
 	</md-list-item>
 
-	<md-progress-linear md-mode="indeterminate" ng-if="cnContactNetVoiceCardChannelConfiguration.openCard && !v.contactNetInfo"></md-progress-linear>
 	<div class="item-card" ng-if="cnContactNetVoiceCardChannelConfiguration.openCard" layout="column" layout-fill>
 		<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="!loadingCards.length">
 
-			<div flex style="overflow-y: auto;" layout="column" layout-align="space-between">
+			<div flex layout="column" layout-align="space-between">
 				
 					<div layout layout="row">
 						<md-input-container flex>
@@ -120,4 +117,4 @@
 		</div>
 
 	</div>
-<!-- </div> -->
+<!-- </div>

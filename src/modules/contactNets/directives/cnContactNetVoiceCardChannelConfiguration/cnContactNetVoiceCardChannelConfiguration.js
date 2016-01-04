@@ -10,8 +10,8 @@
     	
     	var directive = {
 	        restrict: 'EA',
-	        scope: false,
 	        link: link,
+	        scope : false,
 	        templateUrl: 'modules/contactNets/directives/cnContactNetVoiceCardChannelConfiguration/cnContactNetVoiceCardChannelConfiguration.html',
         	controller: controller
 	    };
