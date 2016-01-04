@@ -2,9 +2,11 @@ $blueVC: #3cace1;
 $greenVC: #6b9e30;
 $smokeText: #9b9b9b;
 
+body { 
+  background: rgba(0,0,0,.04);
+}
 
 body {
-	background: rgba(0,0,0,.04);
 	>md-sidenav {
 		transition: none!important;
 		background: transparent;
@@ -75,9 +77,7 @@ body {
 }
 
 [role="main"] {
-	z-index: 2;
 	background: transparent;
-	overflow: visible;
 	>[role="view"] {
 		overflow: visible;
 		background: 0 0;
