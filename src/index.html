@@ -78,13 +78,8 @@
 						<md-icon md-svg-icon="{{fab.trigger.icon}}"></md-icon>
 					</md-button>
 			  </md-fab-trigger>
-<<<<<<< HEAD
-			  <md-fab-actions ng-show="fab.actions">
-					<div ng-repeat="(k,v) in fab.actions">
-=======
 			  <md-fab-actions>
 					<div ng-if="fab.isOpen" ng-repeat="(k,v) in fab.actions">
->>>>>>> origin/master
 						<md-button aria-label="button" ng-click="v.action()" class="md-fab md-accent md-raised md-mini">
 							<md-icon md-svg-icon="{{v.icon}}"></md-icon>
 						</md-button>
