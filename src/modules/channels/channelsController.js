@@ -12,6 +12,7 @@
     $scope.$cnChannels = $cnChannels;
 
 		$scope.save = save;
+		$scope.openFab = openFab;
 
     $rootScope.fab.trigger.action = false;
 		$rootScope.fab.actions = [{
@@ -61,6 +62,10 @@
 			  "channelId": 3,
 			  "configModificable": false
 			});
+		}
+
+		function openFab(){
+			$rootScope.fab.isOpen = true;
 		}
 
     function save(){
