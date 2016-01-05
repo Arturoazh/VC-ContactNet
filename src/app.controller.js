@@ -14,6 +14,7 @@
 		$scope.environment = {};
 
 		$rootScope.fab = {
+			isOpen: false,
 			trigger: {
 				icon: 'add',
 				action: function(){}
@@ -40,6 +41,7 @@
 		});
 
 		$rootScope.$on('$stateChangeSuccess', function () {
+			$rootScope.fab.isOpen = false;
 			$rootScope.fab.actions = [];
 
 			switch(arguments[1].url) {

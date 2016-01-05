@@ -40,6 +40,7 @@
       .icon('contactnets', 'assets/icons/contactnets.svg')
       .icon('channels', 'assets/icons/channels.svg')
       .icon('rules', 'assets/icons/rules.svg')
+			.icon('twitter', 'assets/icons/twitter.svg')
       .icon('mail', 'assets/icons/mail.svg')
       .icon('message', 'assets/icons/message.svg')
       .icon('phone', 'assets/icons/phone.svg')

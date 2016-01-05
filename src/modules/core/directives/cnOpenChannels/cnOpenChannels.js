@@ -29,7 +29,7 @@
 		  		angular.forEach($cnChannels.channels, function () {
 
 		  			var argsForEach = arguments;
-		  			if (argsForEach[0].id == cnChannelInfo.id) {
+		  			if (argsForEach[0].channelId == cnChannelInfo.channelId) {
 		  				if ($cnChannels.channels[argsForEach[1]].downloadedData) {
 		  					$cnChannels.channels[argsForEach[1]].openCard = !$cnChannels.channels[argsForEach[1]].openCard;
 		  				}else {

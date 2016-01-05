@@ -60,7 +60,7 @@
         {{environment.actualSection}}
       </h1>
 
-      <md-tabs md-selected="selectedIndex" flex class="topTabs md-hue-2">
+      <md-tabs md-selected="selectedIndex" flex class="topTabs md-hue-2" md-no-ink>
         <md-tab ng-repeat="(k,v) in menu[2].views[5].views" ng-click="cnNavigate.path(v.uri)">
           <md-tab-label layout="row">
             <md-icon md-svg-icon="{{v.uri}}" aria-label="{{v.name}} Icon"></md-icon>
@@ -72,14 +72,19 @@
       </md-tabs>
 
 
-			<md-fab-speed-dial md-direction="down" class="md-scale fabButtonCreate">
+			<md-fab-speed-dial md-direction="down" md-open="fab.isOpen" class="md-scale fabButtonCreate">
 			  <md-fab-trigger>
 			    <md-button aria-label="trigger" ng-click="fab.trigger.action" class="md-fab md-accent">
 						<md-icon md-svg-icon="{{fab.trigger.icon}}"></md-icon>
 					</md-button>
 			  </md-fab-trigger>
+<<<<<<< HEAD
 			  <md-fab-actions ng-show="fab.actions">
 					<div ng-repeat="(k,v) in fab.actions">
+=======
+			  <md-fab-actions>
+					<div ng-if="fab.isOpen" ng-repeat="(k,v) in fab.actions">
+>>>>>>> origin/master
 						<md-button aria-label="button" ng-click="v.action()" class="md-fab md-accent md-raised md-mini">
 							<md-icon md-svg-icon="{{v.icon}}"></md-icon>
 						</md-button>

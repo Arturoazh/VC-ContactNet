@@ -2,7 +2,7 @@ $blueVC: #3cace1;
 $greenVC: #6b9e30;
 $smokeText: #9b9b9b;
 
-body { 
+body {
   background: rgba(0,0,0,.04);
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .layoutMenu {
-  padding: 0; 
+  padding: 0;
   margin: 0;
   >li {
     border-bottom: 1px solid rgba(0,0,0,0.15);
@@ -62,15 +62,15 @@ body {
 
 
 .arrowDown {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 7px solid black;
 }
 .arrowUp {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-bottom: 7px solid black;
@@ -103,7 +103,7 @@ body {
     	.md-tab {
     		text-transform: none;
     	}
-    }	
+    }
     .sectionTitle {
 	    width: 100%;
 	    max-width: 75%;
@@ -113,11 +113,11 @@ body {
       font-size: 34px;
       color: #9b9b9b;
     }
-  }	
+  }
 }
 
 // .well[ui-view]{
-//  height: 65px; 
+//  height: 65px;
 // }
 
 // .ui-view-container {
@@ -182,10 +182,10 @@ body {
 
 .blueVC-color{
   color: $blueVC;
+  outline: none;
 }
 
 .greenVC-color{
   color: $greenVC;
+  outline: none;
 }
-
-
