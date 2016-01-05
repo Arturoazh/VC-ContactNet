@@ -79,7 +79,7 @@
 					</md-button>
 			  </md-fab-trigger>
 			  <md-fab-actions>
-					<div ng-if="fab.actions.length" ng-repeat="(k,v) in fab.actions">
+					<div ng-if="fab.isOpen" ng-repeat="(k,v) in fab.actions">
 						<md-button aria-label="button" ng-click="v.action()" class="md-fab md-accent md-raised md-mini">
 							<md-icon md-svg-icon="{{v.icon}}"></md-icon>
 						</md-button>
