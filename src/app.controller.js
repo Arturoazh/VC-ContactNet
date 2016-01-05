@@ -13,7 +13,13 @@
 		$scope.cnNavigate = $cnNavigate;
 		$scope.environment = {};
 
-		$rootScope.addNew = function(){};
+		$rootScope.fab = {
+			trigger: {
+				icon: 'add',
+				action: function(){}
+			},
+			actions: []
+		};
 
 
 		$scope.isOpenLeft = function(){
@@ -25,16 +31,17 @@
 			return function() {
 				$mdSidenav(args[0])
 				.toggle();
-			}
+			};
 		}
 
 		$cnMenu.get().then(function(){
 			console.log("arguments", arguments[0]);
-			$scope.menu = arguments[0];	
-		})
+			$scope.menu = arguments[0];
+		});
 
 		$rootScope.$on('$stateChangeSuccess', function () {
-			console.log(arguments);
+			$rootScope.fab.actions = [];
+
 			switch(arguments[1].url) {
 				case '/contactnets':
 					$scope.selectedIndex = 0;

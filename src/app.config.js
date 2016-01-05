@@ -8,9 +8,26 @@
   /* ngInject */
   function config($mdThemingProvider, $mdIconProvider){
 
+		var blueVCmap = $mdThemingProvider.extendPalette('blue', {
+			'100': '#E0F2FA',
+			'200': '#AFDDF3',
+			'300': '#71C3E9',
+			'400': '#57B7E5',
+	    '500': '#3CACE1',
+			'600': '#22A1DC',
+			'700': '#1E8DC2',
+			'800': '#1A7AA7',
+			'900': '#16678D',
+			'A100': '#AFDDF3',
+			'A200': '#3CACE1',
+			'A400': '#57B7E5',
+			'A700': '#1E8DC2'
+	  });
+	  $mdThemingProvider.definePalette('blueVC', blueVCmap);
+
 		$mdThemingProvider.theme('default')
 	    .primaryPalette('grey')
-	    .accentPalette('blue')
+	    .accentPalette('blueVC')
 	    .warnPalette('red');
 
 
@@ -29,7 +46,7 @@
       .icon('shape', 'assets/icons/shape.svg')
       .icon('insert', 'assets/icons/insert-drive-file.svg')
       .icon('mode-edit', 'assets/icons/mode-edit.svg');
-			
+
   }
 
 })();

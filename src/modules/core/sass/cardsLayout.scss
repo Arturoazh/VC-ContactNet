@@ -153,11 +153,11 @@ $cnBackgroundCards : #FFF;
           span{
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis;  
+            text-overflow: ellipsis;
           }
-          
+
         }
-      } 
+      }
     }
   }
   .md-subheader{
@@ -167,7 +167,7 @@ $cnBackgroundCards : #FFF;
     md-icon{
       width: 16px;
       height: 16px;
-      
+
       &.desc{
         transform: rotate(180deg);
       }
@@ -176,14 +176,14 @@ $cnBackgroundCards : #FFF;
       z-index: 3;
     }
     .md-subheader-inner{
-      padding:0; 
+      padding:0;
     }
 
     .md-subheader-content {
 
       >div{
         background-color: rgba(0,0,0,0.04);
-        padding: 1.6em 16px;       
+        padding: 1.6em 16px;
         color: rgba(0,0,0,0.3);
 
         >div{
@@ -193,7 +193,7 @@ $cnBackgroundCards : #FFF;
           }
         }
       }
-    } 
+    }
     &:after{
       right: 0;
     }
@@ -229,14 +229,14 @@ $cnBackgroundCards : #FFF;
           }
         }
       }
-    } 
+    }
   }
 }
 
 .fabButtonCreate {
   position: absolute;
   right: 1em;
-  bottom: -35px;
+  top: calc(100% - 34px);
   z-index: 125125125;
 }
 

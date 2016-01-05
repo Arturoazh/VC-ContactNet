@@ -18,7 +18,7 @@
   /* ngInject */
   function service($http, $q, $timeout){
 
-  	var listJsons = ['menu', 'listContactNets', 'contactNetId', 'channels', 'rules', 'rulesId', 'languages'];
+  	var listJsons = ['menu', 'listContactNets', 'contactNetId', 'channels', 'rules', 'rulesId', 'languages', 'channels', 'channelsId'];
 		var scope = this;
 
 		scope.bbdd = {};
