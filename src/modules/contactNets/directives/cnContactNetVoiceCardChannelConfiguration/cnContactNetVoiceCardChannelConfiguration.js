@@ -11,7 +11,6 @@
     	var directive = {
 	        restrict: 'EA',
 	        link: link,
-	        scope : false,
 	        templateUrl: 'modules/contactNets/directives/cnContactNetVoiceCardChannelConfiguration/cnContactNetVoiceCardChannelConfiguration.html',
         	controller: controller
 	    };
@@ -27,7 +26,7 @@
 	    function controller ($scope) {
 
 	    	// $scope = $scope.$parent;
-	    	console.log($scope);
+	    	// console.log($scope);
 
 	    }
     }

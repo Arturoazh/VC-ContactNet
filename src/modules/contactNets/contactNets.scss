@@ -1,3 +1,12 @@
+.dropdownClick {
+	outline: 0;
+	cursor: pointer;
+	>div {
+		margin-left: 12px;
+	}
+}
+
+
 // $grayText: #616161;
 // $smokeText: #9b9b9b;
 // $blueVC: #3cace1;
@@ -274,3 +283,5 @@
 // .divItems {
 //   padding: 0.6em 2em;
 // }
+
+

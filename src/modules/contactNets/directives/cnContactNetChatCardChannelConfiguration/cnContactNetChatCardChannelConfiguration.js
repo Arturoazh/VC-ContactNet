@@ -27,7 +27,7 @@
 	    function controller ($scope) {
 
 	    	// $scope = $scope.$parent;
-	    	console.log($scope);
+	    	// console.log($scope);
 
 	    }
     }
