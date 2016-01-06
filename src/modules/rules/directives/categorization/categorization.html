@@ -1,0 +1,35 @@
+<div class="categorization" flex layout="column">
+	<div flex layout="row">
+		<md-input-container flex>
+      <label>Etiqueta de la categoría</label>
+      <input ng-model="v.name">
+    </md-input-container>
+    <div flex layout="row">
+    	<p>Si</p>
+    	<md-input-container>
+        <label>Option</label>
+        <md-select ng-model="v.ejemplo">
+        	<md-option  value="1">Alguna de</md-option>
+          <md-option  value="2">Todas</md-option>
+        </md-select>
+      </md-input-container>
+      <p>las siguientes condiciones se cumplen</p>
+    </div>
+  </div>
+
+  <div flex layout="row">
+    <md-input-container>
+      <label>Option</label>
+      <md-select ng-model="v.dddd">
+      	<md-option  value="1">Contiene</md-option>
+      	<md-option  value="2">No Contiene</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex>
+      <label></label>
+      <input ng-model="v.ss">
+    </md-input-container>
+  </div>
+	
+
+</div>
