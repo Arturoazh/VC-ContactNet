@@ -8,6 +8,9 @@ body {
 
 body {
 	>md-sidenav {
+    -webkit-transition : none!important;
+    -moz-transition : none!important;
+    -o-transition : none!important;
 		transition: none!important;
 		background: transparent;
 
@@ -78,10 +81,16 @@ body {
 
 [role="main"] {
 	background: transparent;
-	>[role="view"] {
+	>[ui-view] {
 		overflow: visible;
 		background: 0 0;
     padding: 30px 0 0;
+    // opacity: 1;
+    // -webkit-transform:translate(0, 0);
+    // -moz-transform:translate(0, 0);
+    // -o-transform:translate(0, 0);
+    // transform:translate(0, 0);
+    // z-index: 1;
     will-change: auto;
 	}
 }
@@ -120,27 +129,29 @@ body {
 //  height: 65px;
 // }
 
-// .ui-view-container {
-//   position: relative;
-// }
+.ui-view-container {
+  position: relative;
+}
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   width: 100%;
   z-index: 1;
-  -webkit-transition:all .2s ease-in-out;
-	-moz-transition:all .2s ease-in-out;
-	-o-transition:all .2s ease-in-out;
-	transition:all .2s ease-in-out;
+  -webkit-transition:all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	-o-transition:all 0.2s ease-in-out;
+	transition:all 0.2s ease-in-out;
 }
 
 [ui-view].ng-enter {
   opacity: 0;
   -webkit-transition-delay: 650ms;
   -moz-transition-delay: 650ms;
+  -o-transition-delay: 650ms;
   transition-delay: 650ms;
   -webkit-transform:translate(0, 100px);
   -moz-transform:translate(0, 100px);
+  -o-transform:translate(0, 100px);
   transform:translate(0, 100px);
 }
 
@@ -148,20 +159,23 @@ body {
   opacity: 1;
   -webkit-transform:translate(0, 0);
   -moz-transform:translate(0, 0);
+  -o-transform:translate(0, 0);
   transform:translate(0, 0);
 }
 
 [ui-view].ng-leave {
   opacity: 1;
-   -webkit-transform:translate(0, 0);
+  -webkit-transform:translate(0, 0);
   -moz-transform:translate(0, 0);
+  -o-transform:translate(0, 0);
   transform:translate(0, 0);
 }
 
 [ui-view].ng-leave-active {
   opacity: 0;
-    -webkit-transform:translate(0, 100px);
+  -webkit-transform:translate(0, 100px);
   -moz-transform:translate(0, 100px);
+  -o-transform:translate(0, 100px);
   transform:translate(0, 100px);
 }
 

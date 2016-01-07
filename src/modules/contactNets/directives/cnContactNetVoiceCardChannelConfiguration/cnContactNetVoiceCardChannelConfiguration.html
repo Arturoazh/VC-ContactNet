@@ -11,7 +11,7 @@
 	<div layout-xs="column" layout-gt-xs="row" ng-show="!loadingCards.length">
 
 		<div flex layout="column" layout-align="space-between" layout-padding>
-			
+
 				<div layout layout="row">
 					<md-input-container flex layout-align="center strech">
 		        <label>Curso del tráfico</label>
@@ -19,37 +19,37 @@
 		      </md-input-container>
 				</div>
 				<div layout="column">
-					<h4 flex>Tráfico entrante</h4>
+					<h4>Tráfico entrante</h4>
 					<div layout="row" flex layout-wrap layout-align="strech">
 						<md-input-container flex="33">
 			        <label>Música en espera</label>
 			        <input ng-model="v.music">
-			      </md-input-container>			
+			      </md-input-container>
 			      <md-input-container flex="33">
 			        <label>Simulate Audio</label>
 			        <input ng-model="v.music">
-			      </md-input-container>	
+			      </md-input-container>
 			      <md-input-container flex="33">
 			        <label>Regla</label>
 			        <input ng-model="v.aleatorio">
-			      </md-input-container>		
+			      </md-input-container>
 			      <md-input-container flex="33">
 			        <label>Tiempo Administrativo</label>
 			        <input type="number" ng-model="v.administrativeTime">
-			      </md-input-container>		
+			      </md-input-container>
 			      <md-input-container flex="33">
 			        <label>Tiempo medio</label>
 			        <input type="number" ng-model="v.mediumTime">
-			      </md-input-container>		
+			      </md-input-container>
 			      <md-input-container flex="33">
 			        <label>Máximo número</label>
 			        <input type="number" ng-model="v.maxTime">
-			      </md-input-container>		
+			      </md-input-container>
 					</div>
 				</div>
 				<div layout="column">
-					<h4 layout="row" flex ng-click="traficoEntrante = !traficoEntrante" layout-align="start center" class="dropdownClick">
-						Configuración avanzada del tráfico entrante 
+					<h4 layout="row" ng-click="traficoEntrante = !traficoEntrante" layout-align="start center" class="dropdownClick">
+						Configuración avanzada del tráfico entrante
 						<div ng-class="{'arrowDown': traficoEntrante, 'arrowUp' : !traficoEntrante}"></div>
 					</h4>
 					<div layout="row" flex layout-wrap ng-show="traficoEntrante">
@@ -73,7 +73,7 @@
 			      	<md-input-container>
 				        <label>Timeout (seg)</label>
 				        <input type="number" ng-model="v.time">
-				      </md-input-container>		
+				      </md-input-container>
 			      </div>
 			      <div flex="100" layout="column" layout-padding>
 			      	<md-checkbox layout="row" flex ng-model="v.notifications" ng-change="">
@@ -101,7 +101,7 @@
 					      	<md-input-container >
 						        <label>Frecuencia de aviso</label>
 						        <input type="number" ng-model="v.freNot">
-						      </md-input-container>		
+						      </md-input-container>
 					      </div>
 					      <div flex="12" layout="row">
 									<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
@@ -134,7 +134,7 @@
 					      	<md-input-container>
 						        <label>Frecuencia de aviso</label>
 						        <input type="number" ng-model="v.freNot">
-						      </md-input-container>		
+						      </md-input-container>
 					      </div>
 					      <div flex="12">
 									<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
@@ -144,18 +144,18 @@
 					</div>
 				</div>
 				<div layout="column">
-					<h4 layout="row" flex layout-align="start center" class="dropdownClick">
-						Tráfico saliente 
+					<h4 layout-align="start center" class="dropdownClick">
+						Tráfico saliente
 					</h4>
 					<div layout="row" flex layout-wrap>
 						<md-input-container flex="50">
 			        <label>Seleccionar ANI</label>
 			        <input ng-model="v.selectAni">
-			      </md-input-container>			
+			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Llamar primero</label>
 			        <input ng-model="v.selectAgent">
-			      </md-input-container>	
+			      </md-input-container>
 			      <md-checkbox layout="row" flex="100" ng-model="v.callSelected" ng-change="" layout-padding>
 				      	Grabación de llamadas
 				      </md-checkbox>
@@ -166,29 +166,29 @@
 			      <md-input-container flex="50" layout-align="center center">
 			        <label>Porcentaje de llamadas a grabar</label>
 			        <input ng-model="v.recordCalls">
-			      </md-input-container>		
+			      </md-input-container>
 		      	<md-checkbox layout="row" flex="100" ng-model="v.comunity" ng-change="" layout-padding>
 			      	Comunidad
 			      </md-checkbox>
 		        <md-input-container flex="50" layout-padding layout-align="center center">
 			        <label>Selecciona comunidad</label>
 			        <input ng-model="v.city">
-			      </md-input-container>		
+			      </md-input-container>
 			      <md-input-container flex="50" layout-padding layout-align="center center">
 			        <label>Transferencia</label>
 			        <input ng-model="v.atendida">
-			      </md-input-container>	
+			      </md-input-container>
 			      <md-input-container flex="50" layout-padding>
 			        <label>Tipos de numeración</label>
 			        <input ng-model="v.typeNumeration">
-			      </md-input-container>		
+			      </md-input-container>
 					</div>
 				</div>
 				<div layout layout-align="end">
 					<md-button ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = false;" class="md-accent md-hue-2">Cancelar</md-button>
 					<md-button class="md-accent md-raised md-hue-2">Guardar</md-button>
 				</div>
-				
+
 			</div>
 
 		</div>
