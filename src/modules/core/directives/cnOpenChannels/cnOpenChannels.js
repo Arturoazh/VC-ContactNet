@@ -9,7 +9,9 @@
     function directive($cnChannels) {
     	var directiveObj = {
 	        restrict: 'EA',
-	        scope: {},
+	        scope: {
+						channel: '=cnChannelInfo'
+					},
 	        link: link
 	    };
 
@@ -25,11 +27,10 @@
 	    		if(arguments[0].target.localName === 'button')
 	    			return;
 
-	    		var cnChannelInfo = JSON.parse(attr.cnchannelinfo);
 		  		angular.forEach($cnChannels.channels, function () {
 
 		  			var argsForEach = arguments;
-		  			if (argsForEach[0].channelId == cnChannelInfo.channelId) {
+		  			if (argsForEach[0].channelId == scope.channel.channelId) {
 		  				if ($cnChannels.channels[argsForEach[1]].downloadedData) {
 		  					$cnChannels.channels[argsForEach[1]].openCard = !$cnChannels.channels[argsForEach[1]].openCard;
 		  				}else {

@@ -1,4 +1,4 @@
-<md-list-item ng-repeat="(k,v) in contactNets | filter:{channels: {$: rule.channelId}}">
+<md-list-item ng-repeat="(k,v) in contactNets | filter:{channels: {$: channelId}}">
   <md-checkbox ng-model="v.selected" ng-change="selectCN(v)"></md-checkbox>
   <md-button aria-label="Open menu" class="md-icon-button" ng-click="moveContactNet(v, true)">
     <md-icon md-menu-origin md-svg-icon="arrow_upward"></md-icon>
