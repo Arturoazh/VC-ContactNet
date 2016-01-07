@@ -9,7 +9,9 @@
     function openRules($cnRules) {
     	var directive = {
 	        restrict: 'EA',
-	        scope: {},
+	        scope: {
+						rule: '=cnRuleInfo'
+					},
 	        link: link
 	    };
 
@@ -25,11 +27,10 @@
 	    		if(arguments[0].target.localName === 'button')
 	    			return;
 
-	    		var cnRuleInfo = JSON.parse(attr.cnruleinfo);
 		  		angular.forEach($cnRules.rules, function () {
 
 		  			var argsForEach = arguments;
-		  			if (argsForEach[0].id == cnRuleInfo.id) {
+		  			if (argsForEach[0].id == scope.rule.id) {
 		  				if ($cnRules.rules[argsForEach[1]].downloadedData) {
 		  					$cnRules.rules[argsForEach[1]].openCard = !$cnRules.rules[argsForEach[1]].openCard;
 		  				}else {
@@ -47,5 +48,5 @@
 				}
 	    }
     }
- 
+
 }());

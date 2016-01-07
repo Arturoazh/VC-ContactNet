@@ -14,7 +14,7 @@
 		$scope.save = save;
 		$scope.openFab = openFab;
 
-    $rootScope.fab.trigger.action = false;
+    $rootScope.fab.trigger.action = function(){};
 		$rootScope.fab.actions = [{
 			icon: 'phone',
 			action: newPhone

@@ -7,11 +7,12 @@
 
     /* @ngInject */
     function directive($cnContactNets, $filter) {
-    	
+
     	var directive = {
 	        restrict: 'EA',
 	        scope: {
-	        	rule: '=cnRule'
+	        	rule: '=cnRule',
+						channelId: '=cnChannelId'
 	        },
 	        templateUrl: 'modules/rules/directives/selectOrderContactNet/selectOrderContactNet.html',
 	        link: link
@@ -32,7 +33,7 @@
 	        contactNetsRaw = arguments[0];
 
 	        orderContactNets();
-	      });	
+	      });
 
 
 	    	function orderContactNets(){
@@ -40,7 +41,7 @@
 
 	    		angular.forEach(scope.rule.destinations, function(){
 
-	        	var contactNet = $filter('filter')(contactNetsRaw, {id: arguments[0]});
+	        	var contactNet = angular.copy( $filter('filter')(contactNetsRaw, {id: arguments[0]}) );
 	        	if(contactNet.length){
 	        		contactNet[0].selected = true;
         			contactNetsOrder.push(contactNet[0]);
@@ -52,6 +53,8 @@
 	        		contactNetsOrder.push(arguments[0]);
 	        	}
 	        });
+
+
 
 	        scope.contactNets = contactNetsOrder;
 
@@ -78,9 +81,9 @@
 		      scope.rule.destinations.splice(position, 1);
 
 		      if(arguments[1]){
-						scope.rule.destinations.splice(position-1, 0, arguments[0].id);		      		
+						scope.rule.destinations.splice(position-1, 0, arguments[0].id);
 		      }else{
-		      	scope.rule.destinations.splice(position+1, 0, arguments[0].id);		      		
+		      	scope.rule.destinations.splice(position+1, 0, arguments[0].id);
 		      }
 
 		      orderContactNets();
@@ -89,5 +92,5 @@
 
 	    }
     }
- 
+
 }());

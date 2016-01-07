@@ -46,7 +46,8 @@
       .icon('phone', 'assets/icons/phone.svg')
       .icon('shape', 'assets/icons/shape.svg')
       .icon('insert', 'assets/icons/insert-drive-file.svg')
-      .icon('mode-edit', 'assets/icons/mode-edit.svg');
+      .icon('edit', 'assets/icons/edit.svg')
+			.icon('delete', 'assets/icons/delete.svg');
 
   }
 

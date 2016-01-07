@@ -7,11 +7,12 @@
 
     /* @ngInject */
     function directive($cnLanguages, $filter) {
-    	
+
     	var directive = {
 	        restrict: 'EA',
 	        scope: {
-	        	rule: '=cnRule'
+	        	rule: '=cnRule',
+						vocabulary: '=cnVocabulary'
 	        },
 	        templateUrl: 'modules/rules/directives/categorization/categorization.html',
 	        link: link
@@ -24,13 +25,13 @@
 
 	    	function init(){
 
-	    			
+	    			console.log(attr);
 
 	    	}
 
 	    	init();
-	    	
+
 	    }
     }
- 
+
 }());

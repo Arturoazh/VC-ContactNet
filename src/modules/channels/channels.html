@@ -3,7 +3,7 @@
 	<section flex>
 
 		<div ng-if="$cnChannels.channels.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in $cnChannels.channels track by $index" ng-class="{'open-item': v.openCard}">
-			<md-list-item class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cnChannelInfo="{{v}}" cn-open-channels>
+			<md-list-item class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-channel-info="v" cn-open-channels>
 				<div flex>{{v.multimedia}}</div>
 				<span flex></span>
 				<md-icon ng-if="v.channelId == 1" md-svg-icon="phone" aria-label="Open Chat" class="greenVC-color"></md-icon>
@@ -18,7 +18,7 @@
 						<md-menu-item >
 							<md-button ng-click="">
 									<div layout="row">
-										<md-icon md-menu-align-target md-svg-icon="mail"></md-icon>
+										<md-icon md-menu-align-target md-svg-icon="edit"></md-icon>
 										<p flex>Editar</p>
 									</div>
 							</md-button>
@@ -26,7 +26,7 @@
 						<md-menu-item >
 							<md-button ng-click="">
 									<div layout="row">
-										<md-icon md-menu-align-target md-svg-icon="mail"></md-icon>
+										<md-icon md-menu-align-target md-svg-icon="delete"></md-icon>
 										<p flex>Eliminar</p>
 									</div>
 							</md-button>
@@ -85,7 +85,7 @@
 				<div flex layout="column">
 					<h3>No hay ningun Canal guardado, puedes <span class="blueVC-color" ng-click="openFab()">crear el primero ahora</span></h3>
 					<p>
-						Recuerda que necesitarás al menos tener creada una regla por cada canal que acrives en el ContactNet
+						Recuerda que necesitarás al menos tener creada una regla por cada canal que actives en el ContactNet
 						<br>
 						A continuación le recordamos los canales que tiene contratados
 					</p>

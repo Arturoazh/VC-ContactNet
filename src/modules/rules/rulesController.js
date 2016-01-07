@@ -11,17 +11,37 @@
   	$scope.contactNets = [];
     $scope.$cnRules = $cnRules;
 
-    $rootScope.addNew = addNew;
+    $rootScope.fab.trigger.action = addNew;
+		$scope.addNew = addNew;
+
+		$scope.addRoutingRule = addRoutingRule;
     $scope.save = save;
 
   	$cnRules.get().then(function () {
-      $scope.$cnRules.rules = arguments[0];
+      //$scope.$cnRules.rules = arguments[0];
   	});
 
-    
+
+		function addRoutingRule(){
+			arguments[0].routingRules.push({
+				"name": 'nueva regla',
+				"openCard": true,
+				"destinations": [],
+				"rules": []
+			});
+		}
 
     function addNew(){
-      console.log("ejemplo");
+			console.log("ar");
+			$cnRules.rules.unshift({
+				"id": (new Date()).getTime(),
+				"name": "Nuevo grupo de reglas",
+				"downloadedData": true,
+				"openCard": true,
+			  "configModificable": false,
+				"vocabulary": [],
+				"routingRules": []
+			});
     }
 
     function save(){
