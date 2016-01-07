@@ -3,7 +3,7 @@
 		<section flex>
 
 			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets track by $index" ng-class="{'open-item': v.openCard}">
-				<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cnContactNetInfo="{{v}}" cn-open-contact-nets>
+				<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-contact-net-info="v" cn-open-contact-nets>
 					<div flex>{{v.description}}</div>
 					<span flex></span>
 					<md-icon md-svg-icon="phone" aria-label="Open Chat" class="greenVC-color"></md-icon>
@@ -61,13 +61,16 @@
 				      	</div>
 				      </div>
 						</div>
-						<div cn-contact-net-voice-card-channel-configuration layout="column" flex class="md-item md-whiteframe-z1" ng-model="cnContactNetVoiceCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetVoiceCardChannelConfiguration.openCard}"></div>
+						<div cn-contact-net-voice-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetVoiceCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetVoiceCardChannelConfiguration.openCard}"></div>
 						<div cn-contact-net-chat-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetChatCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetChatCardChannelConfiguration.openCard}"></div>
+						<div cn-contact-net-mail-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetMailCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetMailCardChannelConfiguration.openCard}"></div>
+						<div cn-contact-net-twitter-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetTwitterCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetTwitterCardChannelConfiguration.openCard}"></div>
+
 
 						<div layout layout-align="end">
 							<md-button class="md-hue-2">Siguiente</md-button>
 						</div>
-						
+
 					</div>
 
 				</div>
@@ -84,37 +87,37 @@
 					<h3>No hay ningun ContactNet guardado, puedes <span class="blueVC-color">crear el primero ahora</span></h3>
 					<p>
 						Recuerda que necesitarás al menos tener creada una regla por cada canal que actives en el ContactNet
-						<br> 
+						<br>
 						A continuación le recordamos los canales que tiene contratados
 					</p>
 				</div>
 
 				<div flex class="channels-section" layout="row" layout-align="space-between">
 					<div flex="15" layout="column" >
-						<md-icon class="big-icon" md-svg-icon="phone" aria-label="phone"></md-icon>								
+						<md-icon class="big-icon" md-svg-icon="phone" aria-label="phone"></md-icon>
 						<p>Voz</p>
 						<a class="blueVC-color">Contratar</a>
 					</div>
 
 					<div flex="15" layout="column" >
-						<md-icon class="big-icon greenVC-color" md-svg-icon="message" aria-label="message"></md-icon>								
+						<md-icon class="big-icon greenVC-color" md-svg-icon="message" aria-label="message"></md-icon>
 						<p>Chat</p>
 					</div>
 
 					<div flex="15" layout="column" >
-						<md-icon class="big-icon greenVC-color" md-svg-icon="mail" aria-label="mail"></md-icon>								
+						<md-icon class="big-icon greenVC-color" md-svg-icon="mail" aria-label="mail"></md-icon>
 						<p>Mail</p>
 					</div>
 
 					<div flex="15" layout="column" >
-						<md-icon class="big-icon" md-svg-icon="mail" aria-label="mail"></md-icon>								
+						<md-icon class="big-icon" md-svg-icon="mail" aria-label="mail"></md-icon>
 						<p>Twitter</p>
 						<span class="md-caption">Próximamente<span>
 					</div>
-				</div>	
+				</div>
 
 			</div>
-							
+
 		</div>
 
 	</section>

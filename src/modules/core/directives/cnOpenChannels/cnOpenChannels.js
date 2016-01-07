@@ -21,7 +21,7 @@
 	    	element.on('click', elementClick);
 
 	    	function elementClick(){
-
+					
 	    		if(arguments[0].target.localName === 'button')
 	    			return;
 

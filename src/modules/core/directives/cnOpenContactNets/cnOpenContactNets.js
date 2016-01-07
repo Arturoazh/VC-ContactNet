@@ -9,7 +9,9 @@
     function openContactNets($cnContactNets) {
     	var directive = {
 	        restrict: 'EA',
-	        scope: {},
+	        scope: {
+						contactNet : '=cnContactNetInfo'
+					},
 	        link: link
 	    };
 
@@ -21,10 +23,11 @@
 	    	element.on('click', elementClick);
 
 	    	function elementClick(){
-	    		if(arguments[0].target.localName === 'button')
-	    			return;
 
-	    		var cncontactnetinfo = JSON.parse(attr.cncontactnetinfo);
+	    		// if(arguments[0].target.localName === 'button')
+	    		// 	return;
+
+	    		var cncontactnetinfo = scope.contactNet;
 		  		angular.forEach($cnContactNets.contactNets, function () {
 		  			var argsForEach = arguments;
 		  			if (argsForEach[0].id == cncontactnetinfo.id) {
@@ -44,5 +47,5 @@
 				}
 	    }
     }
- 
+
 }());

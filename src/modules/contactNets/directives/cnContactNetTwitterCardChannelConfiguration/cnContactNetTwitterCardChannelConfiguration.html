@@ -1,0 +1,122 @@
+<!-- <div class="md-item md-whiteframe-z1" ng-model="yo.openCard" ng-class="{'openInnerCard md-whiteframe-z3': yo.openCard}"> -->
+<!-- ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard" -->
+	<md-list-item class="item md-no-style md-clickable disable-hover" aria-label="row" ng-click="cnContactNetTwitterCardChannelConfiguration.openCard = !cnContactNetTwitterCardChannelConfiguration.openCard">
+		<md-icon md-svg-icon="twitter" aria-label="Open Chat" class="md-hue-3"></md-icon>
+
+		<span layout-margin flex>Twitter</span>
+		<!-- <md-switch class="md-secondary" ng-model="data.cb1" aria-label="Switch 1">
+	  </md-switch> -->
+		<span class="md-secondary">Proximamente</span>
+
+	</md-list-item>
+
+	<div class="item-card" ng-if="cnContactNetTwitterCardChannelConfiguration.openCard" layout="column" layout-fill>
+		<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="!loadingCards.length">
+
+			<div flex layout="column" layout-align="space-between">
+
+					<div layout layout="row">
+						<md-input-container flex>
+			        <label>Curso del tráfico</label>
+			        <input ng-model="v.trafic">
+			      </md-input-container>
+					</div>
+					<div layout="column">
+						<h3 flex>Tráfico entrante</h3>
+						<div layout="row" flex layout-wrap>
+							<md-input-container flex="33" layout-padding>
+				        <label>Música en espera</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Simulate Audio</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Regla</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Tiempo Administrativo</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Tiempo medio</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Máximo número</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+						</div>
+					</div>
+					<div layout="column">
+						<h3 flex>Configuración avanzada del tráfico entrante</h3>
+						<div layout="row" flex layout-wrap>
+							<md-input-container flex="33" layout-padding>
+				        <label>Música en espera</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Simulate Audio</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Regla</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Tiempo Administrativo</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Tiempo medio</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Máximo número</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+						</div>
+					</div>
+					<div layout="column">
+						<h3 flex>Tráfico saliente</h3>
+						<div layout="row" flex layout-wrap>
+							<md-input-container flex="33" layout-padding>
+				        <label>Música en espera</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Simulate Audio</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Regla</label>
+				        <input ng-model="v.music">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Tiempo Administrativo</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Tiempo medio</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+				      <md-input-container flex="33" layout-padding>
+				        <label>Máximo número</label>
+				        <input type="number" ng-model="v.time">
+				      </md-input-container>
+						</div>
+					</div>
+					<div layout layout-align="end">
+						<md-button ng-click="cnContactNetTwitterCardChannelConfiguration.openCard = false;" class="md-accent md-hue-2">Cancelar</md-button>
+						<md-button class="md-accent md-raised md-hue-2">Guardar</md-button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+<!-- </div>
