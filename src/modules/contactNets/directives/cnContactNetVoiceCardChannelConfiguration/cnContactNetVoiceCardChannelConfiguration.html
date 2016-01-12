@@ -1,8 +1,8 @@
 
-<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard">
+<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard" ng-class="{'disable-hover' : !data.cb1}">
 	<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
 	<span layout-margin flex>Voz</span>
-	<md-switch class="md-secondary" ng-model="data.cb1" aria-label="Switch 1">
+	<md-switch class="md-secondary enable-hover" ng-model="data.cb1" aria-label="Switch 1" ng-show="!cnContactNetVoiceCardChannelConfiguration.openCard">
   </md-switch>
 
 </md-list-item>
@@ -27,7 +27,7 @@
 			      </md-input-container>
 			      <md-input-container flex="33">
 			        <label>Simulate Audio</label>
-			        <input ng-model="v.music">
+			        <input ng-model="v.music1">
 			      </md-input-container>
 			      <md-input-container flex="33">
 			        <label>Regla</label>
@@ -56,7 +56,7 @@
 						<div flex="25">
 							<md-input-container>
 				        <label>Comportamiento según disponibilidad</label>
-				        <input ng-model="v.disponible">
+				        <input ng-model="v.disponible1">
 				      </md-input-container>
 						</div>
 			      <div layout="row" flex="25" layout-align="center center">
@@ -83,13 +83,13 @@
 					      <div flex="22" layout="row">
 									<md-input-container>
 						        <label>Tipo de notificación</label>
-						        <input ng-model="v.disponible">
+						        <input ng-model="v.disponible2">
 						      </md-input-container>
 								</div>
 					      <div flex="22" layout="row">
 									<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <input ng-model="v.disponible">
+						        <input ng-model="v.disponible3">
 						      </md-input-container>
 								</div>
 					      <div flex="22" layout="row" layout-align="center center">
@@ -116,13 +116,13 @@
 					      <div flex="22">
 									<md-input-container>
 						        <label>Tipo de notificación</label>
-						        <input ng-model="v.disponible">
+						        <input ng-model="v.disponible4">
 						      </md-input-container>
 								</div>
 					      <div flex="22">
 									<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <input ng-model="v.disponible">
+						        <input ng-model="v.disponible5">
 						      </md-input-container>
 								</div>
 					      <div layout="row" flex="22" layout-align="center center">

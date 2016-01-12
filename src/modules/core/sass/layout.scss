@@ -183,6 +183,9 @@ body {
   pointer-events: none;
 }
 
+.enable-hover {
+  pointer-events: all;
+}
 
 .planet-size-icon{
   width: 130px;

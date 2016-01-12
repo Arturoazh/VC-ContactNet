@@ -1,9 +1,9 @@
 <!-- <div class="md-item md-whiteframe-z1" ng-model="yo.openCard" ng-class="{'openInnerCard md-whiteframe-z3': yo.openCard}"> -->
 <!-- ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard" -->
-	<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="cnContactNetChatCardChannelConfiguration.openCard = !cnContactNetChatCardChannelConfiguration.openCard">
+	<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="cnContactNetChatCardChannelConfiguration.openCard = !cnContactNetChatCardChannelConfiguration.openCard" ng-class="{'disable-hover' : !data.cb2}">
 		<md-icon md-svg-icon="message" aria-label="Open Chat" class="md-hue-3"></md-icon>
 		<span layout-margin flex>Chat</span>
-		<md-switch class="md-secondary" ng-model="data.cb1" aria-label="Switch 1">
+		<md-switch class="md-secondary enable-hover" ng-model="data.cb2" aria-label="Switch 1" ng-show="!cnContactNetChatCardChannelConfiguration.openCard">
 	  </md-switch>
 
 	</md-list-item>
