@@ -6,7 +6,7 @@
     .controller('appController', controller);
 
   /* ngInject */
-  function controller($rootScope, $scope, $timeout, $mdSidenav, $cnMenu, $cnNavigate, $location){
+  function controller($rootScope, $scope, $timeout, $mdSidenav, $cnMenu, $cnNavigate, $location, $interval){
 
 		$scope.toggleLeft = buildToggler('left');
 		$scope.menu = {};

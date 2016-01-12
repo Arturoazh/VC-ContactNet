@@ -4,7 +4,7 @@
 
 				<div ng-if="$cnRules.rules.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in $cnRules.rules track by $index" ng-class="{'open-item': v.openCard}">
 					<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-rule-info="v" cn-open-rules>
-						<div flex>{{v.name}}</div>
+						<div flex ng-class="{'hText' : v.downloadedData}">{{v.name}}</div>
 						<span flex></span>
 						<md-icon ng-if="v.channelId == 1" md-svg-icon="phone" aria-label="Open Chat" class="greenVC-color"></md-icon>
 						<md-icon ng-if="v.channelId == 2" md-svg-icon="message" aria-label="Open Chat" class="greenVC-color"></md-icon>

@@ -5,3 +5,10 @@
 		margin-left: 12px;
 	}
 }
+
+.activeIndex {
+	>span:first-child {
+		border: 0!important;
+		background: #FFF;
+	}
+}

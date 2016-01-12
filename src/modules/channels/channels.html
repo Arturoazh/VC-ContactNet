@@ -4,7 +4,7 @@
 
 		<div ng-if="$cnChannels.channels.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in $cnChannels.channels track by $index" ng-class="{'open-item': v.openCard}">
 			<md-list-item class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-channel-info="v" cn-open-channels>
-				<div flex>{{v.multimedia}}</div>
+				<div flex ng-class="{'hText' : v.downloadedData}">{{v.multimedia}}</div>
 				<span flex></span>
 				<md-icon ng-if="v.channelId == 1" md-svg-icon="phone" aria-label="Open Chat" class="greenVC-color"></md-icon>
 				<md-icon ng-if="v.channelId == 2" md-svg-icon="message" aria-label="Open Chat" class="greenVC-color"></md-icon>

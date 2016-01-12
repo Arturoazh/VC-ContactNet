@@ -112,7 +112,9 @@ $cnBackgroundCards : #FFF;
           margin: 30px -10px;
           background: $cnBackgroundCardsOpen;
         }
-
+        .hText {
+          font-size: 1.5em;
+        }
         .item-card{
           visibility: visible;
           &, & > * {
@@ -206,10 +208,10 @@ $cnBackgroundCards : #FFF;
       border-bottom: 1px solid white;
       >div {
         &:first-child {
-          md-icon {
-            height: 18px;
-            width: 18px;
-          }
+          // md-icon {
+          //   height: 18px;
+          //   width: 18px;
+          // }
           input {
             background: transparent;
             outline: 0;

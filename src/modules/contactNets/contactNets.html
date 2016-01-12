@@ -4,7 +4,7 @@
 
 			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets track by $index" ng-class="{'open-item': v.openCard}">
 				<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-contact-net-info="v" cn-open-contact-nets>
-					<div flex>{{v.description}}</div>
+					<div flex ng-class="{'hText' : v.contactNetInfo}">{{v.description}}</div>
 					<span flex></span>
 					<md-icon md-svg-icon="phone" aria-label="Open Chat" class="greenVC-color"></md-icon>
 					<md-icon md-svg-icon="mail" aria-label="Open Chat" class="md-hue-3 greenVC-color"></md-icon>
@@ -43,11 +43,11 @@
 					<div class="cardContainer" flex layout="column" layout-align="space-between">
 						<div layout layout="row" layout-align="start center" layout-margin class="md-hue-3">
 							<div flex layout="row" layout-align="center center">
-								<md-icon class="md-hue-3" md-svg-icon="mode-edit"></md-icon>
+								<md-icon class="md-hue-3" md-svg-icon="edit"></md-icon>
 								<input placeholder="Nombre del ContactNet" ng-model="v.description" flex>
 							</div>
 				      <div flex="70" layout="row" layout-align="end center">
-				      	<div flex layout="row" layout-align="center center">
+				      	<div flex layout="row" layout-align="center center" ng-class="{'activeIndex' : !activeIndexNavigation}">
 				      		<span layout-margin>1</span>
 				      		<span>Configurar Canales</span>
 				      	</div>
