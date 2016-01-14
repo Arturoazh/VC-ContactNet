@@ -1,0 +1,30 @@
+ #footer{
+    .ps-container.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail{
+      background:#3034c4; 
+    }
+    .ps-container > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+      background: #8184ea;
+    }
+    .ps-container .ps-scrollbar-x-rail.in-scrolling,
+    .ps-container .ps-scrollbar-x,
+    .ps-container .ps-scrollbar-x-rail,
+    .ps-container .ps-scrollbar-x-rail:hover,
+    .ps-container .ps-scrollbar-x-rail.hover {
+      background:#3034c4;
+    }
+    .ps-container:hover .ps-scrollbar-x-rail,
+    .ps-container.hover .ps-scrollbar-x-rail,
+    .ps-container .ps-scrollbar-x-rail:hover,
+    .ps-container .ps-scrollbar-x-rail.hover,
+    .ps-container .ps-scrollbar-x-rail.in-scrolling{
+      opacity: 0.7;
+      filter: alpha(opacity = 70);
+    }
+    .ps-container .ps-scrollbar-x-rail {
+      
+      -o-transition: background-color .2s linear, opacity .2s linear;
+      -webkit-transition: background-color .2s linear, opacity .2s linear;
+      -moz-transition: background-color .2s linear, opacity .2s linear;
+      transition: background-color .2s linear, opacity .2s linear;
+    }
+  }

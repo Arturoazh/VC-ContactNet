@@ -1,0 +1,44 @@
+#mainContent{
+  .cases-header{
+    display: inline-block;
+    width:100%;
+    //overflow: hidden;
+    .boxes:nth-child(1){
+      height:65px;
+      p{
+        opacity: 1;
+        @include transition(opacity .3s ease-in);
+      }
+      .search-bar{
+        @include transition(width .3s ease-in);
+        width:auto;
+        ul{
+          width:100%;
+          display: inline-block;
+          li{
+            display: inline-block;
+            width:100%;
+            a{
+              display: inline-block;
+              width:100%;
+              img:nth-child(1){
+                display: inline-block;
+              }
+              img:nth-child(2){
+                float: right;
+                margin: 13px 8px 0;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+  /*** box cases */
+}
+@import 'issuesBoxContent';
+@import 'issueAvancedSearch';
+@import 'issueConversation';
+@import 'issueConversationComment';
+@import 'issueEditModal';

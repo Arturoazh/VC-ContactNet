@@ -1,0 +1,85 @@
+#mainContent {
+  .stats-header {
+    display: flex !important;
+  }
+
+  .show-filters {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+  }
+
+  .stats-filters {
+    .flex {
+      padding: 0 0.5em;
+    }
+
+    .filter-button {
+      float: right;
+      margin-top: 20px;
+      color: $inverse-primary;
+      background-color: $primary-color;
+      &:hover {
+        background-color: $primary-color-intense;
+      }
+    }
+  }
+
+  .stats-filter-list {
+    color: $gray-intense;
+    padding: 3px .5em;
+    label {
+      padding-left: 5px;
+    }
+    ul {
+      height: 200px;
+      padding-bottom: 1px;
+      border: 1px solid $module-border;
+      li {
+        padding: 6px 8px;
+        border-left: none;
+        border-right: none;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+      &.unsel {
+        li {
+          background-color: $main-background;
+        }
+      }
+    }
+  }
+
+  .stats-content {
+    td {
+      &.contactnet,
+      &.agent,
+      &.category,
+      &.qualification,
+      &.status,
+      &.date {
+        cursor: pointer;
+        color: $primary-color;
+      }
+
+      &.contactnet:hover,
+      &.agent:hover,
+      &.category:hover,
+      &.qualification:hover,
+      &.status:hover,
+      &.date:hover {
+        font-weight: 800;
+        color: $primary-color-intense;
+      }
+    }
+  }
+
+  .header-bold {
+    div {
+      font-size: 1.1em;
+      color: #666;
+    }
+  }
+}
+
+@import 'rangeManage';

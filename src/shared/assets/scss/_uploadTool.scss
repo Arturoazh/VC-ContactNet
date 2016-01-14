@@ -1,0 +1,43 @@
+.channelTool {
+  &.chat {
+    .upload {
+      font-size: 1px;
+      width: 70%;
+      padding: 10em;
+      margin-left: 20em;
+    }
+    .upload::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    .inputText {
+      font-family: Lato, arial, helvetica, helve, sans-serif;
+      font-size: 14px;
+      margin-left: 2em;
+      margin-bottom: 2em;
+    }
+    .upload::before {
+      content: 'Seleccionar fichero';
+      display: inline-block;
+      background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+      border: 1px solid #999;
+      border-radius: 3px;
+      padding: 5px 8px;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      text-shadow: 1px 1px #fff;
+      font-weight: 500;
+      font-size: 10pt;
+    }
+    .upload:hover::before {
+      border-color: black;
+    }
+    .upload:active::before {
+      background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+    .md-raised.md-primary {
+      width: 90%;
+    }
+  }
+}

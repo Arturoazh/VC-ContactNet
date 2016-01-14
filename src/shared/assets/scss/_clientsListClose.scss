@@ -1,0 +1,121 @@
+#rightSidebar{
+  .clients-close{
+    background: $secundary;
+    display: table;
+    width:100%;
+    height:100%;
+    .title{
+      width:100%;
+      background: $secundary;
+
+      vertical-align: middle;
+      display:table-row;
+      text-align: center;
+      height:41px;
+      a {
+        border-bottom: 1px solid $secundary-low;
+        width: 96%;
+      }
+      .box{
+        width:100%;
+        text-align: left;
+        border-bottom: 1px solid $secundary-low;
+      }
+      a{
+        display: inline-block;
+        padding: 20px 0;
+        &.title, &.search{
+          padding: 0;
+          width:auto;
+          border: 0;
+        }
+        &.title{
+          padding: 20px 0 20px 20px;
+          display: inline-block;
+          img{
+            margin-right:8px;
+          }
+        }
+        &.search{
+          padding: 20px 20px 20px 0;
+          float: right;
+        }
+      }
+
+    }
+    .rows{
+      position: relative;
+      display: table;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      .scroll{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .row{
+      padding-top: 4px;
+      display: block;
+      border-bottom: 1px solid $module-border;
+      &:hover {
+        background: $secundary-intense;
+      }
+      &.hight-priority{
+        background: none;
+        .center{
+          a{
+            .name{
+              color: $busy;
+            }
+          }
+        }
+      }
+      .center{
+        display: table;
+        padding: 8px 0;
+        text-align: center;
+        a{
+          display: inline-block;
+          margin-left: 3px;
+          position: relative;
+          text-decoration: none;
+          .pic{
+            display: block;
+            margin-top: 16px;
+          }
+          .name{
+            color: $inverse-primary;
+            font-size: .8em;
+            display: block;
+            margin-top: 6px;
+            width:46px;
+            margin-left: 5px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+          }
+          .channel-info{
+            background-color: $secundary-low;
+            color: $inverse-primary;
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            margin-right: 5px;
+            margin-top: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+            img{
+              width: 15px;
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

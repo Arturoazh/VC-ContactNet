@@ -1,0 +1,53 @@
+#mainContent{
+  .contact-header{
+    width:100%;
+  }
+  .boxes{
+    &.contact-detail-cases{
+      height: 100%;
+      display:table-row;
+      .flex-content{
+        display: table;
+        width: 100%;
+        table-layout:fixed;
+        /*flex-flow: row;*/
+        height:96%;
+      }
+      .detail, .cases, .contacts, .historic, .sep{
+        display: table-cell;
+        /*flex-direction: column;
+        flex-flow: column wrap;*/
+        margin-top: 0;
+        width:24%;
+        vertical-align: top;
+
+        height:100%;
+
+        .table{
+          display: table;
+          height:100%;
+          width:100%;
+
+        }
+
+      }
+      .sep{
+        width: 1%;
+      }
+      .contacts{
+        width:100%;
+        margin-left: 0;
+      }
+      .cases, .historic{
+        width: 75%;
+        /*flex: 1;*/
+
+      }
+    }
+  }
+}
+@import 'contactDetail';
+@import 'contactCases';
+@import 'contactsList';
+@import 'contactNewModal';
+@import 'contactHistoricCases';

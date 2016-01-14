@@ -1,0 +1,111 @@
+#modal-compare-agents {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  @include transition (opacity .3s);
+  &.fadein {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .box {
+    width: 93% !important;
+    height: 85%;
+    margin: 3% auto;
+    position: relative;
+    background: $inverse-primary;
+    display: table;
+    z-index: 90;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+    .row {
+      &.buttons {
+        display: inline-block;
+        width: calc(100% - 20px) !important;
+        position: absolute;
+        bottom: 1%;
+        .cell {
+          float: right;
+          .md-button {
+            color: $inverse-primary;
+            font-size: 0.8em;
+            padding: 8px 30px;
+            &:nth-child(1) {
+              background: $gray-intense
+            }
+          }
+        }
+      }
+    }
+    md-content {
+      height: 77%;
+      width: 98%;
+      overflow-x: auto;
+      position: absolute;
+      overflow-y: hidden;
+      margin: 0.5em;
+    }
+    .title {
+      background: $primary-color;
+      color: $inverse-primary;
+      font-weight: bold;
+      display: table-row;
+      height: 60px;
+      line-height: 60px;
+      padding-left: 20px;
+      p{
+        padding: 0 !important;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .card {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 15px 2px rgba(0, 0, 0, .12);
+    padding: 1em;
+
+    .md-headline {
+      font-size: 1.3em;
+    }
+
+    .card-header {
+      text-align: center;
+      display: block;
+      margin-bottom: 1em;
+      border-bottom: 1px solid $gray-low;
+
+      span {
+        display: block;
+      }
+    }
+
+    .md-tab.md-active {
+      color: $black !important;
+    }
+
+    .md-tab {
+      color: $gray-low !important;
+    }
+
+    .pic-user {
+      display: block;
+    }
+
+    .info {
+      margin-left: 1em;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+  }
+}

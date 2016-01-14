@@ -1,17 +1,15 @@
-var gulp = require('gulp');
-var fs = require('fs');
+'use strict';
 
-//-- read in all files from gulp/tasks and create tasks for them
-fs.readdirSync('./gulp/tasks')
-  .filter(function (filename) {
-    return filename.match(/\.js$/i);
-  })
-  .map(function (filename) {
-    return {
-      name: filename.substr(0, filename.length - 3),
-      contents: require('./gulp/tasks/' + filename)
-    };
-  })
-  .forEach(function (file) {
-    gulp.task(file.name, file.contents.dependencies, file.contents.task);
-  });
+var gulp = require('gulp');
+
+var sharedPrefix       = 'sh-';
+var multichannelPrefix = 'mt-';
+var contactNetConfig   = 'cc-';
+
+//require('./src/shared/gulpTasks/gulpfile')(gulp, sharedPrefix);
+//require('./src/multichannel/gulpTasks/gulpfile')(gulp, multichannelPrefix, sharedPrefix);
+require('./src/contactNetConfig/gulpTasks/gulpfile')(gulp, contactNetConfig, sharedPrefix);
+
+//gulp.task('default', ['multichannel', 'shared']);
+
+gulp.task('contactNetConfig', ['contactNetConfig']);

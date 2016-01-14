@@ -1,0 +1,40 @@
+.agent-detail-title, .agent-detail-subtitle {
+  padding: 22px 0 21px 0;
+  border-bottom: 1px solid $secundary-low;
+  i {
+    margin: 0 10px 0 10px;
+  }
+}
+
+.agent-detail-subtitle {
+  padding: 22px 0 5px 10px;
+  span:nth-child(2) {
+    float: right;
+    margin-right: 2%;
+  }
+}
+
+.agent-detail-conversations {
+  display: inline-block;
+  width: 100%;
+  height: calc(100% - 255px);
+  position: absolute;
+  cursor: default;
+  img {
+    margin-right: 1em;
+  }
+  p {
+    width: 100px;
+    padding-right: 5px;
+    font-size: .7em;
+    color: $module-text;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.agent-detail-text {
+  padding: 1em;
+}

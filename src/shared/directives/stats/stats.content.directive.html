@@ -1,0 +1,89 @@
+<md-card>
+
+  <div layout="row" layout-sm="column" layout-align="space-around">
+    <md-progress-circular md-mode="indeterminate" ng-if="stats.length===0"></md-progress-circular>
+  </div>
+
+  <md-table-container>
+    <table md-table class="md-primary">
+
+      <!-- Cabeceras de la tabla -->
+      <thead md-head md-order="configTable.order">
+
+      <!-- Cabecera superior -->
+      <tr md-row ng-if="isExistMulti()">
+
+        <!-- Unico bucle de todos las las columnas seleccionadas -->
+        <th md-column ng-repeat-start="(key,column) in getCurrentColumns() track by key" ng-hide="true"></th>
+
+        <!-- La cabecera superior si es Simple sera vacia -->
+        <th md-column ng-if="::column.type !== 'multiple'" colspan="1"></th>
+
+        <!-- La cabecera superior si es Multiple sera el nombre de la Key -->
+        <th md-column ng-if="::column.type === 'multiple'" colspan="{{ countKeys(column.values) }}" class="header-bold"
+            ng-click="clickedHeader(key)">
+          {{ ::key | translate}}
+        </th>
+        <th md-column ng-repeat-end ng-hide="true"></th>
+
+      </tr>
+
+      <!-- Cabecera secundaria -->
+      <tr md-row>
+        <!-- Unico bucle de todos las las columnas seleccionadas -->
+        <th md-column ng-repeat-start="(header,column) in getCurrentColumns() track by header" ng-hide="true"></th>
+
+        <!-- La cabecera secundaria si es Simple sera la Key que no pusimos arriba -->
+        <th md-column ng-if="::column.type !== 'multiple'" order-by="{{::header}}.value">
+          {{ ::header | translate}}
+        </th>
+
+        <!-- La cabecera secundaria si es Multiple sera el Bucle de los Values. Requiere el -start-end para no bajar de nivel en el HTML -->
+        <th md-column ng-repeat="(key,subcolumn) in column.values track by key"
+            ng-if="::column.type === 'multiple'" order-by="{{::header}}.values.{{::key}}.value">
+          {{ ::key | translate}}
+        </th>
+        <th md-column ng-repeat-end ng-hide="true"></th>
+
+      </tr>
+
+      </thead>
+
+      <!-- Cuerpo de la tabla -->
+      <tbody md-body>
+      <!-- Fila de Datos de la Tabla -->
+      <tr md-row
+          ng-repeat="row in stats | orderBy: configTable.order | limitTo: configTable.limit: (configTable.page - 1) * configTable.limit track by $index">
+
+        <!-- Unico bucle de todos las las columnas seleccionadas -->
+        <td md-cell ng-repeat-start="(column,o) in getCurrentColumns() track by column" ng-hide="true"></td>
+
+        <!-- Si la Fila es Simple se pinta el Value sin mas -->
+        <td md-cell ng-if="::row[column].type !== 'multiple'" x-ng-click="clickedCell(row[column])"
+            ng-class="::row[column].type">
+          {{ getFormattedValue(row[column]) }}
+        </td>
+
+        <!-- Si la Fila es Multiple se pinta el Value del Bucle de los Values. Requiere el -start-end para no bajar de nivel en el HTML -->
+        <td md-cell ng-if="row[column].type === 'multiple' && isSelected(key)" ng-class="::subcolumn.type"
+            ng-repeat="(key,subcolumn) in row[column].values track by key" x-ng-click="clickedCell(subcolumn)">
+          {{ getFormattedValue(subcolumn) }}
+        </td>
+        <td md-cell ng-repeat-end ng-hide="true"></td>
+
+      </tr>
+      </tbody>
+
+    </table>
+  </md-table-container>
+
+  <!-- Barra inferior de paginacion -->
+  <md-table-pagination md-label="{{configTable.paginationLabel}}" md-total="{{stats.length}}"
+                       md-limit="configTable.limit" md-page="configTable.page"
+                       md-row-select="configTable.limitSelect"
+                       md-page-select>
+  </md-table-pagination>
+    <button class="md-button button-clean button-table-footer" ng-click="exportXLS()">
+      <span class="ng-scope">{{ ::'EXPORT_XLS' | translate }}</span>
+    </button>
+</md-card>

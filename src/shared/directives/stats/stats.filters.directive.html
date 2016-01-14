@@ -1,0 +1,96 @@
+<md-button class="md-raised show-filters" ng-click="showFilters()">
+  {{ (isVisible)? 'HIDDEN_FILETRS' : 'SHOW_FILETRS'|translate }}
+</md-button>
+
+<md-card id="stats-filters">
+
+  <div layout="row">
+    <div flex>
+      <div layout="row">
+        <div flex>
+          <ng-date-picker class="date-picker" model-data="filter.initDate"
+                          label-for-input="{{::'EARLIER_DATE'|translate}}">
+          </ng-date-picker>
+          <md-input-container>
+            <label>{{::'EARLIER_TIME'|translate}}</label>
+            <input type="time" step="1" ng-model="filter.initTime">
+          </md-input-container>
+          <md-input-container>
+            <label>{{ ::"TIME_PATTERN"|translate }} {{ ::"OF"|translate }}</label>
+            <md-select ng-model="filter.timePattern">
+              <md-option ng-repeat="patter in ::timePatters track by $index" value="{{ ::patter }}">
+                {{::patter|translate}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+
+        <div flex>
+          <ng-date-picker class="date-picker" model-data="filter.laterDate"
+                          label-for-input="{{ ::'LATER_DATE'|translate}}">
+          </ng-date-picker>
+          <md-input-container>
+            <label>{{ ::'LATER_TIME'|translate}}</label>
+            <input type="time" step="1" ng-model="filter.laterTime">
+          </md-input-container>
+
+          <md-input-container>
+            <label>{{::'CHANNELS'|translate}}</label>
+            <md-select multiple="true" ng-model="filter.channels">
+              <md-option ng-repeat="(id,name) in ::channels track by id" value="{{ ::id }}">
+                {{ ::name |translate }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+        </div>
+
+        <div flex>
+          <md-input-container>
+            <label>{{::'CONTACTNETS'|translate}}</label>
+            <md-select multiple="true" ng-model="filter.contactnets">
+              <md-option ng-repeat="contactnet in ::contactnets track by contactnet.id"
+                         value="{{ ::contactnet.id }}">
+                {{ ::contactnet.description }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container>
+            <label>{{::'AGENTS'|translate}}</label>
+            <md-select multiple="true" ng-model="filter.agents">
+              <md-option ng-repeat="agent in ::agents track by agent.id" value="{{ ::agent.id }}">
+                {{ ::agent.name }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-button class="filter-button" ng-click="changeFilters()">{{ ::'TO_FILTER' |translate }}</md-button>
+        </div>
+      </div>
+    </div>
+    <div flex>
+      <div layout="row">
+        <div flex class="stats-filter-list">
+          <label>{{ ::"SELECT_FIELDS" | translate }}</label>
+          <ul dnd-list="unselected" class="unsel" scrollbar-directive suppress-scroll-x="yes">
+            <li ng-repeat="item in unselected track by $index" dnd-effect-allowed="move"
+                dnd-draggable="item" dnd-moved="moveColumn(unselected,$index)">
+              {{item.label |translate}}
+            </li>
+          </ul>
+        </div>
+        <div flex class="stats-filter-list">
+          <label>{{ ::"FIELDS_TO_SHOW" | translate }}</label>
+          <ul dnd-list="selected" class="sel" scrollbar-directive suppress-scroll-x="yes">
+            <li ng-repeat="item in selected track by $index" dnd-effect-allowed="move"
+                dnd-draggable="item" dnd-moved="moveColumn(selected,$index)">
+              {{item.label | translate}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</md-card>

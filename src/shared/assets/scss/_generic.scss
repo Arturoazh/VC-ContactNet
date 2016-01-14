@@ -1,0 +1,25 @@
+.nopic{
+  position: initial !important;
+  background-color: $gray-low !important;
+  border: 1px solid $inverse-primary;
+  border-radius: 50%!important;
+  color: $inverse-primary !important;
+  display: inline-block !important;
+  margin: 0 9px;
+  font-size: 0.8em;
+  text-align:center!important;
+  height: 35px;
+  width: 35px;
+  line-height:35px;
+  background-size:35px 35px;
+}
+
+.big{
+  .nopic{
+    font-size: 1.3em;
+    height: 48px;
+    width: 48px;
+    line-height:48px;
+    background-size:48px 48px;
+  }
+}

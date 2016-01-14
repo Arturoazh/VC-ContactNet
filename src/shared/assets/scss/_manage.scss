@@ -1,0 +1,480 @@
+
+#mainContentContainer {
+  .main {
+    .cell {
+      &:nth-child(2) {
+        #mainContent {
+          .boxes {
+            &:nth-child(2) {
+              &.md-primary {
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#mainContent {
+  .manage-header {
+    display: flex !important;
+  }
+
+  .management-content {
+    display: table;
+    width: 100%;
+    height: 87%;
+    .title {
+      border-bottom: none;
+      * {
+        float: left;
+      }
+      p {
+        padding-bottom: 0;
+        line-height: 4em;
+      }
+      .search {
+        width: 55%;
+        padding: 0;
+        margin-bottom: 1em;
+      }
+    }
+
+    .content {
+      ul {
+        overflow: visible;
+      }
+    }
+
+    .weight-hash-select-entity {
+      float: left;
+      display: inline-block;
+      width: 39%;
+      height: 100%;
+      margin: 0 1% 0 0;
+      overflow: auto;
+
+      .content {
+        height: 80%;
+        .item {
+          border: 1px solid $module-subtle;
+          display: block;
+          padding: 10px 15px;
+          margin-bottom: -1px;
+
+          &:hover {
+            background: $module-border;
+            color: $primary-color;
+          }
+        }
+
+        .active {
+          background: $primary-color;
+          color: $inverse-primary;
+        }
+        ul {
+          height: 100%;
+        }
+      }
+    }
+    .change-weights-wrapper {
+      display: inline-block;
+      width: 60%;
+      height: 100%;
+      float: left;
+      margin: 0;
+      overflow: auto;
+
+      .info-message-center-aligned {
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 62%;
+      }
+
+      .selected, .content {
+        height: 50%;
+      }
+
+      .selected {
+        .title p {
+          width: auto;
+          padding-bottom: 0;
+          line-height: 4em;
+        }
+        .search {
+          width: 55%;
+          padding: 0;
+          margin-bottom: 1em;
+        }
+      }
+
+      .item {
+        border: 1px solid $module-subtle;
+        display: flex;
+        padding: 10px 15px;
+        margin-bottom: -1px;
+        background: $secundary-low;
+        color: $module-accent;
+
+        &:hover {
+          background: $secundary-lowest;
+        }
+
+        p {
+          margin: 0 1em 0 0;
+          line-height: 2em;
+          width: 50%;
+        }
+      }
+
+      .item-to-select {
+        border: 1px solid $module-subtle;
+        display: flex;
+        padding: 10px 15px;
+        background: $module-border;
+
+        &:hover {
+          background: $module-accent;
+        }
+      }
+
+      .weights {
+        display: flex;
+        width: 50%;
+        float:right;
+        md-select {
+          margin: 0 1em 0 0;
+        }
+        img {
+          height: 100%;
+          padding-top: 0.7em;
+        }
+      }
+    }
+  }
+  .boxes {
+    &.md-primary {
+      float: right;
+      width: auto;
+      color: $inverse-primary;
+      background: $primary-color;
+      padding: 4px 40px;
+      margin: 8px 2% 0;
+
+    }
+    &.manage-contacnet {
+      height: 100%;
+    }
+    &.manage-header {
+      display: table-row;
+      width: 100%;
+    }
+    &.header {
+      .selector {
+        text-align: center;
+        margin: 20px 10px 0 0;
+        span {
+          display: inline-block;
+          text-transform: uppercase;
+          font-size: .9em;
+          @include transition(color 0.3s);
+          &.active {
+            font-weight: bold;
+            color: $black;
+          }
+        }
+        md-switch {
+          display: inline-block;
+          margin: -9px 10px;
+          .md-container {
+            cursor: pointer;
+            .md-bar {
+              border: 1px solid $primary-color;
+              background: none;
+              top: 2px;
+              width: 32px;
+              height: 18px;
+              border-radius: 10px;
+            }
+            .md-thumb {
+              background: $primary-color;
+              width: 20px;
+              height: 20px;
+
+            }
+          }
+        }
+      }
+
+    }
+    &.manage-contacnet {
+      .flex-content {
+        /*display: flex;
+        flex-flow: row;*/
+        display: table;
+        table-layout: fixed;
+        height: calc(100% - 41px);
+        width: 100%;
+      }
+      .sep {
+        display: table-cell;
+        width: 2%;
+        &.center {
+
+          width: 12%;
+        }
+      }
+      .column {
+        /*display: inline-flex;
+        flex-direction: column;
+        flex-flow: column wrap;*/
+        display: table-cell;
+        margin-top: 0;
+        width: 42%;
+        height: 100%;
+        vertical-align: top;
+        &.first {
+          margin-left: 3%;
+          .table {
+            ul {
+              li {
+                cursor: pointer;
+                &:hover, &.even:hover {
+                  background: $secundary;
+                  color: $module-border;
+                }
+                &.select, &.even.select {
+                  color: $module-border;
+                  background: url('./assets/img/arrow-right.png') 97% center no-repeat $secundary;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          /*margin-left: 10%;*/
+          /*flex: 1;*/
+          @include border-radius(0);
+        }
+        .table {
+          margin: 0;
+          width: 100%;
+          .title {
+            display: table-row;
+            height: 1px;
+            color: $module-border;
+            border: 0;
+            div {
+              display: inline-block;
+              width: 100%;
+              border-bottom: 1px solid $module-border;
+            }
+            strong {
+              color: $black;
+            }
+
+            md-input-container {
+              margin: 0;
+              width: 50%;
+              padding: 0;
+              margin-right: 20px;
+              input {
+                background: url('./assets/img/search-icon-body.png') 98% 0 no-repeat;
+              }
+            }
+          }
+          .content {
+            position: relative;
+            overflow: hidden;
+
+            .scroll {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              ul {
+                position: relative;
+                &.drop {
+                  /*position: absolute;/*/
+                  display: inline-block;
+                  width: 100%;
+                }
+                &[dnd-list] .dndDraggingSource {
+                  display: none;
+                }
+              }
+              li {
+                display: table;
+                position: relative;
+                width: 100%;
+                table-layout: fixed;
+                border-bottom: 1px solid $module-subtle;
+
+                &.even {
+                  background: $inverse-primary;
+                }
+                &.last {
+                  border: 0;
+                }
+                &.dndDragging {
+                  div {
+                    p {
+                      color: $black;
+                    }
+                  }
+                }
+                div {
+                  display: table-cell;
+                  width: 100%;
+                  text-align: left;
+                  height: 55px;
+                  vertical-align: middle;
+                  p {
+                    width: 90%;
+                    margin-left: 5%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .selected {
+          height: 100%;
+          overflow: hidden;
+          background: none;
+          @include transition(max-height .3s);
+          .scroll {
+          }
+          ul {
+          }
+          .title {
+            div {
+              display: table;
+              table-layout: fixed;
+              border: 0;
+              p {
+                color: $module-border;
+                display: table-cell;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0;
+
+              }
+            }
+          }
+          .table {
+
+            &.content {
+
+              .scroll {
+                ul {
+
+                  width: 100%;
+                  height: 100%;
+                  li {
+                    border-bottom: 1px solid $secundary-low;
+                    &.dndDragging {
+                      div {
+                        display: none;
+                        &:nth-child(1) {
+                          display: table-cell;
+                        }
+                        p {
+                          color: $black;
+                        }
+                      }
+                    }
+                    div {
+                      display: table-cell;
+                      width: 20%;
+                      p {
+                        color: $inverse-primary;
+                      }
+                      .range {
+                        margin-left: 10px;
+                        @media (max-width: 1100px) {
+                          margin-left: 3px;
+                        }
+                        position: relative;
+                        display: inline-block;
+                        ul {
+                          position: absolute;
+                          bottom: 55px;
+                          background: $inverse-primary;
+                          width: 50px;
+                          height: 50px;
+                          display: none;
+                          z-index: 200;
+                          &.open {
+                            display: inline;
+                          }
+                        }
+                        span {
+                          display: block;
+                          cursor: pointer;
+                          width: 70px;
+                          text-align: center;
+                          padding: 8px 0;
+                          color: $inverse-primary;
+                          background: url('./assets/img/icon-desplegable.png') 96% center no-repeat;
+                          @media (max-width: 1100px) {
+                            width: 45px;
+                            font-size: .8em;
+                            background: none;
+                          }
+                          &.off {
+                            color: $alert;
+                          }
+                          &.cliked {
+                            background: $alert;
+                            color: $inverse-primary;
+                            font-weight: bold;
+                          }
+                        }
+                      }
+                      img {
+                        display: inline-block;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+        }
+        &.open {
+          .selected {
+            background: $secundary;
+            max-height: 50%;
+            .title {
+              div {
+                border-bottom: 1px solid $secundary-low;
+                p {
+                  padding: 14px 10px;
+                }
+              }
+            }
+          }
+          .un-selected {
+            max-height: 50%;
+            @include transition(max-height .3s);
+
+          }
+        }
+        .un-selected {
+          max-height: 100%;
+
+        }
+      }
+    }
+  }
+}
+
+@import 'rangeManage';

@@ -1,0 +1,613 @@
+@charset "utf-8";
+
+/* partials */
+@import 'constants';
+@import 'color_theme';
+@import 'radialProgress';
+
+html {
+  overflow-y: hidden !important;
+}
+
+html.waiting,
+html.waiting * {
+  cursor: wait !important;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1;
+  font: 100%/1.4 'Lato',
+  arial, helvetica, helve,
+  sans-serif;
+  overflow-y: hidden;
+  background-color: $main-background !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: 0;
+}
+
+[ng-click],
+[data-ng-click] {
+  cursor: pointer;
+}
+
+.wrapper {
+  height: 100%;
+  display: table;
+  width: 100%;
+  text-align: left;
+  -webkit-animation: fadein 500ms;
+  -moz-animation: fadein 500ms; /* Firefox < 16 */
+  -ms-animation: fadein 500ms; /* Internet Explorer */
+  -o-animation: fadein 500ms; /* Opera < 12.1 */
+  animation: fadein 500ms;
+}
+
+.main {
+  height: 100%;
+  display: table;
+  width: 100%;
+  position: relative;
+
+  & > .cell {
+    display: table-cell;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+
+    &:first-child {
+      left: 0;
+      width: 59px;
+      -webkit-transition: width .3s;
+      -moz-transition: width .3s;
+      -ms-transition: width .3s;
+      -o-transition: width .3s;
+      transition: width .3s;
+    }
+
+    &:nth-child(2) {
+      left: 59px;
+      width: calc(100% - (59px * 2));
+      -webkit-transition: left .3s, width .3s;
+      -moz-transition: left .3s, width .3s;
+      -ms-transition: left .3s, width .3s;
+      -o-transition: left .3s, width .3s;
+      transition: left .3s, width .3s;
+    }
+
+    &:last-child {
+      right: 0;
+      width: 59px;
+      background: $secundary-low;
+      -webkit-transition: width .3s;
+      -moz-transition: width .3s;
+      -ms-transition: width .3s;
+      -o-transition: width .3s;
+      transition: width .3s;
+    }
+  }
+
+  &.leftOpen > .cell {
+    &:first-child {
+      width: 23%;
+    }
+    &:nth-child(2) {
+      left: 23%;
+      width: calc(77% - 59px);
+    }
+  }
+
+  &.rightOpen > .cell {
+    &:nth-child(2) {
+      right: 23%;
+      width: calc(77% - 59px);
+    }
+    &:last-child {
+      width: 23%;
+    }
+  }
+}
+
+/* This code hides right side bar only on agent */
+.main.agent {
+  & > .cell {
+    &:last-child {
+      display: none;
+    }
+    &:nth-child(2) {
+      width: calc(100% - (59px));
+    }
+  }
+  &.leftOpen > .cell {
+    &:nth-child(2) {
+      width: 77%;
+    }
+  }
+}
+
+.box {
+  display: table-cell;
+}
+
+.row {
+  display: table-row;
+}
+
+.footer {
+  display: table-row;
+  height: 1px;
+  background: green;
+  color: #333;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+.uc {
+  text-transform: uppercase;
+}
+
+.centerAlignedMessage {
+  text-align: center;
+  font-size: 14px;
+  padding: 0 2% !important;
+  display: table-cell;
+  table-layout: fixed;
+  vertical-align: middle;
+  height: 51px;
+  width: 12%;
+}
+
+.paddingMessage {
+  padding: 3%;
+}
+
+.issueActionButton {
+  float: right;
+  margin-top: 2% !important;
+}
+
+.nowrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.disabled {
+  overflow: hidden !important;
+  opacity: 0.2 !important;
+  cursor: default !important;
+  background-color: transparent !important;
+  img, span, p, div {
+    background-color: transparent !important;
+  }
+}
+
+.disabled-low {
+  overflow: hidden !important;
+  opacity: 0.6 !important;
+  cursor: default !important;
+  background-color: transparent !important;
+  img, span, p, div {
+    background-color: transparent !important;
+  }
+}
+
+.md-open-menu-container,
+.md-dialog-container {
+  z-index: 300 !important;
+}
+
+.md-center {
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+}
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.button-table-footer {
+  width: auto !important;
+  position: absolute !important;
+  margin-top: -3em !important;
+}
+
+.toast-alert {
+  width: 300px;
+  text-align: center;
+  background-color: $alert;
+  color: $white;
+}
+
+.liteDisabled {
+  opacity: 0.5 !important;
+}
+
+.bold {
+  font-weight: 800 !important;
+}
+
+.link {
+  color: $primary-color !important;
+  text-decoration: none;
+  cursor: pointer !important;
+  &:hover {
+    color: $primary-color-intense !important;
+    font-weight: 800 !important;
+  }
+}
+
+.date-detail {
+  float: right;
+  font-size: 0.8em;
+  color: $gray-intense;
+  line-height: 1.6em;
+}
+
+.empty-table {
+  text-align: center;
+  padding: 5%;
+}
+
+.md-off {
+  border-color: $module-border;
+}
+
+.md-checked .md-off {
+  border-color: $primary-color;
+}
+
+.md-on {
+  background-color: $inverse-primary
+}
+
+.md-cell, .md-column{
+  padding-left: 5px !important;
+}
+
+.primary-color {
+  color: $primary-color !important;
+}
+
+.monitoring {
+  color: $rec !important;
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+.removeSelectedOption {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 20px !important;
+  line-height: 20px !important;
+}
+
+.row.barInfoMessage {
+  text-align: center;
+  color: grey;
+  font-size: 1.2em;
+  cursor: default !important;
+  display: list-item;
+}
+
+.row.barInfoMessage:hover {
+  background: $secundary-intense !important;
+}
+
+.row.barInfoMessage p {
+  line-height: 5em;
+}
+
+.tooltip {
+  background-color: $black;
+  z-index: 200;
+}
+
+#labelInternalChats {
+  position: relative;
+  bottom: 0;
+}
+
+#internalChatMenu {
+  float: right;
+}
+
+.labelInfo {
+  position: absolute;
+  z-index: 20;
+  bottom: 30px;
+  margin-left: 0;
+  font-size: 0.6em;
+  width: 15px;
+  color: #fff;
+  background: #292b2d;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.md-button {
+  color: $inverse-primary;
+  background-color: $primary-color;
+  &:hover {
+    background-color: $primary-color-low;
+  }
+  &.button-clean {
+    color: $primary-color;
+    background-color: $main-background;
+    &:hover {
+      background-color: $module-border;
+    }
+  }
+}
+
+md-progress-circular {
+  display: inline !important;
+  position: relative !important;
+  width: 100px !important;
+  height: 100px !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+  .md-half-circle {
+    border-width: 4px !important;
+  }
+}
+
+md-switch.md-default-theme.md-checked.tbs-rec .md-bar, md-switch.md-checked.tbs-rec .md-bar {
+  background-color: $rec !important;
+}
+
+wysiwyg-edit {
+  .sizer {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .resizer, .tinyeditor-footer {
+    display: none;
+  }
+}
+
+.emoji {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+/* hidden gmail reply */
+.gmail_quote {
+  display: none;
+}
+
+div[contenteditable=true] {
+  cursor: text;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mfadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes mfadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes mfadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes mfadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes mfadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sep-content {
+  display: table-cell;
+  width: 18px;
+  height: 100%;
+}
+
+.multi::before {
+  content: "M |";
+  font-size: 8px;
+  position: absolute;
+  top: 1em;
+  left: -2em;
+  color: $gray-low;
+}
+
+.more-info {
+  font-size: 12px;
+  color: $gray-low;
+  bottom: 10px;
+  position: absolute;
+}
+
+.queued {
+  color: $white;
+  animation: parpadeo .6s;
+  -webkit-animation: parpadeo .6s;
+  -moz-animation: parpadeo .6s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+}
+
+md-input-container {
+  width: 100%;
+}
+
+/**
+ * For the correct positioning of the placeholder element, the dnd-list and
+ * it's children must have position: relative
+ */
+ul[dnd-list],
+ul[dnd-list] > li {
+  position: relative;
+}
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+ul[dnd-list] {
+  min-height: 40px;
+  height: 145%;
+  padding-left: 0px;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+ul[dnd-list] .dndDraggingSource {
+  display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ */
+ul[dnd-list] .dndPlaceholder {
+  display: block;
+  background-color: #ddd;
+  min-height: 40px;
+}
+
+/**
+ * The dnd-lists's child elements currently MUST have
+ * position: relative. Otherwise we can not determine
+ * whether the mouse pointer is in the upper or lower
+ * half of the element we are dragging over. In other
+ * browsers we can use event.offsetY for this.
+ */
+ul[dnd-list] li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+}
+
+/**
+ * Show selected elements in green
+ */
+ul[dnd-list] li.selected {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+/*====== Ignore section below ======*/
+@import 'generic';
+@import 'header';
+@import 'content';
+@import 'displayMain';
+@import 'footer';
+@import 'channelsTools';
+@import 'datePicker';

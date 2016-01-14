@@ -1,0 +1,95 @@
+.rightOpen {
+  #rightSidebar {
+    .filter-by-status {
+      display: table-row;
+      height: 31px;
+      vertical-align: top;
+      width: 100%;
+      color: $main-background;
+      .box {
+        padding: 8px;
+      }
+    }
+    .box {
+      width: 100%;
+      border-bottom: 1px solid $secundary-low;
+    }
+
+    .status-selector {
+      width: 18%;
+      display: inline-table;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      .md-container {
+        height: 16px;
+        width: 22px;
+        margin-left: 25%;
+        .md-off {
+          height: 16px;
+          width: 16px;
+        }
+        .md-on {
+          height: 16px;
+          width: 16px;
+        }
+      }
+      .md-label {
+        margin-left: 40%;
+        margin-top: -0.45em;
+        font-size: 0.7em;
+      }
+
+      &.all {
+        .md-container {
+          .md-off {
+            border-color: $all;
+          }
+          .md-on {
+            background: $all;
+          }
+        }
+      }
+      &.free {
+        .md-container {
+          .md-off {
+            border-color: $free;
+          }
+          .md-on {
+            background: $free;
+          }
+        }
+      }
+      &.pause {
+        .md-container {
+          .md-off {
+            border-color: $pause;
+          }
+          .md-on {
+            background: $pause;
+          }
+        }
+      }
+      &.busy {
+        .md-container {
+          .md-off {
+            border-color: $busy;
+          }
+          .md-on {
+            background: $busy;
+          }
+        }
+      }
+      &.offline {
+        .md-container {
+          .md-off {
+            border-color: $offline;
+          }
+          .md-on {
+            background: $offline;
+          }
+        }
+      }
+    }
+  }
+}

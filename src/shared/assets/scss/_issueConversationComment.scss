@@ -1,0 +1,39 @@
+ #mainContent{
+  .boxes{
+    &.detail-case, &.contact-detail-cases{
+      .rows{
+
+
+        a.goto-comments{
+          position: absolute;
+          top:8px;
+          right:8px;
+        }
+
+
+        .row{
+
+          &.comment{
+            text-align: center;
+            .comment-content{
+              background-color: $secundary-low !important;
+              text-align: left;
+              display: inline-block;
+              width:100%;
+              padding: 10px 40px;
+              p{
+                color: $gray !important;
+                font-size: 0.7em;
+              }
+              .message{
+                color: $inverse-primary !important;
+                font-size: 1em;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

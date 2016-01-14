@@ -1,0 +1,26 @@
+#mainContent{
+  .boxes{
+    &.flex-content{
+      display: flex;
+      flex-flow: row;
+      margin-top:18px;
+      height:92%;
+
+      .average-time, .agents-summary{
+        display: table-row;
+        /*flex-direction: column;
+        flex-flow: column wrap;*/
+        width:49.5%;
+        height: 100%;
+        background: blue;
+        .box{
+          height: 100%;
+        }
+      }
+
+      .agents-summary{
+        margin-left: 1%;
+      }
+    }
+  }
+}

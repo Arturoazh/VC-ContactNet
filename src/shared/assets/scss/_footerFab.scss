@@ -1,0 +1,146 @@
+#footer{
+
+  footer-fab{
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    overflow:hidden;
+
+    &:nth-child(2) {
+      left: 50px;
+    }
+
+    &:nth-child(3) {
+      left: 100px;
+    }
+
+    &:nth-child(4) {
+      left: 150px;
+    }
+
+    span {
+      &.active {
+        background: url('./assets/img/footer-call-icon-on.png') center center no-repeat !important;
+      }
+    }
+
+    .fab-icon {
+      display: block;
+      position: absolute;
+      bottom:0;
+      left:0;
+      z-index: 15;
+      width: 40px;
+      height: 40px;
+      margin: 2px;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+
+      &.fab-icon-voice {
+        background: url('./assets/img/footer-call-icon.png') center center no-repeat;
+        display: inline-block;
+      }
+
+      &.fab-icon-email {
+        background: url('./assets/img/footer-email-icon.png') center center no-repeat;
+        display: inline-block;
+      }
+
+      &.fab-icon-chat {
+        background: url('./assets/img/footer-mensajes-icon.png') center center no-repeat;
+        display: inline-block;
+      }
+
+      &.fab-icon-twitter {
+        background: url('./assets/img/footer-redes-icon.png') center center no-repeat;
+        display: inline-block;
+      }
+    }
+
+    .fab-content {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top:0;
+      width: 50px;
+      height:auto;
+    }
+
+    .fab-item {
+      display: block;
+      position: absolute;
+      left:0;
+      bottom:0;
+      z-index: 14;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      color: $inverse-primary;
+      margin: 7px;
+      padding: 0;
+      border: 0 solid $black;
+      border-radius: 50%;
+      opacity: 0;
+      background-color: $primary-color;
+      -webkit-transition: bottom .3s ease-out, opacity .1s ease-in .1s;
+      -moz-transition: bottom .3s ease-out, opacity .1s ease-in .1s;
+      -ms-transition: bottom .3s ease-out, opacity .1s ease-in .1s;
+      -o-transition: bottom .3s ease-out, opacity .1s ease-in .1s;
+      transition: bottom .3s ease-out, opacity .1s ease-in .1s;
+      cursor: pointer;
+      overflow:hidden;
+
+      &:hover{
+        background-color: $primary-color-low;
+      }
+    }
+
+    &:hover {
+      .fab-icon {
+        &.fab-icon-voice {
+          background: url('./assets/img/footer-call-icon-on.png') center center no-repeat;
+        }
+        &.fab-icon-email {
+          background: url('./assets/img/footer-email-icon-on.png') center center no-repeat;
+        }
+        &.fab-icon-chat {
+          background: url('./assets/img/footer-mensajes-icon-on.png') center center no-repeat;
+        }
+        &.fab-icon-twitter {
+          background: url('./assets/img/footer-redes-icon-on.png') center center no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.readed {
+  animation: parpadeo-readed 1s;
+  -webkit-animation: parpadeo-readed 1s;
+  -moz-animation: parpadeo-readed 1s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+}
+
+.monitored{
+  background-color: $rec !important;
+}
+
+@keyframes parpadeo-readed {
+  0%  {background-color: $primary-color-lowest;}
+  50%{background-color: $primary-color;}
+  100%{background-color: $primary-color-lowest;}
+}
+
+@-webkit-keyframes parpadeo-reade {
+  0%  {background-color: $primary-color-lowest;}
+  50%{background-color: $primary-color;}
+  100%{background-color: $primary-color-lowest;}
+}

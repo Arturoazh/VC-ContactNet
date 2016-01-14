@@ -1,0 +1,681 @@
+.channelTool {
+  &.telephone {
+    opacity: 0;
+    pointer-events: none;
+    /*visibility: hidden;*/
+    webkit-transition: -moz-transform .4s linear;
+    -moz-transition: -webkit-transform .4s linear;
+    -o-transition: -o-transform .4s linear;
+    transition: transform .4s linear;
+    /*    transform: scale(0.7);*/
+    z-index: 20;
+    height: 519px;
+    width: 317px;
+    bottom: 14%;
+    left: 43%;
+    &.show-tool {
+      pointer-events: all;
+      /*visibility: visible;*/
+      opacity: 1;
+      /*
+            transition: opacity .2s, all .3s linear;
+            transform: scale(1);
+      */
+    }
+    .userContent {
+      width: 100%;
+    }
+    .modalmask {
+      width: 217px;
+      position: absolute;
+      bottom: 130px;
+      right: 0;
+      background: $white;
+      display: none;
+
+      height: 150px;
+      opacity: 0;
+      z-index: 50;
+      .shadow {
+        display: table;
+        overflow: hidden;
+        position: relative;
+        margin-left: 10px;
+        margin-top: 14px;
+        width: 200px;
+        height: 122px;
+        box-shadow: 0 2px 8px 2px $module-accent;
+      }
+      .scroll {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      @include transition(opacity 0.3s);
+      &.show {
+
+        display: block;
+        opacity: 1;
+      }
+      .arrow {
+        position: absolute;
+        bottom: 0;
+        right: 19px;
+
+      }
+      ul {
+
+        display: table;
+        width: 200px;
+        height: 100%;
+
+        li {
+          display: block;
+          color: $module-border;
+          overflow: hidden;
+          height: 60px;
+          width: 100%;
+          border-bottom: 1px solid $module-border;
+          &.odd {
+            background: $module-subtle;
+          }
+          &:hover {
+            background: $module-subtle;
+          }
+          a {
+            display: table-cell;
+            vertical-align: middle;
+
+            width: 180px;
+            padding: 9px 10px;
+
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+    .icon-modal {
+      position: absolute;
+
+      right: 20px;
+      cursor: pointer;
+      bottom: 110px;
+      img {
+        display: block;
+        padding-bottom: 10px;
+      }
+    }
+    .header {
+      display: table-row;
+      width: 100%;
+      height: 10%;
+      background: $secundary;
+      position: relative;
+      .content-header {
+        display: table-cell;
+        width: 100%;
+      }
+      .field {
+        display: table-cell;
+        vertical-align: top;
+        height: 51px;
+        width: 266px;
+        .content {
+          display: table;
+          width: 100%;
+          a {
+            cursor: pointer;
+            width: 38px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+          }
+          .selected {
+            display: table-cell;
+            height: 51px;
+            position: relative;
+            padding-top: 4px;
+            p {
+              display: block;
+              width: 100%;
+              text-align: center;
+              color: $white;
+              &.alone {
+                margin-top: 11px;
+                width: 220px;
+                overflow: hidden;
+              }
+              &:nth-child(2) {
+                font-size: 0.8em;
+                color: $module-border;
+              }
+            }
+          }
+          angucomplete-alt {
+            display: table-cell;
+            height: 51px;
+            position: relative;
+            .angucomplete-holder {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              input {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                background: none;
+                color: $white;
+                text-align: center;
+
+              }
+              .angucomplete-dropdown {
+
+                position: absolute;
+                width: 317px;
+                height: 153px;
+                overflow: hidden;
+                z-index: 1;
+                .ps-scrollbar-y-rail {
+                  z-index: 11;
+                }
+                .scroll {
+                  position: absolute;
+                  height: 100%;
+                  width: 100%;
+                  z-index: 1;
+                }
+                left: -38px;
+
+                .angucomplete-row {
+                  display: block;
+                  width: 100%;
+                  &.no-match {
+                    p {
+                      padding: 0 10px;
+                      display: table-cell;
+                      vertical-align: middle;
+                      width: 80%;
+                    }
+
+                  }
+                  .angucomplete-title {
+                    width: 100%;
+                    height: 41px;
+                    display: table;
+                    table-layout: fixed;
+
+                    background: $module-subtle;
+                    padding: 5px 0;
+                    border-bottom: 1px solid $white;
+                    cursor: pointer;
+                    &:hover {
+                      background: $white;
+                    }
+                    div {
+                      display: table-cell;
+                      vertical-align: middle;
+                      &:nth-child(1) {
+                        width: 46px;
+                        .nopic {
+                          margin: 0 4px;
+                        }
+                      }
+                      &:nth-child(2) {
+                        width: 100%;
+                        ul {
+                          display: table;
+                          table-layout: fixed;
+                          width: 100%;
+                          li {
+                            display: table-cell;
+                            vertical-align: middle;
+                            height: 41px;
+                            &:nth-child(1) {
+                              width: 70%;
+                              p {
+                                font-size: 0.9em;
+                                text-align: center;
+                              }
+                            }
+                            &:nth-child(2) {
+                              vertical-align: top;
+                              width: 30%;
+                              p {
+                                font-size: 0.8em;
+                              }
+                            }
+                            p {
+                              display: inline-block;
+                              width: 100%;
+                              white-space: nowrap;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+
+                            }
+                          }
+                        }
+
+                      }
+                    }
+
+                  }
+                }
+              }
+
+            }
+
+          }
+        }
+
+      }
+      .ico {
+        display: table-cell;
+        right: 0;
+        top: 0;
+        width: 51px;
+        height: 51px;
+        background: $primary-color;
+        text-align: center;
+        img {
+          display: inline-block;
+          margin-top: 16px;
+        }
+      }
+
+    }
+    .rec {
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+      display: block;
+      background: $module-subtle;
+      @include transition(height 0.3s);
+      &.open {
+        height: 49px;
+      }
+      p, a {
+        display: table-cell;
+        height: 49px;
+        vertical-align: middle;
+        text-align: center;
+      }
+      p {
+        width: 257px;
+        font-size: 1.5em;
+      }
+      a {
+        width: 60px;
+        position: relative;
+        height: 44px;
+        padding-top: 10px;
+        color: $module-text;
+        font-size: .7em;
+        text-decoration: none;
+        cursor: pointer;
+        div{
+          width: 60px;
+        }
+        span.pic {
+          background: $module-text;
+          border-radius: 50%;
+          height: 10px;
+          position: absolute;
+          width: 10px;
+          top: 12px;
+          right: 25px;
+          z-index: 10;
+        }
+        &:hover, &.isRecording {
+          span.pic {
+            background-color: $rec;
+          }
+        }
+      }
+      .supervisorsIcon {
+        padding-top: 0;
+        font-size: 1.4em;
+        .icon{
+          color: $module-text;
+        }
+      }
+    }
+    .panelNumber {
+      display: table;
+      width: 100%;
+      height: 100%;
+      z-index: 90;
+      text-align: center;
+
+      ul {
+        display: block;
+        padding: 0 15%;
+        &:nth-child(1) {
+          @include transition(padding-top 0.3s);
+          padding-top: 8%;
+        }
+
+        li {
+          border: 1px solid $module-accent;
+          margin: 2%;
+
+          display: inline-block;
+          vertical-align: middle;
+          border-radius: 50%;
+          font-size: 1.5em;
+          width: 42px;
+          height: 42px;
+          line-height: 42px;
+          list-style: none;
+          cursor: pointer;
+          &.txt {
+            border: 0;
+          }
+          &:hover {
+            background: $secundary;
+            color: $white;
+            transition-duration: 0.3s;
+          }
+        }
+      }
+
+      &.open {
+        ul {
+          &:nth-child(1) {
+            padding-top: 0;
+          }
+          &:nth-child(4) {
+            padding-bottom: 8%;
+          }
+        }
+
+      }
+    }
+    .boxCall {
+      display: table-row;
+
+      height: 61px;
+      width: 100%;
+
+      a {
+        cursor: pointer;
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background: $green-call;
+        /* transition-duration: 0.3s;*/
+        &:hover {
+          background: $green-call-light;
+        }
+        &.close {
+          background: $red-call;
+          &:hover {
+            background: $red-call-light;
+          }
+          img {
+            margin-top: 7%;
+          }
+        }
+        img {
+          margin-top: 4%;
+        }
+      }
+    }
+
+    .boxTransfer {
+      display: table-row;
+
+      height: 61px;
+      width: 100%;
+      a {
+        width: 33.3%;
+        background: $primary-color;
+        color: $inverse-primary;
+        line-height: 62px;
+        font-size: 1.1em;
+        text-decoration: none;
+        /* transition-duration: 0.3s;*/
+        display: inline-block;
+        text-align: center;
+        &:hover {
+          background: $primary-color-low;
+        }
+        &.close {
+          background: $red-call;
+          &:hover {
+            background: $red-call-light;
+          }
+        }
+
+      }
+    }
+    .boxActions {
+      height: 0;
+      padding: 0 1em;
+
+      &.calling {
+        .content-call {
+          height: 51px;
+          border-top: 1px solid $module-accent;
+        }
+        .content {
+          display: none;
+        }
+      }
+
+      text-align: center;
+      display: table-row;
+      .content-call {
+        overflow: hidden;
+        display: block;
+        height: 0;
+        @include transition(height 0.3s);
+        a {
+          cursor: pointer;
+          width: 92px;
+          padding: 5% 0 0 0;
+          display: inline-block;
+          vertical-align: middle;
+          height: 100%;
+
+          &:nth-child(2) {
+            border-left: 1px solid $module-accent;
+            border-right: 1px solid $module-accent;
+          }
+
+          &:nth-child(3) {
+            border-right: 1px solid $module-accent;
+          }
+
+          &:nth-child(4) {
+            padding-left: 2px;
+            width: 14px;
+          }
+        }
+      }
+      .content {
+        margin-bottom: 40px;
+        a {
+          float: right;
+          margin-right: 20px;
+          display: block;
+          cursor: pointer;
+          color: $secundary;
+          border: solid 1px $module-accent;
+          border-radius: 60%;
+          height: 28px;
+          width: 28px;
+          font-size: 18px;
+          span {
+            color: transparent;
+            position: absolute;
+            margin-left: -20px;
+            width: 45px;
+          }
+          &:before {
+            vertical-align: middle;
+          }
+          &:hover {
+            color: $inverse-primary;
+            background-color: $secundary;
+          }
+
+        }
+      }
+      .do-more {
+        position: absolute;
+        right: 0;
+        text-align: left;
+        background: $secundary;
+        width: auto;
+        padding: 10px;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s .1s, all .1s linear;
+        &.open {
+          opacity: 1;
+          visibility: visible;
+          height: auto;
+        }
+        ul {
+          display: block;
+          li {
+            display: block;
+            a {
+              text-decoration: none;
+              cursor: pointer;
+              display: inline-block;
+              height: 31px;
+              line-height: 31px;
+              font-size: .9em;
+              margin-left: 2px;
+              color: $module-border;
+              &:hover {
+                color: $inverse-primary;
+              }
+              img {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .transferir {
+      .boxCall {
+        a {
+          background: $primary-color;
+          color: $inverse-primary;
+          line-height: 61px;
+          font-size: 1.2em;
+          text-decoration: none;
+          /* transition-duration: 0.3s;*/
+          &:hover {
+            background: $primary-color-low;
+          }
+        }
+        .transfering {
+          background: $primary-color-lowest;
+          &:hover {
+            background: $primary-color-lowest;
+          }
+        }
+      }
+      .header {
+
+        a {
+          display: block;
+          width: 100%;
+          height: 41px;
+          vertical-align: middle;
+          color: $white;
+          text-decoration: none;
+          padding-top: 10px;
+          cursor: pointer;
+          background: $secundary;
+          img {
+            padding: 9px 5%;
+            display: inline-block;
+          }
+          span {
+            float: right;
+            width: 84%;
+            margin-top: 8px;
+            text-align: center;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.monitor-call {
+  text-align: center;
+  display: table-row;
+  .icon-arrow-down, .icon-arrow-up {
+    color: $green-call;
+  }
+
+  .icon:before {
+    font-size: 24px;
+  }
+
+  md-progress-linear {
+    color: $primary-color;
+  }
+
+}
+
+.danger {
+  color: $red-call;
+}
+
+body.md-toast-open-top {
+  md-toast {
+    background-color: $green-call;
+    color: $white;
+    animation: parpadeo 1s;
+    -webkit-animation: parpadeo 1s;
+    -moz-animation: parpadeo 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+  }
+}
+
+/* TODO: desactivado por el momento*/
+.angucomplete-dropdown {
+  display: none;
+}
+
+@keyframes parpadeo {
+  0% {
+    background-color: $green-call-light;
+  }
+  50% {
+    background-color: $green-call;
+  }
+  100% {
+    background-color: $green-call-light;
+  }
+}
+
+@-webkit-keyframes parpadeo {
+  0% {
+    background-color: $green-call-light;
+  }
+  50% {
+    background-color: $green-call;
+  }
+  100% {
+    background-color: $green-call-light;
+  }
+}

@@ -1,0 +1,269 @@
+/*****************************************  Header */
+#header {
+  padding: 0;
+  line-height: 0;
+  background-color: $secundary;
+  display: table-row;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  .content {
+    display: table;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+  }
+  .logo {
+    display: inline-block;
+    line-height: 0;
+    height: 60px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: $primary-color;
+    a {
+      display: inline-block;
+      line-height: normal;
+      text-decoration: none;
+    }
+  }
+  .row {
+    display: table-row;
+    width: 100%;
+  }
+  .logo-channels-user {
+    height: 60px;
+  }
+  .channel-user {
+    float: right;
+    .channels-user {
+      text-align: right;
+    }
+  }
+
+  .channels {
+    height: 60px;
+    margin-right: 60px;
+    display: inline-block;
+    position: relative;
+
+    a {
+      display: table-cell;
+      height: 60px;
+      position: relative;
+      vertical-align: middle;
+
+      &.active {
+        background-color: $secundary-intense;
+      }
+
+      img.over {
+        padding: 19px 18px 12px 22px;
+        display: inline-block;
+
+        &:hover {
+          background-color: $secundary-intense;
+        }
+      }
+      span {
+        position: absolute;
+        font-size: 0.7em;
+        width: 20px;
+        color: $inverse-primary;
+        background: $primary-color;
+        height: 20px;
+        line-height: 19px;
+        text-align: center;
+        border-radius: 50px;
+        bottom: 30px;
+        left: 50%;
+        margin-left: 0;
+        z-index: 10;
+        top: 10px;
+        :after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -8px;
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+  /***------ user-profile */
+  .user {
+    color: $main-background;
+    font-size: 12px;
+    width: 300px;
+    margin-top: 9px;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    .photo {
+      display: inline-block;
+      margin-right: 5px;
+      background-color: white;
+      border-radius: 100%;
+    }
+    .name-rol {
+      line-height: 1;
+      color: $primary-color-low;
+      display: inline-block;
+      .name {
+        color: $inverse-primary;
+        max-width: 190px;
+      }
+    }
+    .arrow {
+      padding: 5px 10px;
+      cursor: pointer;
+      display: inline-block;
+      top: -5px;
+      right: 0;
+
+    }
+  }
+
+}
+
+.header-supervisor {
+  display: table;
+  width: 100%;
+  height: 5px;
+  background: $primary-color;
+  text-align: right;
+  table-layout: fixed;
+}
+
+.header-agent {
+  display: table;
+  width: 100%;
+  height: 31px;
+  background: $green-call;
+  text-align: right;
+  table-layout: fixed;
+  &.busy {
+    background: $busy;
+  }
+  &.free {
+    background: $free;
+  }
+  &.pause {
+    background: $pause;
+  }
+  &.offline {
+    background: $offline;
+  }
+  .content-agent {
+    float: right;
+    width: 30%;
+    vertical-align: middle;
+    padding-right: 44px;
+    display: table;
+    table-layout: fixed;
+    color: $inverse-primary;
+    .status-blocked {
+      padding: 0;
+      font-weight: bold;
+      padding-right: 20px;
+      vertical-align: middle;
+      width: 200px;
+      display: table-cell;
+      margin: 0;
+      color: $inverse-primary;
+      height: 31px;
+    }
+    .time {
+      display: table-cell;
+      font-weight: bold;
+      vertical-align: middle;
+      margin: 0;
+      height: 31px;
+      width: 100px;
+      text-align: center;
+      padding: 0;
+    }
+    md-select {
+      padding-right: 20px;
+      width: 200px;
+      display: table-cell;
+      margin: 0;
+      color: $inverse-primary;
+      &:not([disabled]):focus {
+        .md-select-value {
+          border: 0;
+        }
+      }
+      md-select-value {
+        border: 0;
+        color: $inverse-primary;
+        padding: 0;
+        display: block;
+
+        span {
+          border: 0;
+          display: table-cell;
+          vertical-align: middle;
+          &:nth-child(1) {
+            height: 30px;
+            padding-right: 2%;
+            text-align: right;
+            width: 100%;
+          }
+
+          color: $inverse-primary;
+        }
+      }
+
+    }
+  }
+}
+
+.submenu {
+  display: inline-block;
+  height: 60px;
+  position: relative;
+  ul {
+    text-align: right;
+    float: right;
+    li {
+      display: table-cell;
+      .ico {
+        display: inline-block;
+        height: 24px;
+        padding: 18px 16px;
+        color: $inverse-secudary;
+        font-size: 0.8em;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover, &.active {
+          background-color: $secundary-intense;
+        }
+        img {
+          margin-right: 9px;
+          margin-bottom: -3px;
+        }
+      }
+
+    }
+  }
+}
+
+
+.vinculate-text {
+  margin-left: 5px;
+  height: 30px;
+  &::before{
+    content: "|";
+  }
+}
+
+.lang-title {
+  font-size: 10px;
+  padding: 0 10px;
+  color: $module-text;
+}
+
+@import 'tooltipChannelHeader';

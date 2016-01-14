@@ -1,0 +1,140 @@
+#mainContent {
+  .unify-new {
+    display: inline-block;
+    width: 100%;
+    ul {
+      float: right;
+      li {
+        display: inline-block;
+        .unify-button {
+          color: $main-background;
+          background: $primary-color;
+          padding: 7px 30px;
+          font-size: 0.8em;
+          display: inline-block;
+        }
+        .new-button {
+          padding: 7px 30px;
+          img {
+            margin-left: 8px;
+          }
+
+        }
+      }
+    }
+  }
+  .contact-header-list-cases, .cases-header {
+    display: block;
+    width: 100%;
+
+    .content-header {
+      display: block;
+      height: 65px;
+      width: 100%;
+      @include transition(height .3s ease-out);
+      .advanced-search {
+        height: 0;
+        overflow: hidden;
+      }
+      &.open {
+        height: 300px;
+        .advanced-search {
+          overflow: visible;
+          height: 240px;
+        }
+      }
+      .boxes {
+        &.header {
+          .search-bar {
+            width: auto;
+
+            form {
+              display: inline-block;
+              width: 100%;
+              input {
+                background: url('./assets/img/search-icon-body.png') 3px center no-repeat;
+                padding-left: 35px;
+              }
+
+            }
+            ul {
+              li {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                a {
+                  position: absolute;
+                  right: 6px;
+                  height: 30px;
+                  width: 10px;
+                  cursor: pointer;
+                  top: 2px;
+                  z-index: 10;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .advanced-search {
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      @include transition(height .3s ease-out);
+
+      .content {
+        display: inline-block;
+        width: 100%;
+        form {
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          padding: 10px 0;
+        }
+        .form {
+          display: block;
+
+          width: 100%;
+          .row {
+            display: block;
+            .cell {
+              display: inline-block;
+              width: 31%;
+              padding: 0;
+              margin-left: 2%;
+              .md-select-label {
+                width: 100%;
+              }
+              &:nth-child(1) {
+                margin-left: 0;
+              }
+            }
+            .md-button {
+              float: right;
+              background: $primary-color;
+              color: $inverse-primary;
+              span {
+                font-size: 0.9em;
+                padding: 0 35px;
+              }
+            }
+          }
+
+          p:nth-child(1) {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+  .boxes {
+    &.contact-list-cases {
+      .advanced-search {
+        background: red;
+      }
+    }
+
+  }
+}

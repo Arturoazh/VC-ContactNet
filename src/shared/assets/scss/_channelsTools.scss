@@ -1,0 +1,292 @@
+.channelTool{
+  position: fixed;
+  z-index: 80;
+  .for-minimize{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    //transform: scale(1);
+    pointer-events: none;
+    /*visibility: hidden;*/
+    webkit-transition: -moz-transform .3s linear;
+   -moz-transition: -webkit-transform .3s linear;
+   -o-transition: -o-transform .3s linear;
+    transform: scale(0.7);
+
+    transition: opacity .1s linear;
+    &.show-tool{
+      pointer-events: all;
+      /*visibility: visible;*/
+      opacity: 1;
+      transition: opacity .2s, all .3s linear;
+      transform: scale(1);
+    }
+  }
+  .card{
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 32px -4px rgba(0, 0, 0, 0.46);
+
+
+    &.flipped{
+      transform: rotateY( 180deg );
+    }
+  }
+  .figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    &.front{
+      background: $inverse-primary;
+      z-index: 10;
+    }
+    &.back{
+      z-index: 20;
+      background: $secundary-low;
+      transform: rotateY( 180deg );
+
+    }
+  }
+  .table{
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .cell{
+    display: table-cell;
+    width: 100%;
+    &.button-monitor {
+      width: auto !important;
+    }
+
+    &.button-open-chat {
+      padding: 1em;
+      width: auto !important;
+      text-align: right;
+    }
+  }
+
+  form{
+    .boxExternalPhone{
+      display: inline-block;
+      border-bottom: 1px solid $module-border;
+      width: 100%;
+      md-input-container{
+        color: $primary-color;
+        width: 94%;
+        margin-left: 3%;
+        label{
+          color: $primary-color;
+          font-size: 1.2em;
+        }
+        input{
+          color: $inverse-primary;
+          border-color: $primary-color;
+        }
+      }
+
+    }
+    .list-agents{
+      height: 220px;
+      border-bottom: 1px solid $module-border;
+      position: relative;
+      overflow: hidden;
+      .scroll{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+      &.big{
+        height: 364px;
+      }
+      &.phone {
+        li {
+          width: 100%;
+          .status{
+            right: 5px;
+          }
+        }
+      }
+      &.email{
+        height: 385px;
+        .status {
+          margin: 0 !important;
+        }
+      }
+    }
+    ul{
+
+      padding: 15px 0;
+      li{
+        display: inline-block;
+        width: 138px;
+        margin-left: 14px;
+        md-checkbox, md-radio-button{
+          margin: 8px 0;
+          padding-left: 0;
+          padding-right: 18px;
+          .md-icon{
+            border-color: $module-border;
+          }
+          .md-off {
+            border-color: $module-border;
+          }
+          &.md-checked{
+            .md-on {
+              background-color: $inverse-primary;
+            }
+            .md-off {
+              border-color: $primary-color;
+            }
+          }
+          &.md-checked{
+            .md-icon{
+              background: $primary-color;
+            }
+          }
+          .md-label{
+            div{
+              display: block;
+              width: 110px;
+              height: 30px;
+              line-height: 26px;
+              position: relative;
+            }
+
+            span.status{
+              margin: 0 0 0 281px;
+              display: inline-block;
+              vertical-align: middle;
+              position: absolute;
+              top:9px;
+            }
+            span.name{
+              display: inline-block;
+              color: $inverse-primary;
+              margin-left: 0;
+              width: 275px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+        }
+
+      }
+    }
+    .boxPhoneStatus{
+      ul{
+        li{
+          width: 90px;
+          margin: 0;
+          color: $inverse-primary;
+          margin-left:10px;
+          font-size: 0.9em;
+          md-radio-button{
+            margin: 0;
+            .md-label{
+              margin-left: 0;
+            }
+            .md-container{
+              .md-off, .md-on{
+                right: 0;
+              }
+              .md-off{
+                border-color: $module-border;
+              }
+              .md-on{
+                  background-color: $inverse-primary;
+              }
+            }
+            &.md-checked{
+              .md-container{
+                .md-off{
+                  border-color: $primary-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .boxAgents{
+    display: table;
+    width: 100%;
+    height: 100%;
+    .headerAgents{
+      display: inline-block;
+      width: 100%;
+      height: 42px;
+      a{
+        display: block;
+        padding: 10px 0;
+        margin-left: 5%;
+        text-decoration: none;
+        color: $module-border;
+        width: 90%;
+      }
+      md-input-container{
+        span, input{
+          color: $inverse-primary;
+        }
+      }
+      img{
+        float: right;
+        position: absolute;
+        right: 10px;
+        margin-top: -50px;
+      }
+    }
+
+  }
+  span.status{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ff84;
+    &.busy{
+      background: $busy;
+    }
+    &.offline{
+      background: $offline;
+    }
+    &.pause{
+      background: $pause;
+    }
+    &.free{
+      background: $free;
+    }
+    &.all{
+      background: $inverse-primary;
+    }
+
+    &.in-bar{
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+  }
+
+  .do-more {
+    .md-select-value:first-child {
+      color: $white;
+    }
+  }
+
+  .button-monitor {
+    padding: 1em;
+  }
+}
+@import 'commentTool';
+@import 'uploadTool';
+@import 'telephoneTool';
+@import 'emailTool';
+@import 'chatTool';

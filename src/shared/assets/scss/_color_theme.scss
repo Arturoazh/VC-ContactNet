@@ -1,0 +1,53 @@
+/* Color Application */
+$primary-color: #7b7de7;//OLD $blue-electric
+$primary-color-intense: darken($primary-color, 10%);$c:#5557C1;
+$primary-color-low: lighten($primary-color, 10%);$c:#A1A3FF;
+$primary-color-lowest: lighten($primary-color, 20%);$c:#C8CAFF;
+$inverse-primary: #fff;
+
+
+$secundary: #3a3d43;
+$secundary-intense: darken($secundary,10%);$c:#21242A;
+$secundary-low: lighten($secundary,5%);$c:#474A50;
+$secundary-lowest: lighten($secundary-low,10%);$c:#54575D;
+$inverse-secudary: #f0f0f0;
+
+
+$main-background: #f5f5f5;
+$main-text: #262626;
+$module-background: #fff;
+$module-border: #e3e3e3;;
+$module-text: #7d7d7d;
+$module-accent: #c3c3c3;
+$module-subtle: #f4f4f4;
+
+
+$rec: #f95f5f;
+
+/* Status color */
+$busy: #f95f5f;
+$offline: #a4a4a4;
+$pause: #ffba54;
+$free: #6dc290;
+$all: lightskyblue;
+
+/* Alert Colors */
+$alert: #f95f5f;
+$warning: #ffba54;
+$success: #6dc290;
+
+/* Widgets */
+$green-call: #6dc290;
+$green-call-light: lighten($green-call, 5%);
+$red-call: #f95f5f;
+$red-call-light: lighten($red-call, 5%);
+
+/* Gray scale */
+$white: #fff;
+
+$gray-lowest: #e6e6e6;
+$gray-low: #b2b2b2;
+$gray: #a1a1a1;
+$gray-intense: #7d7d7d;
+
+$black: #000;

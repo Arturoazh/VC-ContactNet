@@ -1,0 +1,636 @@
+.channelTool{
+  .body {
+    word-wrap: break-word;
+  }
+  &.email{
+    left: 26%;
+    bottom: 84%;
+    .for-minimize{
+      left: 0;
+      width: 760px;
+      height: 525px;
+      top: 0;
+    }
+    .big{
+      height: 625px;
+    }
+
+    .block{
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 276px);
+      z-index: 30;
+      background: rgba(0,0,0,0.75) !important;
+      .table{
+        display: table;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+      }
+      .scroll{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .comments{
+        display: block;
+        color: $main-background;
+        border-bottom: 1px solid $module-border;
+        padding: 15px 0;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        font-size: .9em;
+        p{
+          text-align: left;
+          display: block;
+          padding: 0 15px;
+
+        }
+        span{
+          margin-top: 9px;
+          width: calc(100% - 18px);
+          text-align: right;
+
+          display: block;
+          font-size: .8em;
+          span{
+            display: inline-block;
+            width: auto;
+            margin: 0;
+            font-size: 1em;
+
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .header {
+      height: 36px;
+
+      background: $secundary-low;
+      width: 100%;
+      display: table-row;
+      a{
+        cursor: pointer;
+        display: table-cell;
+        width: 19px;
+        vertical-align: middle;
+        text-align: left;
+        color: $inverse-primary;
+        img{
+          margin: 0 10px;
+        }
+      }
+      p{
+        display: table-cell;
+        color: $inverse-primary;
+        vertical-align: middle;
+      }
+      &.transfer{
+        height: 60px;
+        background: none;
+        img{
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .info{
+      display: table;
+      height: 76px;
+      width: 100%;
+      .table{
+        position: relative;
+        overflow: hidden;
+        height: 76px;
+      }
+      .cell{
+        width: 50%;
+        display: inline-block;
+
+        &:nth-child(2){
+          text-align: right;
+          width:49%;
+          div{
+            float: right;
+            padding: 0;
+            margin-right: 20px;
+            div{
+              display: block;
+              float: none;
+              width: 100%;
+              position: relative;
+
+              p{
+                font-size: .8em;
+                padding-top:15px;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline-block;
+                text-overflow: ellipsis;
+                &:nth-child(2){
+                  color: $black;
+                  strong{
+                    font-size: 1em;
+                  }
+                }
+              }
+            }
+            a{
+              float: right;
+              text-align: center;
+              width: 180px;
+              background: $primary-color;
+              color: $inverse-primary;
+              padding: 3px 8px;
+              margin-top: 10px;
+              display: block;
+              cursor: pointer;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              @include  border-radius(2px);
+            }
+
+          }
+        }
+        div{
+          padding: 15px 0;
+          display: table-cell;
+          vertical-align: middle;
+          &:nth-child(1){
+            padding-left:20px;
+            a.associate{
+              width: auto;;
+              background: none;
+              position: relative;
+              display: inline-block;
+
+            }
+          }
+          p{
+            &:nth-child(1){
+              font-size: 1.1em;
+
+            }
+            &:nth-child(2){
+              font-size: 0.8em;
+              color: $module-accent;
+              cursor: default;
+            }
+          }
+        }
+
+      }
+    }
+    .messages{
+      background: $module-subtle;
+      display: table-row;
+      height: 100%;
+      .table{
+        display: table;
+        position: relative;
+        overflow: hidden;
+        z-index: 10;
+      }
+      .conversation-row{
+        display: block;
+        position: relative;
+        &.odd{
+          background: $inverse-primary;
+        }
+        .issue-selector{
+          position: absolute;
+          width: 200px;
+          height: 110px;
+          display: table;
+          z-index: 90;
+          right: 18px;
+          top: 74px;
+          background: $inverse-primary;
+          box-shadow: 0 2px 8px 2px $module-border;
+          @include transition( opacity 0.3s, visibility 0.3s);
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+          &.open{
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+          }
+          a{
+            display: block;
+            width: 100%;
+            height: 51px;
+            line-height: 51px;
+            border-bottom: 1px solid $module-border;
+            text-decoration: none;
+            font-size: 1em;
+            cursor: pointer;
+            &:hover{
+              background: $module-border;
+            }
+            span{
+              display: block;
+              width: 80%;
+              margin-left: 10%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+      &.commenting{
+        height: calc(100% - 150px);
+      }
+      .scroll{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .row{
+          display: block;
+          padding: 2%;
+          p{
+            &.attach{
+              font-size: 0.8em;
+              text-align: right;
+            }
+            &.subject{
+              font-size: 1.2em;
+            }
+          }
+          div{
+            font-size:1em;
+            p{
+              font-size: .8em;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+    .actions{
+      display: table;
+      width: 100%;
+      height: 61px;
+      vertical-align: top;
+      /*cursor: pointer;*/
+      &.commenting{
+        height: 150px;
+      }
+      a{
+        cursor: pointer;
+        float: right;
+        background: $primary-color;
+        padding: 7px  12px;
+        color: $inverse-primary;
+        font-size: .8em;
+        text-transform: uppercase;
+        margin: 14px 15px 0;
+        text-decoration: none;
+        @include  border-radius(2px);
+      }
+      .associate-add-contact{
+        /*display: block;*/
+        vertical-align: middle;
+        float:left;
+        height: 61px;
+        width: 500px;
+        a{
+          float: none;
+          width: auto;
+          background: none;
+          border: 0;
+          color: $secundary-intense;
+          display: table-cell;
+          vertical-align: middle;
+          height: 61px;
+          img{
+            margin-right: 8px;
+          }
+          span{
+            font-size: 1.3em;
+            margin-right: 8px;
+          }
+        }
+
+      }
+      .answer-associate{
+        display: table;
+        width: 100%;
+        height:61px;
+        table-layout: fixed;
+      }
+      .answer{
+        display: table-cell;
+        z-index: 30;
+        width: 96%;
+        padding: 20px 2%;
+        .pic{
+          display: table-cell;
+
+        }
+        .response{
+          width: 100%;
+
+          display: table-cell;
+          vertical-align: top;
+          height:190px;
+          .row{
+            display: table;
+            table-layout: fixed;
+            height: 100%;
+            width: 100%;
+          }
+          .table {
+            height: 100%;
+            width: 100%;
+            border: 1px solid $module-border;
+          }
+          a.email{
+            display: inline-block;
+            width: 99%;
+            background: none;
+            margin: 0;
+            border: 0;
+            color: $black;
+            float: none;
+            font-size: .8e;
+            border-bottom: 1px solid $module-border;
+            text-transform: none;
+            padding: 10px 0 10px 1%;
+
+            span{
+              float: right;
+              margin-right: 20px;
+            }
+
+          }
+          .wysiwyg{
+            width:675px;
+            float:left;
+            padding: 2%;
+            height: 120px;
+            font-size: .9em;
+            box-sizing: border-box;
+            background: $inverse-primary;
+            resize: none;
+            border: 0;
+            overflow-y: scroll;
+            a{
+              border: 0;
+              float: none;
+              padding: 0;
+              color: $primary-color;
+              margin: 0;
+              background: none;
+              text-transform: none;
+              font-size: 1em;
+            }
+          }
+          md-select{
+            /*width: 95%;*/
+            /*display: inline-block;*/
+            float: left;
+            margin: 0;
+            margin-left:1%;
+            border-bottom: 0;
+            .md-select-value{
+              border-bottom: 0;
+              span{
+                font-size: .8em;
+              }
+            }
+          }
+          md-input-container{
+            padding: 2px;
+          }
+          .botones{
+            display: table-row;
+            vertical-align: top;
+            width: 100%;
+            background: $module-subtle;
+            height: 56px;
+
+            margin: 0;
+            padding: 0;
+            ul{
+              display: table;
+              height: 100%;
+              margin-left:2%;
+              width: 98%;
+              li{
+                display: table-cell;
+                vertical-align: middle;
+                margin: 0;
+                height: 56px;
+                padding: 0;
+
+                &:nth-child(3){
+
+                  width: 100%;
+                  text-align: right;
+                  padding-right:15px;
+                  span{
+                    font-size: .8em;
+                    width:300px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align:left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                  }
+                  a, button{
+                    float: none;
+                    background: $primary-color;
+                    padding: 7px  12px;
+                    color: $inverse-primary;
+                    font-size: .8em;
+                    text-transform: uppercase;
+                    margin: 0 10px 0;
+                    text-decoration: none;
+                    @include  border-radius(2px);
+
+                  }
+                  button {
+                    line-height: 1.4;
+                    &[disabled=disabled]{
+                      background: #BBB;
+                    }
+                  }
+                }
+
+                a, button{
+                  @include border-radius(0);
+                  background: none;
+                  display: inline-block;
+                  padding: 0 15px;
+                  border: 0;
+                  margin: 0;
+                  float: none;
+                  img{
+                    display: inline-block;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .comment{
+        display: table;
+        width: 96%;
+        position: relative;
+        margin:2%;
+        border: 1px solid $module-border;
+        border-bottom: 0;
+        height: 90px;
+        &.hidden{
+          height: 0;
+          display: none;
+        }
+        div{
+          display: inline-block;
+          width: 100%;
+          height: 50px;
+          background: $module-subtle;
+          border-bottom: 1px solid $module-border;
+          a{
+            margin-top: 13px;
+          }
+        }
+        textarea{
+          padding: 2%;
+          border: 0;
+          outline: none;
+          resize: none;
+          display: inline-block;
+          width: 96%;
+          height: 70px;
+          font-size: .9em;
+        }
+        a{
+
+        }
+      }
+    }
+    .boxCall{
+      display: table-row;
+
+      height:61px;
+      width: 100%;
+
+      a{
+        cursor: pointer;
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background: $green-call;
+        transition-duration: 0.3s;
+        &:hover{
+          background: $green-call-light;
+        }
+        &.close{
+          background: $red-call;
+          &:hover{
+            background: $red-call-light;
+          }
+          img{
+            margin-top: 7%;
+          }
+        }
+        img{
+          margin-top: 4%;
+        }
+      }
+    }
+    .transferir {
+      .boxCall{
+        a{
+          background: $primary-color;
+          color: $inverse-primary;
+          line-height: 61px;
+          font-size: 1.2em;
+          text-decoration: none;
+          transition-duration: 0.3s;
+          &:hover{
+            background: $primary-color-low;
+          }
+        }
+
+      }
+    }
+    .footer{
+      display: block;
+      height: 52px;
+      border-top: 1px solid $module-border;
+      background: $secundary-low;
+      .table {
+        padding-left: 1em;
+      }
+      .cell{
+        display: table-cell;
+        vertical-align: middle;
+        height: 25px;
+        width: auto;
+        a{
+          display: block;
+          color: $module-border;
+          cursor: pointer;
+          text-decoration: blink;
+          span, img{
+            vertical-align: middle;
+          }
+          img{
+            margin-right: 10px;
+          }
+        }
+      }
+      .cell:last-child {
+        a {
+          margin-right: 15px;
+        }
+      }
+    }
+    form{
+      .list-agents{
+        .userContent {
+          width: 170px;
+          height: 26px;
+          .name {
+            width: 150px;
+          }
+        }
+      }
+      .boxExternalPhone{
+        border-bottom: 0;
+      }
+      ul{
+        li{
+          width: 238px;
+          md-checkbox{
+            .md-label{
+              div{
+                width: 180px;
+              }
+              span{
+                &.name{
+                  width: 170px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

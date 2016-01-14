@@ -1,0 +1,237 @@
+#mainContentContainer{
+    .main{
+      &.summary-hidden{
+        .cell{
+            #mainContent{
+              .boxes{
+                .sep-vertical{
+                  display: none;
+                }
+                .contactnets-queued{
+                  height: 0;
+                  overflow: hidden;
+                }
+              }
+            }
+        }
+      }
+      &.queue-hidden{
+        .cell{
+            #mainContent{
+              .boxes{
+                .sep-vertical{
+                  display: none;
+                }
+                .contactnets-queued{
+                  height: 0;
+                  overflow: hidden;
+                }
+                .average-time {
+                  top:0;
+                  height: 96%;
+                }
+              }
+            }
+        }
+      }
+      &.chart-hidden{
+        .cell{
+          #mainContent{
+            .boxes{
+
+              .sep-vertical{
+                display: none;
+              }
+
+              .average-time {
+                canvas{
+                  display: none;
+                }
+                width: 0;
+                overflow: hidden;
+              }
+              .contactnets-queued{
+                top:0;
+                height: 96%;
+              }
+            }
+          }
+        }
+      }
+      .cell{
+          #mainContent{
+            .table{
+              &.average-summary{
+                position: absolute;
+                height: calc(96% - 265px);
+                width: 98%;
+
+              }
+            }
+            .boxes{
+              position: relative;
+              &:nth-child(2){
+                height:198px;
+                &.content-agent-dashboard{
+                  height: 100%;
+                }
+
+              }
+              .cell{
+                &.queue-channels{
+
+                  position: absolute;
+                  height: 190px;
+                  width: 97.7%;
+                  margin-top: 0;
+                  @include transition(height .3s ease-in);
+                  .col-12{
+                    height: calc(100% - 46px);
+                    padding: 0;
+                    .col-3{
+                      vertical-align: middle;
+                      padding: 0;
+                    }
+                  }
+
+                }
+              }
+              .sep-content{
+                position: absolute;
+              }
+              .contactnets-queued{
+                position: absolute;
+                width: 50%;
+                height: 48%;
+                @include transition(all .3s ease-in);
+              }
+              .agent-historic-cases{
+                position: absolute;
+                width: 49.2%;
+                @include transition(all .3s ease-in);
+              }
+              .average-time {
+                position: absolute;
+                width: 50%;
+                @include transition(all .3s ease-in);
+                &.agent{
+                  height: 46.5%;
+                }
+              }
+              .agents-summary{
+                width: 49.5%;
+                @include transition(width .3s ease-in);
+              }
+            }
+          }
+          &.summary-hidden{
+            #mainContent{
+              .boxes{
+                .sep-content{
+                  display: none;
+                }
+                .agents-summary{
+                  width: 0;
+                  overflow: hidden;
+                  @include transition(all .3s ease-in);
+                }
+                .average-time {
+                  width: 100%;
+                  @include transition(all .3s ease-in);
+                }
+              }
+            }
+            .tg-summary{
+              opacity: .4;
+            }
+          }
+          &.queue-hidden{
+            #mainContent{
+              .boxes{
+                .sep-vertical{
+                  display: none;
+                }
+                .contactnets-queued{
+                  height: 0;
+                  overflow: hidden;
+                  @include transition(all .3s ease-in);
+                }
+                .average-time {
+                  top: 0;
+                  height: 96%;
+                  @include transition(all .3s ease-in);
+                }
+              }
+            }
+            .tg-queue{
+              opacity: .4;
+            }
+          }
+          &.chart-hidden{
+            #mainContent{
+              .boxes{
+                .sep-content{
+                  display: none;
+                }
+                .agents-summary{
+                  width: 100%;
+                  @include transition(all .3s ease-in);
+                }
+                .contactnets-queued{
+                  height: 96%;
+                  @include transition(all .3s ease-in);
+                }
+                .average-time {
+                  canvas{
+                    display: none;
+                  }
+                  /*  display: none;*/
+                  width: 0;
+                  overflow: hidden;
+                  @include transition(all .3s ease-in);
+                }
+              }
+            }
+            .tg-chart{
+              opacity: .4;
+            }
+          }
+          &.both-hidden{
+            #mainContent{
+              .table{
+                &.average-summary{
+                  width: 0;
+                  overflow: hidden;
+                }
+              }
+              .boxes{
+                .queue-channels{
+                  height: calc(96% - 65px);
+                }
+                .agent-historic-cases {
+                  width: 100%;
+                  left: 0;
+                  @include transition(all .3s ease-in);
+                }
+                .sep-content, .cell-sep{
+                  display: none;
+                }
+                .average-time,.agents-summary,.contactnets-queued {
+                  canvas{
+                    display: none;
+                  }
+                  width: 0;
+                  height: 0;
+                  overflow: hidden;
+                  @include transition(all .3s ease-in);
+                }
+              }
+            }
+            .tg-chart,.tg-queue,.tg-summary{
+              opacity: .4;
+            }
+          }
+
+      }
+    }
+}

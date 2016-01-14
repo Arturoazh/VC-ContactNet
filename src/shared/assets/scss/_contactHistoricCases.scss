@@ -1,0 +1,341 @@
+#mainContentContainer {
+  .main {
+    .cell {
+      &:nth-child(2) {
+        #mainContent {
+          .boxes {
+            &:nth-child(2) {
+              &.contact-detail-cases {
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin contactIssuesWidths() {
+  li {
+    text-align: center;
+    padding: 0 !important;
+
+    a {
+      display: inline-block;
+      font-size: 1em;
+      color: #000 !important;
+      text-align: center;
+      height: 30px !important;
+      line-height: 30px !important;
+      margin: 0;
+      list-style: none;
+      outline: 0;
+      border: 0;
+      width: auto !important;
+      background: none !important;
+    }
+
+    &:nth-child(1) {
+      width: 36%;
+    }
+    &:nth-child(2) {
+      width: 30%;
+    }
+    &:nth-child(3) {
+      width: 11%;
+    }
+    &:nth-child(4) {
+      width: 23%;
+    }
+  }
+}
+
+#mainContent {
+  .boxes {
+    &.contact-detail-cases {
+
+      .historic, .cases {
+        position: relative;
+        .case-actions {
+          border-bottom: 1px solid $module-accent;
+          position: relative;
+
+          a {
+            float: right;
+            width: 51px;
+            line-height: 51px;
+            text-align: center;
+            color: $primary-color;
+            font-size: 2em;
+            border-left: 1px solid $module-border;
+            cursor: pointer;
+            text-decoration: none;
+            img {
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      .historic {
+        .buttons {
+          display: table-row;
+          width: 100%;
+          height: 0;
+          overflow: hidden;
+          position: relative;
+          @include transition(height 0.3s);
+          .content {
+            @include transition(height 0.3s);
+            display: block;
+            overflow: hidden;
+            bottom: 0;
+            left: 0;
+            height: 0;
+          }
+          &.open {
+            height: 65px;
+            .content {
+              height: 65px;
+            }
+          }
+          .md-button {
+            float: right;
+            margin-top: 14px;
+            background: $primary-color;
+            color: $inverse-primary;
+            span {
+              font-size: 0.9em;
+              padding: 0 35px;
+            }
+          }
+        }
+        .new-case-field {
+          display: block;
+          height: 0;
+          @include transition(height 0.3s);
+          background: $primary-color;
+          width: 100%;
+          overflow: hidden;
+          &.open {
+
+            height: 75px;
+          }
+          .table {
+            width: 80%;
+            height: 100%;
+            margin-top: 3px;
+
+            margin-left: 5%;
+            label {
+              color: $inverse-primary;
+            }
+            md-input-container {
+              .md-input {
+                border-color: $inverse-primary;
+                color: $inverse-primary;
+              }
+            }
+          }
+        }
+        .modal {
+          position: absolute;
+          background: $inverse-primary;
+          z-index: 100;
+          top: 51px;
+          right: 0;
+          width: 200px;
+          height: 200px;
+          overflow: hidden;
+          visibility: hidden;
+          opacity: 0;
+          @include transition(opacity 0.3s, visibility 0.3s);
+          box-shadow: 0 2px 8px 2px $module-border;
+          &.open {
+            opacity: 1;
+            visibility: visible;
+          }
+          ul {
+            display: inline-block;
+
+            width: 100%;
+            li {
+              display: table;
+              width: 100%;
+              border-bottom: 1px solid $module-accent;
+
+              table-layout: fixed;
+              a {
+                cursor: pointer;
+                display: table-cell;
+                vertical-align: middle;
+                height: 51px;
+                padding: 0 10%;
+                &:hover {
+                  background: $module-border;
+                }
+              }
+            }
+          }
+
+        }
+
+        .title {
+          height: 51px;
+          border-bottom: 1px solid $module-accent;
+          ul {
+            li {
+              display: inline-block;
+              text-align: center;
+              width: 50%;
+              a {
+                display: inline-block;
+                font-size: 1em;
+                color: $black;
+                text-align: center;
+                padding: 0 15%;
+                border: 0;
+                width: auto;
+                &:hover, &.active {
+                  border-bottom: 2px solid $primary-color;
+                  background: none;
+                }
+              }
+            }
+          }
+        }
+        .title.contactIssuesList {
+          @include contactIssuesWidths();
+          padding: 2em;
+        }
+
+        .title.headerContactIssues {
+          a {
+            height: 24px;
+            line-height: 28px;
+          }
+        }
+        .rows {
+          display: table;
+          height: 100%;
+          width: 100%;
+          position: relative;
+          overflow: hidden;
+          .scroll {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            .block {
+              display: block;
+              height: 51px;
+              width: 100%;
+              border-bottom: 1px solid $module-border;
+              &:hover {
+                background: $module-border;
+              }
+              ul {
+                display: table;
+                cursor: pointer;
+                width: 100%;
+
+                li {
+                  display: table-cell;
+                  vertical-align: middle;
+                  table-layout: fixed;
+                  height: 51px;
+                  md-radio-button {
+                    display: table-cell;
+                    height: 51px;
+                    padding-left: 16px;
+                    margin: 0;
+                    width: 41px;
+                    .md-container {
+                      display: table;
+                      top: 26px;
+                      left: 15px;
+                      .md-on {
+                        background-color: $primary-color;
+
+                      }
+                      .md-off {
+                        border-color: $primary-color;
+                      }
+                    }
+                    .md-label {
+                      display: table;
+                      margin: 0;
+
+                      padding: 0;
+                      table-layout: fixed;
+                      width: 90%;
+
+                    }
+                    span {
+                      /*overflow: hidden;
+                      display: table-cell;
+                      text-overflow: ellipsis;
+                      -o-text-overflow: ellipsis;
+                      white-space: nowrap;
+                      padding-left: 25px;
+                      vertical-align: top;
+                      font-weight: bold;*/
+                    }
+                    &.md-checked .md-icon,
+                    &:not([disabled]).md-warn.md-checked .md-icon {
+                      background-color: $primary-color;
+                    }
+                  }
+                  &:nth-child(1) {
+                    div.table-fixed {
+                      display: table;
+                      table-layout: fixed;
+                      vertical-align: middle;
+                      width: 95%;
+                    }
+
+                    a {
+                      color: $black;
+                      text-decoration: none;
+                      padding-left: 10px;
+                      overflow: hidden;
+                      display: table-cell;
+                      text-overflow: ellipsis;
+                      -o-text-overflow: ellipsis;
+                      white-space: nowrap;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                  }
+
+                  &:nth-child(2) {
+                    div {
+                      display: table;
+                      width: 100%;
+                      table-layout: fixed;
+                      p {
+                        overflow: hidden;
+                        display: table-cell;
+                        text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                        width: 100%;
+                        white-space: nowrap;
+                        padding-left: 18px;
+
+                      }
+                    }
+                    img {
+                      margin-right: 6px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .contactIssuesList {
+          @include contactIssuesWidths();
+        }
+      }
+    }
+  }
+}

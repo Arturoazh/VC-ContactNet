@@ -1,0 +1,23 @@
+#content{
+  height: 100%;
+  display: table-row;
+  width: 100%;
+}
+.cell{
+  display:table-cell;
+  vertical-align: top;
+}
+
+.right{float:right;}
+
+@import 'leftSidebar';
+@import 'mainContent';
+@import 'rightSidebar';
+
+@media only screen and (max-width: 1124px) {
+  .leftSidebarRow{
+    .tiempoEspera{
+      clear:left; float:left; width:100%;
+    }
+  }
+}

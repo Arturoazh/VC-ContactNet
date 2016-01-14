@@ -1,0 +1,151 @@
+// FontFaces
+@font-face {
+  font-family: 'Asap';
+  src: url('./assets/fonts/Asap-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Asap-Bold';
+  src: url('./assets/fonts/Asap-Bold.ttf') format('truetype');
+}
+
+radial-progress {
+  position: relative;
+  display: inline-block;
+  width: 76px;
+  height: 76px;
+
+  md-progress-circular {
+    position: absolute;
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    .md-spinner-wrapper {
+      width: 100%;
+      height: 100%;
+      .md-inner {
+        width: 100%;
+        height: 100%;
+        .md-gap {
+          display:none;
+          left:49%;
+          right:49%;
+          border-color: #5452d9;
+        }
+        .md-left {
+          width: 50%;
+          height: 100%;
+          .md-half-circle{
+            width: 76px;
+            height: 100%;
+            border-left-color: #5452d9;
+            border-top-color: #5452d9;
+          }
+        }
+        .md-right {
+          width: 50%;
+          height: 100%;
+          .md-half-circle{
+            width: 76px;
+            height: 100%;
+            border-right-color: #5452d9;
+            border-top-color: #5452d9;
+          }
+        }
+      }
+    }
+    &.overload {
+        -webkit-animation: mfadein 800ms;
+        -moz-animation: mfadein 800ms;
+        -ms-animation: mfadein 800ms;
+        -o-animation: mfadein 800ms;
+        animation: mfadein 800ms;
+      .md-inner {
+        .md-gap {
+          border-color: #f84e61;
+        }
+        .md-left {
+          .md-half-circle {
+            border-left-color: #f84e61;
+            border-top-color: #f84e61;
+          }
+        }
+        .md-right {
+          .md-half-circle {
+            border-right-color: #f84e61;
+            border-top-color: #f84e61;
+          }
+        }
+      }
+    }
+  }
+
+  div.radialBackground {
+          -webkit-animation: fadein 2200ms;
+        -moz-animation: fadein 2200ms; /* Firefox < 16 */
+        -ms-animation: fadein 2200ms; /* Internet Explorer */
+        -o-animation: fadein 2200ms; /* Opera < 12.1 */
+        animation: fadein 2200ms;
+    position: absolute;
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #dde2e7;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+
+  span {
+    position: absolute;
+    left:0;
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    line-height: 76px;
+    font: {
+      family: 'Asap-Bold';
+      size: 20pt;
+    }
+    color: #333333;
+
+    &.alert {
+      color: #f84e61;
+    }
+  }
+
+  &.small {
+    width: 40px;
+    height: 40px;
+
+    md-progress-circular.md-spinner-wrapper.md-inner {
+      .md-gap {
+        border-color: #7477e1;
+      }
+      .md-left {
+        .md-half-circle{
+          width: 40px;
+          border-left-color: #7477e1;
+          border-top-color: #7477e1;
+        }
+      }
+      .md-right {
+        .md-half-circle{
+          width: 40px;
+          border-right-color: #7477e1;
+          border-top-color: #7477e1;
+        }
+      }
+    }
+
+    div.radialBackground {
+      border: 3px solid #515761;
+    }
+
+    span {
+      font-size: 14.5pt;
+      color: $inverse-primary;
+    }
+  }
+}

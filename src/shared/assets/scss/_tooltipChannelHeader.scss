@@ -1,0 +1,204 @@
+#header{
+  .channels{
+    a.active:hover {
+        background-color: $secundary-intense;
+        .tooltip-channel{
+          visibility: visible;
+          opacity: 1;
+          transition: opacity 0.3s, visibility 0.3s;
+        }
+      }
+    .tooltip-channel{
+
+      box-shadow: 0 0 32px -4px rgba(0, 0, 0, 0.46);
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+      position:absolute;
+      width: 425px;
+      right: -52px;
+      background: $inverse-primary;
+      z-index: 1000;
+      .table{
+        display: table;
+        width:100%;
+        .header{
+          display: table-row;
+          width:100%;
+          background: $primary-color;
+           div{
+            display: inline-block;
+            height:40px;
+            color: $inverse-primary;
+            font-size: 0.9em;
+
+            vertical-align: middle;
+            padding-top: 6px;
+            width:100%;
+            span{
+              position: relative;
+              background: none;
+              border: 0;
+              border-radius: 0;
+              float:right;
+              top: 0;
+              right: 0;
+              left: 0;
+              margin-right:3%;
+              margin-top: 6px;
+              font-size: 1em;
+            }
+
+            img{
+              display: inline-block;
+              vertical-align: middle;
+              margin: 0  3%;
+            }
+          }
+        }
+      }
+      &:before, &:after{
+        bottom: 100%;
+        left: 339px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        z-index: 1000;
+      }
+      &:after{
+        border-bottom-color: $primary-color;
+        border-width: 10px;
+        margin-left: -10px;
+      }
+    }
+    .btn{
+      display: table-row;
+      width:100%;
+      background: $primary-color;
+      height:36px;
+      vertical-align: middle;
+
+      a.ver-todos{
+        font-size: 0.8em;
+        display: table-cell;
+        color: $inverse-primary;
+        border: 0;
+        background: $secundary-low;
+        text-decoration: none;
+        width:100%; text-align: center;
+
+        height:40px;
+        &:hover{
+          background: $black;
+        }
+
+      }
+    }
+    .rows{
+      display: block;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      &.one{
+        height: 60px;
+        border-bottom: 10px solid $secundary-low;
+      }
+      &.two{
+        height: 120px;
+        border-bottom: 10px solid $secundary-low;
+      }
+      &.all{
+        height: 180px;
+      }
+      &.more{
+        height: 480px;
+      }
+      .scroll{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .row{
+        display: table;
+        cursor: pointer;
+        padding-top: 10px;
+        height: 50px;
+        div{
+          display: table-cell;
+          vertical-align: middle;
+          table-layout: fixed;
+          &.thumbnail{
+            width: 50px;
+            text-align:center;
+
+            img{
+              margin: 15px auto;
+            }
+          }
+          &.time{
+            vertical-align: top;
+            text-align: right;
+            padding-right: 10px;
+            span{
+              left: 0;
+              color: $module-text;
+
+            }
+          }
+          &.voice{
+            vertical-align: middle;
+            font-size:1.3em;
+            width:100px;
+            text-align: center;
+            span{
+              left: 0;
+              color:$primary-color;
+              top: 0;
+
+
+            }
+          }
+          a{
+            height: auto;
+            line-height: normal;
+            border: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 90%;
+            overflow: hidden;
+            &:hover{
+              background: none;
+            }
+          }
+
+          span{
+            position: relative;
+            background: none;
+            border: 0;
+            border-radius: 0;
+          }
+          &.name-contactnet{
+            width: 225px;
+            font-size: 0.8em;
+            a{
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            a.name{
+              color: $secundary;
+            }
+            a.contactnet{
+              color:$primary-color;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

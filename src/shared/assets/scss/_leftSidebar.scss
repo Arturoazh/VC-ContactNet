@@ -1,0 +1,268 @@
+/*--- left sidebar */
+@import 'leftScroll';
+#leftSidebar
+{
+  background-color: $secundary;
+  color: $inverse-primary;
+  top: 0;
+  display:table;
+  width:100%;
+  height:100%;
+  position:relative;
+  .timeline{
+    display: table;
+    width:100%;
+    height:100%;
+    opacity: 1;
+    @include transition(opacity .2s);
+    &.ng-hide{
+      opacity: 0;
+
+    }
+  }
+  &.close{
+    width:59px;
+  }
+  .title
+  {
+    height: 21px;
+    display:table-row;
+    a{
+      display: inline-block;
+      padding: 20px 0 20px 4%;
+      width:96%;
+      border-bottom:1px solid $secundary-low;
+      text-decoration: none;
+      color: $inverse-primary;
+      cursor: pointer;
+      img{
+        display: inline-block;
+        margin-top:5px;
+      }
+      span{
+        margin-left: 4%;
+        display: inline-block;
+      }
+    }
+
+  }
+  .name{
+    height: 41px;
+    display:table-row;
+    a
+    {
+      display: inline-block;
+      cursor: pointer;
+      color: $inverse-primary;
+      width:100%;
+      height:51px;
+      text-decoration: none;
+      border-bottom: 1px solid $secundary-low;
+      vertical-align:middle;
+      position:relative;
+      table-layout: fixed;
+      img{
+      }
+      span{
+        display: table-cell;
+        vertical-align:middle;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-left: 1px solid $secundary-low;
+        width: calc(95% - 51px);
+        height: 51px;
+        padding-left: 15px;
+        &:nth-child(1){
+          width: 41px;
+          border: 0;
+          text-align: center;
+          padding: 0;
+        }
+
+
+      }
+    }
+    a:hover {
+      background-color: #232529;
+    }
+    p{
+      padding: 20px 0 0 0;
+      width: auto;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow:hidden;
+    }
+  }
+}
+.leftBar{width:23%;}
+/*---------------------------*/
+@mixin typeChannelEntry() {
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
+  left: 2px;
+  text-align: center;
+  width: 80px;
+}
+
+.timeline{
+  width: 100%;
+  position:relative;
+  height:100%;
+  display: table;
+  z-index:10;
+
+  .timeline-content{
+    overflow: hidden;
+    position:absolute;
+    height:100%;
+    width:100%;
+  }
+  .row {
+    -webkit-animation: fadein 300ms;
+    -moz-animation: fadein 300ms; /* Firefox < 16 */
+    -ms-animation: fadein 300ms; /* Internet Explorer */
+    -o-animation: fadein 300ms; /* Opera < 12.1 */
+    animation: fadein 300ms;
+    padding-bottom:8px;
+    border-bottom: 1px solid $secundary-low;
+    width:100%;
+    display:table;
+    cursor:pointer;
+    &:hover{
+      background: $secundary-intense;
+    }
+    .ico{
+      display: table-cell;
+      height:100%;
+      width:55px;
+      text-align:center;
+      position:relative;
+
+      img{
+        position:absolute;
+        top:calc(50% - 12px);
+      }
+    }
+    .new{
+      @include typeChannelEntry();
+      color: $green-call;
+    }
+    .reply{
+      @include typeChannelEntry();
+      color: $primary-color;
+    }
+    .content{
+      margin-left: 28px;
+      height:auto;
+      position: relative;
+      p{
+
+        overflow: hidden;
+        white-space: nowrap;
+        width: auto;
+        text-overflow: ellipsis;
+        line-height: 1.1em;
+      }
+      p:first-child{
+        width:100%;
+      }
+      .contactNet {
+        padding: 11px 0 0;
+        text-decoration:none;
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: .8em;
+        color: #8b8c8d;
+        line-height: 0.8em;
+        display: table-cell;
+
+      }
+      .contactNet:hover {
+        color: $inverse-primary;
+      }
+      .cliente {
+        @extend .contactNet;
+        font-size: 0.7em;
+        color: $inverse-primary;
+        line-height: 0.9em;
+        float:none;
+      }
+      .from {
+        @extend .contactNet;
+        width:auto;
+        font-size: 0.7em;
+        color: #8688d7;
+        line-height: 1.3em;
+        display: inline-block;
+      }
+      .info {
+        @extend .from;
+        color: #8b8c8d;
+      }
+      .timer {
+        background: url('./assets/img/watch-icon-left-sidebar.png') 0 5px no-repeat;
+        text-decoration:none;
+        color: $inverse-primary;
+        padding:3px 12px 0 20px;
+        margin-top: 8px;
+        font-size: .7em;
+        display:table-cell;
+        top: 0; margin-right:15px;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        text-align:left;
+        overflow:hidden;
+        &:hover {
+          background: url('./assets/img/watch-icon-left-sidebar-on.png') 0 5px no-repeat ;
+        }
+
+      }
+      .cliente:hover, .mensaje:hover,
+      .mensajeTxt:hover{
+        text-decoration:underline;
+      }
+
+    }
+  }
+}
+@media all and (max-width: 1250px){
+  timeline{
+    .conversation {
+      .content{
+        .timer{
+          display: block;
+          margin-left: 0;
+          background-position: left center
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 1050px){
+  .timeline{
+    .conversation {
+      .content{
+        .timer, .info{
+          width:80%;
+          display: block;
+          margin-left: 0;
+
+        }
+        .timer{
+          background-position: left center
+        }
+        .contactNet {
+          width:70%;
+        }
+      }
+    }
+  }
+
+}
+
+@import 'contactnetsList';
+@import 'timelineClose';

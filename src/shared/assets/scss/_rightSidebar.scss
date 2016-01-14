@@ -1,0 +1,114 @@
+#rightSidebar{
+  display:table;
+  overflow: hidden;
+  width:100%;
+  height:100%;
+  background-color: $secundary;
+  vertical-align: top;
+  color: $inverse-primary;
+  .content{
+    display:table;
+    width:100%;
+  }
+  .center{
+    text-align:center;
+  }
+  .middle{
+    display:table;
+    width:100%;
+    background: $secundary;
+    padding: 18px 0;
+    a.menu{
+      display:table-cell;
+      vertical-align:middle;
+      width:100%;
+      img{
+        margin: 0 auto;
+      }
+    }
+  }
+  .agent{
+    display:table;
+    width:100%;
+    padding:6px 0 6px 0;
+    .center{
+      display: table;
+      text-align:center;
+      width:100%;
+
+    }
+    a{
+      display:table;
+      vertical-align:middle;
+      margin: 0 auto;
+      width:auto;
+      text-decoration:none;
+      span{
+        border-radius: 50%;
+        display:table;
+        height: 9px;
+        margin-left:27px;
+        width: 9px;
+        z-index: 12;
+        &.green{
+          background-color: $success;
+        }
+        &.red{
+          background-color: $alert;
+        }
+        &.nopic{
+          @extend .nopic;
+          margin: 0;
+        }
+      }
+      img{
+        border-radius: 50%;
+        color: $main-background;
+        display: table-cell;
+        height: 35px;
+        position: relative;
+        width: 35px;
+        &.border-red{
+           border: 2px solid $alert;
+        }
+      }
+
+
+    }
+
+  }
+  .agent.disconected{
+    background: $secundary-low;
+  }
+  /*******************when is opened */
+  .title-search{
+    display: table-row;
+    width:100%;
+
+    height:61px;
+
+    vertical-align:middle;
+    a{
+      display: inline-block;
+      padding-top:20px;
+      padding-left: 20px;
+      cursor: pointer;
+      img{
+        margin-right:10px;
+      }
+    }
+    a.search{
+      float:right;
+    }
+  }
+}
+
+@import 'agentStatusSelector';
+@import 'agentDataOpen';
+@import 'agentListClose';
+@import 'agentDetail';
+@import '_compareAgentsModal';
+@import 'clientsListClose';
+@import 'clientsListOpen';
+.rightBar{width:5%;background: $secundary;}
+.rightBar.close{width:59px;}

@@ -1,0 +1,388 @@
+.channelTool {
+  .supervisorsList {
+    cursor: pointer;
+    display: table-cell;
+    width: 19px;
+    vertical-align: middle;
+    text-align: left;
+    color: #fff;
+  }
+  .emojis {
+    .scroll.ps-container {
+      cursor: pointer;
+    }
+  }
+
+  #emojis-button-chat, #emojis-button-internal {
+    position: absolute;
+  }
+
+  #emojis-button-chat {
+    bottom: 12%;
+    right: 2%;
+  }
+
+  #emojis-button-internal {
+    bottom: 1%;
+    right: 3%;
+  }
+
+  &.chat {
+    left: 33%;
+    bottom: 78%;
+    &.internal {
+      left: 55%;
+    }
+    .boxAgents {
+      .headerAgents {
+        height: 75px;
+      }
+    }
+
+    .for-minimize {
+      left: 0;
+      width: 350px;
+      height: 445px;
+      top: 0;
+    }
+
+    .block {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75) !important;
+    }
+    .header {
+      height: 10%;
+      background: $secundary-low;
+      width: 100%;
+      display: table;
+      table-layout: fixed;
+      a, span, p {
+        display: table-cell;
+      }
+      a {
+        cursor: pointer;
+        width: 19px;
+        vertical-align: middle;
+        text-align: left;
+        color: $inverse-primary;
+        img {
+          margin: 0 10px;
+        }
+        &:nth-child(2) {
+          width: 100%;
+        }
+      }
+      p {
+        color: $inverse-primary;
+        line-height: 38px;
+        width: 255px;
+      }
+      &.transfer {
+        height: 60px;
+        background: none;
+        img {
+          margin-left: 10%;
+        }
+      }
+    }
+
+    .messages {
+
+      position: relative;
+      overflow: hidden;
+      height: 85%;
+
+      .scroll {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .row {
+          @include border-radius(5px);
+          display: block;
+          padding: 2%;
+          font-size: .8em;
+          margin: 5px 0 0 2%;
+          width: 80%;
+          color: $inverse-primary;
+          /* margin-left: 5%;*/
+
+          /* if it's not response */
+          background: $primary-color-lowest;
+          float: left;
+          text-align: left;
+
+          .from-date {
+            display: block;
+            width: 94%;
+            margin-left: 2%;
+            color: $primary-color-intense;
+            .nowrap {
+              display: inline-block;
+              width: 220px;
+            }
+            span {
+              float: right;
+            }
+          }
+          /*
+            div.body{
+              margin-top: 10px;
+              display: inline-block;
+              width: 90%;
+
+            }
+          */
+          div.body {
+            width: 88%;
+            margin-left: 2%;
+          }
+
+          &.response {
+            float: right;
+            margin-right: 2%;
+            background: $primary-color;
+            .from-date {
+              color: $inverse-primary;
+            }
+            .direct {
+              text-align: right;
+              width: 95%;
+            }
+          }
+          a {
+            color: $inverse-primary;
+          }
+        }
+      }
+
+      .info{
+        text-align: center !important;
+        color: $module-text !important;
+        background: transparent !important;
+        width: 90% !important;
+        bottom: 0 !important;
+        a{
+          cursor: pointer;
+          color: darken($module-text,10%) !important;
+        }
+      }
+
+    }
+    .actions {
+      display: table-row;
+      height: 20%;
+      .table {
+        border-top: 1px solid $module-border;
+        textarea {
+          width: 94%;
+          display: block;
+          height: 78%;
+          margin: 3%;
+          border: 0;
+          resize: none;
+          color: $module-text;
+          font-size: .8em;
+        }
+        div {
+          color: $module-text;
+          height: 100%;
+          font-size: .8em;
+          padding: 5px;
+        }
+        md-select {
+          display: table-footer-group;
+          margin: 0;
+          .md-select-value.md-select-placeholder {
+            display: inline-flex;
+            color: rgba(0,0,0,0.5);
+          }
+        }
+      }
+
+    }
+    .boxCall {
+      display: table-row;
+
+      height: 61px;
+      width: 100%;
+
+      a {
+        cursor: pointer;
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background: $green-call;
+        transition-duration: 0.3s;
+        &:hover {
+          background: $green-call-light;
+        }
+        &.close {
+          background: $red-call;
+          &:hover {
+            background: $red-call-light;
+          }
+          img {
+            margin-top: 7%;
+          }
+        }
+        img {
+          margin-top: 4%;
+        }
+      }
+    }
+    .transferir {
+      .boxCall {
+        a {
+          background: $primary-color;
+          color: $inverse-primary;
+          line-height: 61px;
+          font-size: 1.2em;
+          text-decoration: none;
+          transition-duration: 0.3s;
+          &:hover {
+            background: $primary-color-low;
+          }
+        }
+
+      }
+    }
+    .do-more {
+      position: absolute;
+      right: 0;
+      bottom: 52px;
+      color: $main-background;
+      background: $secundary-low;
+      width: 180px;
+      padding-top: 10px;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s .1s, all .1s linear;
+      &.open {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+      }
+      ul {
+        display: block;
+        li {
+          display: block;
+          &:nth-child(1) {
+            a {
+              background: url('./assets/img/upload-icon.png') 8px center no-repeat;
+            }
+          }
+          &:nth-child(2) {
+            a {
+              background: url('./assets/img/icon-mensajes-transparent.png') 8px center no-repeat;
+            }
+          }
+/*        &:nth-child(3) {
+            display: none;
+            a {
+              background: url('./assets/img/alarm-bell-icon-grey.png') 8px center no-repeat;
+            }
+          }*/
+          &:nth-child(3) {
+            a {
+              background: url('./assets/img/transferir-icon.png') 8px center no-repeat;
+            }
+          }
+          &:nth-child(4) {
+            a {
+              background: url('./assets/img/icon-cerrar-caso.png') 8px center no-repeat;
+            }
+          }
+          a {
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+            height: 31px;
+            line-height: 31px;
+            padding-left: 36px;
+            font-size: .9em;
+            margin-left: 10px;
+            color: $module-border;
+            &:hover {
+              color: $main-background;
+            }
+          }
+          md-select {
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+    .footer {
+      display: table-row;
+      height: 52px;
+      border-top: 1px solid $module-border;
+      background: $secundary-low;
+      font-size: .8em;
+      .cell {
+        display: table-cell;
+        vertical-align: middle;
+        height: 25px;
+        width: 30%;
+        &:nth-child(1) {
+          width: 50%;
+        }
+        &:nth-child(2) {
+          width: 50%;
+        }
+        a {
+          display: block;
+          color: $module-border;
+          cursor: pointer;
+          text-decoration: blink;
+          &.comentar {
+            margin-left: 15px;
+          }
+          span, img {
+            vertical-align: middle;
+          }
+          img {
+            margin: 0 5px 0 5px;
+          }
+        }
+        .md-button.md-icon-button {
+          width: 15px;
+        }
+      }
+    }
+    form {
+      .list-agents {
+        width: 96%;
+        margin-left: 2%;
+        height: 305px;
+      }
+      .boxExternalPhone {
+        border-bottom: 0;
+      }
+      ul {
+        padding-top: 0;
+        li {
+          width: 308px;
+
+          md-checkbox {
+            .md-label {
+              div {
+                width: 280px;
+              }
+              span {
+                &.name {
+                  width: 270px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+#modal-new-contact{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  @include transition (opacity .3s);
+  &.fadein{
+    opacity: 1;
+    pointer-events: all;
+  }
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .box {
+    width: 55%;
+    height: 65%;
+    margin: 10% auto;
+    position: relative;
+    background: $inverse-primary;
+    display: table;
+    z-index: 90;
+    border: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    .row{
+      &.buttons{
+        display: inline-block;
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        .cell{
+          float: right;
+          .md-button{
+            color: $main-background;
+            font-size: 0.8em;
+            padding: 8px 30px;
+            &:nth-child(1){
+              background: $secundary-low;
+            }
+            &:nth-child(2){
+              background: $primary-color;
+            }
+          }
+        }
+      }
+    }
+    .title{
+      background: $primary-color;
+      color: $inverse-primary;
+      font-weight: bold;
+      display: table-row;
+      height: 60px;
+      line-height: 60px;
+      padding-left: 20px;
+      p{
+        padding: 0 !important;
+        margin-left: 30px;
+      }
+    }
+    .table{
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      height: calc(100% - 68px);
+
+
+        form{
+          display: table;
+          position: relative;
+          overflow: auto;
+
+          width: 100%;
+          height: 100%;
+          .scroll{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .row{
+          display: inline-block;
+          width: 100%;
+
+          &.selection-principal{
+            padding-bottom: 12px;
+          }
+          .cell{
+            display: inline-block;
+            width: 29%;
+            margin-left: 3%;
+            margin-top: 20px;
+            md-select{
+              margin-top: 22px;
+            }
+            md-input-container{
+              padding: 0;
+            }
+            sup{
+              font-size: 0.7em;
+            }
+            .md-select-label{
+              width: 100%;
+            }
+          }
+          &:nth-child(4){
+            .cell{
+              float: right;
+              .md-button{
+                color: $main-background;
+                font-size: 0.8em;
+                padding: 8px 30px;
+                &:nth-child(1){
+                  background: $secundary-low;
+                }
+                &:nth-child(2){
+                  background: $primary-color;
+                }
+              }
+            }
+
+          }
+
+        }
+
+    }
+  }
+}
