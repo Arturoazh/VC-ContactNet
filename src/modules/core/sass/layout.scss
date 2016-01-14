@@ -15,7 +15,7 @@ body {
 		background: transparent;
     >#sidenavUserInfo{
       height: 185px;
-      background: grey;
+      background: $blueVC;
       div:first-child {
         >span {
           border-radius: 50%;
@@ -44,6 +44,9 @@ body {
     li {
       list-style: none;
       font-size: 0.85rem;
+      a, button {
+        text-transform: none;
+      }
     }
   }
 }
