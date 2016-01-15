@@ -1,12 +1,10 @@
 'use strict';
 
 var config = require('./config');
-//console.log('CONFIIIIIIG', config);
 
 module.exports = function (gulp, appPrefix, sharedPrefix) {
 
   require('./tasks/build-browserify')(gulp, appPrefix);
-  //console.log(require('./tasks/build-browserify')(gulp, appPrefix));
   require('./tasks/build-js')(gulp, appPrefix);
   require('./tasks/build-css')(gulp, appPrefix);
   require('./tasks/build-html')(gulp, appPrefix);
@@ -21,7 +19,6 @@ module.exports = function (gulp, appPrefix, sharedPrefix) {
     appPrefix + 'watch'
   ]);
 
-  //console.log(gulp);
 };
 
 
