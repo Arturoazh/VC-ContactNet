@@ -111,7 +111,7 @@
 			for (var i = 0; i < listJsons.length; i++) {
 				(function (e) {
 					var args = arguments;
-					$http.get('modules/core/services/mocks/json/'+args[0]+'.json').success(function(){
+					$http.get('/contactNetConfig/modules/core/services/mocks/json/'+args[0]+'.json').success(function(){
 						scope.bbdd[args[0]] = arguments[0];
 					});
 				}(listJsons[i]));
