@@ -23,5 +23,5 @@ module.exports = {
   host: '52.18.132.39',
   key: '/Users/'+__dirname.split('/')[2]+'/.ssh/tbs_multicanal',
   user: 'ec2-user',
-  remotePath: '/mnt/proyecto/proyecto_'+__dirname.split('/')[2]+__dirname.substr(__dirname.indexOf("/trunk/"))+'/'
+  remotePath: '/var/www/mamonteagudo_multicanal/code/INR-Platform/public/contactNetConfig'
 };
