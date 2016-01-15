@@ -1,3 +1,8 @@
+var UriConfigUser = {
+  mpeula : 'mamonteagudo',
+  azarzalejo : 'azarzalejo'
+};
+
 module.exports = {
   jsFiles: [
     'src/contactNetConfig/**/*.module.js',
@@ -20,5 +25,5 @@ module.exports = {
   host: '52.18.132.39',
   key: '/Users/'+__dirname.split('/')[2]+'/.ssh/tbs_multicanal',
   user: 'ec2-user',
-  remotePath: '/var/www/mamonteagudo_multicanal/code/INR-Platform/public/contactNetConfig'
+  remotePath: '/var/www/'+UriConfigUser[__dirname.split('/')[2]]+'_multicanal/code/INR-Platform/public/contactNetConfig'
 };
