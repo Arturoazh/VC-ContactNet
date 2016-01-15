@@ -12,11 +12,13 @@ var ngAnnotate = require('gulp-ng-annotate');
 var config = require('../config');
 
 module.exports = function (gulp, appPrefix) {
+
   gulp.task(appPrefix + 'build-browserify', function () {
 
-    return browserify(config.sharedFiles, {insertGlobals: false, debug: false})
+    console.log('CONFIG', config);
+    browserify(config.sourcePath)
       .bundle()
-      .pipe(source(config.sharedFiles))
+      .pipe(source(config.sourcePath), {insertGlobals: true, debug: false})
       .pipe(buffer())
       .pipe(ngAnnotate())
       .pipe(gulpif(!config.debug, uglify()))

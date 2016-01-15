@@ -1,4 +1,3 @@
-
 module.exports = {
   jsFiles: [
     'src/contactNetConfig/**/*.module.js',
@@ -15,9 +14,7 @@ module.exports = {
     'src/contactNetConfig/**/*.json',
     'src/contactNetConfig/**/*.svg'
   ],
-  sharedFiles: [
-    'src/shared/**/*.js'
-  ],
+  sourcePath: 'src/contactNetConfig/app.module.js',
   outputDir: 'dist/contactNetConfig',
 
   host: '52.18.132.39',
