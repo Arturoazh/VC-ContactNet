@@ -1,0 +1,28 @@
+[{
+ "multimediaId": 1,
+ "multimedia": "902 25 35 65",
+ "multimediaDummy": "atsistemas1@iramos.bymail.in",
+ "multimediaParams": {},
+ "channelId": 1,
+ "stakeholderCompanyId": 3,
+ "configurationId": null,
+ "configModificable": false
+},{
+ "multimediaId": 2,
+ "multimedia": "chat",
+ "multimediaDummy": "atsistemas1@iramos.bymail.in",
+ "multimediaParams": {},
+ "channelId": 2,
+ "stakeholderCompanyId": 3,
+ "configurationId": null,
+ "configModificable": false
+},{
+ "multimediaId": 3,
+ "multimedia": "atsistemas1@tbs.com",
+ "multimediaDummy": "atsistemas1@iramos.bymail.in",
+ "multimediaParams": {},
+ "channelId": 3,
+ "stakeholderCompanyId": 3,
+ "configurationId": null,
+ "configModificable": false
+}]

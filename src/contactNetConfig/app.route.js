@@ -12,26 +12,26 @@
 			.state('contactnets', {
 				// url: "/",
 				abstract:true,
-				templateUrl: "layout.html",
+				templateUrl: "/contactNetConfig/layout.html",
 				// controller: "contactNetsController"
 			})
 			.state('contactnets.contatNetConfig', {
 				url: "/contactnets",
-				templateUrl: "modules/contactNets/contactNets.html",
+				templateUrl: "/contactNetConfig/modules/contactNets/contactNets.html",
 				controller: "contactNetsController"
 			})
 			.state('contactnets.channels', {
 				url: "/channels",
-				templateUrl: "modules/channels/channels.html",
+				templateUrl: "/contactNetConfig/modules/channels/channels.html",
 				controller: "channelsController"
 			})
 			.state('contactnets.rules', {
 				url: "/rules",
-				templateUrl: "modules/rules/rules.html",
+				templateUrl: "/contactNetConfig/modules/rules/rules.html",
 				controller: "rulesController"
 			});
 
-		$urlRouterProvider.otherwise("/");
+		$urlRouterProvider.otherwise("/contactnets");
 			
   }
 

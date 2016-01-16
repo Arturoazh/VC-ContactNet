@@ -32,22 +32,22 @@
 
 
 	  $mdIconProvider
-      .icon('add', 'assets/icons/add.svg')
-      .icon('arrow_downward', 'assets/icons/arrow_downward.svg')
-      .icon('arrow_upward', 'assets/icons/arrow_upward.svg')
-      .icon('menu', 'assets/icons/menu.svg')
-      .icon('more_vert', 'assets/icons/more_vert.svg')
-      .icon('contactnets', 'assets/icons/contactnets.svg')
-      .icon('channels', 'assets/icons/channels.svg')
-      .icon('rules', 'assets/icons/rules.svg')
-			.icon('twitter', 'assets/icons/twitter.svg')
-      .icon('mail', 'assets/icons/mail.svg')
-      .icon('message', 'assets/icons/message.svg')
-      .icon('phone', 'assets/icons/phone.svg')
-      .icon('shape', 'assets/icons/shape.svg')
-      .icon('insert', 'assets/icons/insert-drive-file.svg')
-      .icon('edit', 'assets/icons/edit.svg')
-			.icon('delete', 'assets/icons/delete.svg');
+      .icon('add', '/contactNetConfig/assets/icons/add.svg')
+      .icon('arrow_downward', '/contactNetConfig/assets/icons/arrow_downward.svg')
+      .icon('arrow_upward', '/contactNetConfig/assets/icons/arrow_upward.svg')
+      .icon('menu', '/contactNetConfig/assets/icons/menu.svg')
+      .icon('more_vert', '/contactNetConfig/assets/icons/more_vert.svg')
+      .icon('contactnets', '/contactNetConfig/assets/icons/contactnets.svg')
+      .icon('channels', '/contactNetConfig/assets/icons/channels.svg')
+      .icon('rules', '/contactNetConfig/assets/icons/rules.svg')
+			.icon('twitter', '/contactNetConfig/assets/icons/twitter.svg')
+      .icon('mail', '/contactNetConfig/assets/icons/mail.svg')
+      .icon('message', '/contactNetConfig/assets/icons/message.svg')
+      .icon('phone', '/contactNetConfig/assets/icons/phone.svg')
+      .icon('shape', '/contactNetConfig/assets/icons/shape.svg')
+      .icon('insert', '/contactNetConfig/assets/icons/insert-drive-file.svg')
+      .icon('edit', '/contactNetConfig/assets/icons/edit.svg')
+			.icon('delete', '/contactNetConfig/assets/icons/delete.svg');
 
   }
 

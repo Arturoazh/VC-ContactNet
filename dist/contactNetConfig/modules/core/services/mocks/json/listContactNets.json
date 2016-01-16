@@ -1,0 +1,33 @@
+[{
+	"id": 464, 
+	"description": "Cola IO Edu 2",
+	"queueType": "BOTH", 
+	"isACD": 1, 
+	"modificable": true,
+	"channels": { 
+		"2": 2, 
+		"3": 3
+	} 
+},{
+	"id": 465, 
+	"description": "Cola IO Edu 3",
+	"queueType": "BOTH", 
+	"isACD": 1, 
+	"modificable": true,
+	"channels": { 
+		"1": 1, 
+		"2": 2	
+	} 
+},{
+	"id": 463,
+	"description": "Cola IO Edu",
+	"queueType": "BOTH", 
+	"isACD": 1, 
+	"modificable": true,
+	"channels": { 
+		"1": 1, 
+		"2": 2, 
+		"3": 3
+	} 
+}]
+

@@ -1,0 +1,405 @@
+[{
+	"id": 463,
+	"description": "Cola IO Edu",
+	"queueType": "BOTH",
+	"isACD": true,
+	"arrDestination": [{
+		"Agent_Id": 1,
+		"User_Id_fk": 9,
+		"PINCode": "", 
+		"StakeHolderOwner_Id_fk": 3, 
+		"ACDStatus": 0,
+		"Login": "cthivat@telecoming.com", 
+		"Name": "Cyrille",
+		"Surname": "Thivat", 
+		"ACDDescription": "OFFLINE", 
+		"StatusType": "OFFLINE"
+	},{
+		"Agent_Id": 714388, 
+		"User_Id_fk": 1470, 
+		"PINCode": "", 
+		"StakeHolderOwner_Id_fk": 3, 
+		"ACDStatus": 0,
+		"Login": "flashphonetest@telecoming.com", 
+		"Name": "flashphonetest",
+		"Surname": "test",
+		"ACDDescription": "OFFLINE", 
+		"StatusType": "OFFLINE"
+	},{
+		"Agent_Id": 714389, 
+		"User_Id_fk": 3,
+		"PINCode": "", 
+		"StakeHolderOwner_Id_fk": 3, 
+		"ACDStatus": 0,
+		"Login": "jmenendez@telecoming.com", 
+		"Name": "Javier",
+		"Surname": "Menéndez", 
+		"ACDDescription": "OFFLINE", 
+		"StatusType": "OFFLINE"
+	},{
+		"Agent_Id": 715261, 
+		"User_Id_fk": 1664, 
+		"PINCode": "", 
+		"StakeHolderOwner_Id_fk": 3, 
+		"ACDStatus": 0,
+		"Login": "tdmtest@telecoming.com", 
+		"Name": "tdmtest",
+		"Surname": "tdmtest", 
+		"ACDDescription": "OFFLINE", 
+		"StatusType": "OFFLINE"
+	},{
+		"Agent_Id": 715262, 
+		"User_Id_fk": 1668, 
+		"PINCode": "", 
+		"StakeHolderOwner_Id_fk": 3, 
+		"ACDStatus": 0,
+		"Login": "webrtc2@telecoming.com", 
+		"Name": "webrtc2",
+		"Surname": "webrtc2", 
+		"ACDDescription": "OFFLINE", 
+		"StatusType": "OFFLINE"
+	},{
+		"Agent_Id": 715260, 
+		"User_Id_fk": 1663, 
+		"PINCode": "", 
+		"StakeHolderOwner_Id_fk": 3, 
+		"ACDStatus": 0,
+		"Login": "webrtc@telecoming.com", 
+		"Name": "webrtc",
+		"Surname": "webrtc", 
+		"ACDDescription": "OFFLINE", 
+		"StatusType": "OFFLINE"
+	}],
+	"campaign": {
+		"id": 19,
+		"dialerId": -1,
+		"description": "Cola IO Edu", "model": [],
+		"data": [],
+		"status": 1,
+		"modificable": true
+	},
+	"contactTemplateId": 1,
+	"attrs": [],
+	"agents": [{
+		"id": 138226,
+		"name": "vbiosca@telecoming.com",
+		"namePeople": "Victor Biosca",
+		"userId": 10,
+		"password": null,
+		"configurationId": null,
+		"acds": [],
+		"skills": [],
+		"hasSkills": 0,
+		"pincode": "",
+		"ACDStatus": 0,
+		"ha1": null,
+		"stakeholderCompanyId": 3,
+		"thumbnail": "/home/downloads/getagentimage?id=10",
+		"channels": [{
+			"channelId": 1,
+			"reserved": 0,
+			"active": 0,
+			"weight": 0,
+			"maxConcurrency": 1, 
+			"actualConcurrency": 0,
+			"stats": {
+				"awt": 0, 
+				"aat": 0, 
+				"atCount": 0
+			}, 
+			"voiceParams": {
+				"interface": "vbiosca.telecoming.com@192.168.1.117", 
+				"callId": null,
+				"nodeTrack": null,
+				"interfaceType": 4,
+				"alwaysLogged": 0,
+				"sendServiceTypeRequiredId": 265 
+			},
+			"activeConversations": []
+		},{
+			"channelId": 2, 
+			"reserved": 0,
+			"active": 0,
+			"weight": 0, 
+			"maxConcurrency": 10,
+			"actualConcurrency": 0, 
+			"stats": {
+				"awt": 0, 
+				"aat": 0, 
+				"atCount": 0
+			}, 
+			"voiceParams": {
+				"interface": null,
+				"callId": null,
+				"nodeTrack": null, 
+				"interfaceType": null, 
+				"alwaysLogged": null, 
+				"sendServiceTypeRequiredId": null
+			},
+			"activeConversations": []
+		},{
+			"channelId": 3, 
+			"reserved": 0,
+			"active": 0,
+			"weight": 0, 
+			"maxConcurrency": 100, 
+			"actualConcurrency": 0, 
+			"stats": {
+				"awt": 0, 
+				"aat": 0, 
+				"atCount": 0
+			}, 
+			"voiceParams": {
+				"interface": null,
+				"callId": null,
+				"nodeTrack": null, 
+				"interfaceType": null, 
+				"alwaysLogged": null, 
+				"sendServiceTypeRequiredId": null
+			},
+			"activeConversations": []
+		}],
+		"pendingConversations": [], 
+		"channelsCount": [], 
+		"lastStatusDuration": 0
+	}],
+	"agentsBySupervisors": [{
+		"supervisorId": 5,
+		"agentIds": [138226]
+	}],
+	"supervisors": [{
+		"id": 5,
+		"name": "apcinr@telecoming.com",
+		"namePeople": "Desarrollo NO BORRAR",
+		"userId": 5,
+		"password": null,
+		"configurationId": null,
+		"acds": [],
+		"skills": [],
+		"hasSkills": 0,
+		"pincode": 0,
+		"ACDStatus": 0,
+		"ha1": null,
+		"stakeholderCompanyId": 3,
+		"thumbnail": "/home/downloads/getagentimage?id=5", 
+		"channels": [],
+		"pendingConversations": [],
+		"channelsCount": [],
+		"lastStatusDuration": 0
+	}],
+	"modificable": true,
+	"status": [{
+		"id": 33,
+		"idMultiple": "",
+		"label": "Fumar",
+		"value": 33,
+		"modificable": false,
+		"iconNode": "",
+		"checked": 1
+	}],
+	"qualifications": [{
+		"id": 14,
+		"idMultiple": "", 
+		"label": "Good1", 
+		"value": "POSITIVE", 
+		"modificable": false, 
+		"iconNode": "", 
+		"checked": 1	
+	}],
+	"categories": [{
+		"id": 1,
+		"idMultiple": "", 
+		"label": "Alta Orange", 
+		"value": 1, 
+		"modificable": false, 
+		"iconNode": "", 
+		"checked": 1	
+	}],
+	"hasSkills": 0,
+	"skills": [],
+	"channels": { "1": 1,
+		"2": 2,
+		"3": 3 
+	},
+	"urlNotification": null,
+	"urlType": "NONE",
+	"urlSizeWidth": 800,
+	"urlSizeHeight": 600,
+	"thumbnail": "",
+	"stakeholderOwnerId": 3,
+	"voiceChannelParams": {
+		"moh": "1",
+		"advertFrequency": 10,
+		"automaticQueueBuffer": 1,
+		"timeout": 30,
+		"maxlength": 6,
+		"wrapupTime": 5,
+		"strategy": "ROUND_ROBIN",
+		"canHangUp": true,
+		"joinEmpty": "YES",
+		"averageTalkingTime": 0,
+		"tmWarning": 30,
+		"tmCritical": 60,
+		"outgoingConfiguration": {
+			"id": 2776,
+			"channelId": 1,
+			"autoWizard": 1,
+			"name": "Cola IO Edu",
+			"configTypeId": "OUT",
+			"firstLeafId": null,
+			"leaves": [],
+			"serviceTypeId": 1,
+			"callmonitoringnodes": [],
+			"outgoingConfig": [{
+				"ConfigName": "PARAM_AGENT_FIRST", 
+				"ConfigValue": "1",
+				"ConfigModificable": true	
+			},{
+				"ConfigName": "PARAM_ANI", 
+				"ConfigValue": "988049499", 
+				"ConfigModificable": true
+			},{
+				"ConfigName": "PARAM_SHORTNUMBERING_ID", 
+				"ConfigValue": "10",
+				"ConfigModificable": true
+			},{
+				"ConfigName": "PARAM_SHORTNUMBERING_MOH", 
+				"ConfigValue": "2975",
+				"ConfigModificable": true
+			},{
+				"ConfigName": "PARAM_SHORTNUMBERING_TYPE", 
+				"ConfigValue": "BOTH",
+				"ConfigModificable": true			
+			},{
+				"ConfigName": "PARAM_VOICERECORDING_MODE", 
+				"ConfigValue": "2",
+				"ConfigModificable": true	
+			},{
+				"ConfigName": "PARAM_VOICERECORDING_PERCENT", 
+				"ConfigValue": "100",
+				"ConfigModificable": true
+			},{
+				"ConfigName": "SERVICETYPE", 
+				"ConfigValue": "19", 
+				"ConfigModificable": true
+			},{
+				"ConfigName": "SERVICETYPE", 
+				"ConfigValue": "265", 
+				"ConfigModificable": false
+			},{
+				"ConfigName": "SERVICETYPE", 
+				"ConfigValue": "56", 
+				"ConfigModificable": true
+			},{
+				"ConfigName": "SERVICETYPE", 
+				"ConfigValue": "6", 
+				"ConfigModificable": true
+			},{
+				"ConfigName": "SERVICETYPE", 
+				"ConfigValue": "69", 
+				"ConfigModificable": true
+			},{
+				"ConfigName": "SERVICETYPE", 
+				"ConfigValue": "88",
+				"ConfigModificable": true
+			},{
+				"ConfigName": "SERVICETYPE", 
+				"ConfigValue": "96", 
+				"ConfigModificable": true	
+			}]
+		},
+		"notifications": null,
+		"survey": null
+	},
+	"chatChannelParams": {
+		"tmFirstMessage": 120,
+		"tmNextMessage": 120,
+		"timeOut": 300,
+		"tmWarning": 30,
+		"tmCritical": 60,
+		"strategy": "RANDOM",
+		"survey": null,
+		"autoReplies": [{
+			"id": 2,
+			"label": "Mensaje de Bienvenida", 
+			"message": {
+				"attachments": [{
+					"mime": "text/plain", 
+					"name": "oferton.txt", 
+					"path": "/inr/storage/recording/3/mediachannel/20151112/4550f594e60210f43b53a5f09fc74f72/oferton. txt",
+					"size": 32 
+				}],
+				"body": "Hola buenos dias, ¿en que puedo ayudarle?" 
+			},
+			"action": "" 
+		}]
+	},
+	"twitterChannelParams": {
+		"autoReplies": [], 
+		"tmFirstMessage": 0, 
+		"tmNextMessage": 0,
+		"timeOut": 0, 
+		"tmWarning": 30, 
+		"tmCritical": 60, 
+		"strategy": null, 
+		"survey": null
+	},
+	"emailChannelParams": {
+		"footer": "", 
+		"autoReplies": [], 
+		"tmFirstMessage": 120, 
+		"tmNextMessage": 120, 
+		"timeOut": 300, 
+		"tmWarning": 30, 
+		"tmCritical": 60, 
+		"strategy": "RANDOM", 
+		"survey": null,
+		"Array": [{
+			"id": 1,
+			"label": "Mensaje de Bienvenida", 
+			"message": {
+				"attachments": [{
+					"mime": "text/plain", 
+					"name": "oferton.txt", 
+					"path": "/inr/storage/recording/3/mediachannel/20151112/4550f594e60210f43b53a5f09fc74f72/oferton. txt",
+					"size": 32 
+				}],
+				"body": "<div style=\"text-align: center;\"><span style=\"font-size: xx- large; font-style: italic; font-weight: bold;\">Bienvenido [nombre del cliente]</span><br><div style=\"text-align: left;\"><span style=\"font-style: italic; font-weight: bold;\"><br></span></div><div style=\"text-align: left;\"><span style=\"font-style: italic; font- weight: bold;\">Te adjuntamos nuestras ofertas de alta</span></div><div style=\"text-align: left;\"><span style=\"font-style: italic; font-weight: bold;\"><br></span></div><div style=\"text-align: left;\"><span style=\"font-style: italic; font-weight: bold;\"><br></span></div><div style=\"text-align: right;\"><span style=\"font-style: italic; font-weight: bold;\">Un cordial saludo.</span></div></div>"
+			},
+			"action": "" 
+		}]
+	},
+	"voiceChannelStats": {
+		"averageTimeWait": 0, 
+		"averageTmc": 0, 
+		"totalCallsAnswered": 0, 
+		"totalCalls": 0, 
+		"totalCallsLost": 0
+	},
+	"chatChannelStats": {
+		"averageDelayTimeSinceFirstMessage": 0, 
+		"averageDelayTime": 0, 
+		"averageConversationTime": 0, 
+		"totalAnsweredConversations": 0, 
+		"totalConversations": 0, 
+		"totalLostConversations": 0
+	},
+	"emailChannelStats": {
+		"averageDelayTimeSinceFirstMessage": 0, 
+		"averageDelayTime": 0, 
+		"averageConversationTime": 0, 
+		"totalAnsweredConversations": 0, 
+		"totalConversations": 0, 
+		"totalLostConversations": 0
+	},
+	"twitterChannelStats": {
+		"averageDelayTimeSinceFirstMessage": 0, 
+		"averageDelayTime": 0, 
+		"averageConversationTime": 0, 
+		"totalAnsweredConversations": 0, 
+		"totalConversations": 0, 
+		"totalLostConversations": 0
+	},
+	"pendingConversations": [],
+	"channelsCount": []
+}]

@@ -1,0 +1,61 @@
+{
+	"MENU": {
+		"0":{
+			"name": "Nueva Configuración",
+			"href": "https://multichannel.virtualcenter360.es/ivr/flowchart",
+			"icon": "insert"
+		},
+		"1":{
+			"name": "Activar Numeración",
+			"href": "https://multichannel.virtualcenter360.es/ivr/configuration",
+			"icon": "edit"
+		},
+		"2":{
+			"name": "Repositorio",
+			"icon": "shape",
+			"views": {
+				"0": {
+					"name": "Destinos",
+					"href": "https://multichannel.virtualcenter360.es/ivr/contacts"
+				},
+				"1": {
+					"name": "Llamantes",
+					"href": "https://multichannel.virtualcenter360.es/ivr/callers"
+				},
+				"2": {
+					"name": "Horarios",
+					"href": "https://multichannel.virtualcenter360.es/ivr/time"
+				},
+				"3" : {
+					"name": "Variables",
+					"href": "https://multichannel.virtualcenter360.es/ivr/variables"
+				},
+				"4" : {
+					"name": "Locuciones",
+					"href": "https://multichannel.virtualcenter360.es/ivr/speech"
+				},
+				"5" : {
+					"name": "ContactNets",
+		      "views": {
+		        "0": {
+		          "name": "ContactNets",
+		          "uri": "contactnets"
+		        },
+		        "1": {
+		          "name": "Canales",
+		          "uri": "channels"
+		        },
+		        "2": {
+		          "name": "Reglas",
+		          "uri": "rules"
+		        }
+		      }
+				},
+				"6" : {
+					"name": "Colas",
+					"href": "https://multichannel.virtualcenter360.es/ivr/queues"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+[{
+	"id": "11216",
+	"name": "Telecoming MAIL",
+	"networkElement": "",
+	"contactnetId": -1,
+	"campaignId": -1,
+	"networkElementId": -1,
+	"channelId": 3,
+	"autoWizard": 1,
+	"configTypeId": "IN",
+	"modificable": false,
+	"vocabulary": [{
+		"Category_Id": "2",
+		"Classify_Id": "1",
+		"Category": "Alta Orange",
+		"Match_All": "0",
+		"Vocabularies": [{
+			"Classify_Mode_Id_fk": "1",
+			"Mode": "CONTAINS",
+			"Words": ["Alta", "contratación", "contrato esto se obvia"]
+		}]
+	}],
+	"routingRules": [{
+		"name": "regla 2",
+		"destinations": [464],
+		"rules": [{
+			"evaluationMode": "1",
+			"type": "21",
+			"data": [{
+				"Category_Id": "2",
+				"Description": "Alta Orange"
+			}],
+			"multiRule": true
+		}, {
+			"evaluationMode": "1",
+			"type": "20",
+			"data": [{
+				"Language_Id": "19",
+				"Language": "english"
+			}, {
+				"Language_Id": "20",
+				"Language": "french"
+			}],
+			"multiRule": true
+		}]
+	}]
+}]
