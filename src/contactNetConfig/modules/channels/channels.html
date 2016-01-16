@@ -42,27 +42,10 @@
 				<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="!loadingCards.length">
 
 					<div flex layout="column" layout-align="start">
-						<div style="overflow-y:auto;" layout="row">
-							<md-input-container flex>
-								<label>Nombre de la regla</label>
-								<input ng-model="v.multimedia">
-							</md-input-container>
-							<md-input-container flex>
-								<label>Estrategia</label>
-								<input ng-model="v.other">
-							</md-input-container>
-						</div>
 
-						<div style="overflow-y:auto;" layout="row">
-							<md-input-container flex>
-								<label>Tiempo medio en responder el 1º</label>
-								<input ng-model="v.tiempo">
-							</md-input-container>
-							<md-input-container flex>
-								<label>Tiempo medio en responder el resto</label>
-								<input ng-model="v.tiempo1">
-							</md-input-container>
-						</div>
+						<div ng-if="v.channelId == 2" flex layout="column" layout-align="start" ng-include="'/contactNetConfig/modules/channels/partials/chat.html'"></div>
+
+						<div ng-if="v.channelId == 3" flex layout="column" layout-align="start" ng-include="'/contactNetConfig/modules/channels/partials/mail.html'"></div>
 
 						<div flex layout="row">
 							<span flex></span>

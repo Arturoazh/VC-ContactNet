@@ -9,6 +9,8 @@
 	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter){
 
   	$scope.contactNets = [];
+  	$scope.colorOptions = ['FFFFFF', 'FF8A80', 'FFD180', 'FFFF8D', 'CFD8DC', '80D8FF', 'A7FFEB', 'CCFF90'];
+  	$scope.scriptCode = '<script>console.log("empty");</script>'
     $scope.$cnChannels = $cnChannels;
 
 		$scope.save = save;
@@ -49,7 +51,24 @@
 				"openCard": true,
 			  "multimediaId": (new Date()).getTime(),
 			  "channelId": 2,
-			  "configModificable": false
+			  "configModificable": false,
+			  "multimediaParams": {
+					"ChatType":"Chat",
+					"ChatConfig":{
+						"templateId":1,
+						"authenticationText":"",
+						"authenticationMode":"anonymous",
+						"loadingMode":"closed",
+						"headerText":"",
+						"welcomeText":"",
+						"resetText":"",
+						"connectText":"",
+						"primaryBackgroundColor":"CCCCCC",
+						"secundaryBackgroundColor":"FF0000",
+						"primaryColor":"000000",
+						"secundaryColor":"FFFFFF"
+					}
+				}
 			});
 		}
 
@@ -60,7 +79,13 @@
 				"openCard": true,
 			  "multimediaId": (new Date()).getTime(),
 			  "channelId": 3,
-			  "configModificable": false
+			  "configModificable": false,
+			  "multimediaParams": {
+					"MailType":"SendGrid",
+					"MailConfig":{
+						
+					}
+				}
 			});
 		}
 
