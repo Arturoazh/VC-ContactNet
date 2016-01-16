@@ -5,11 +5,13 @@ var gulp         = require('gulp');
 var notify     = require('gulp-notify');
 var minifyHTML   = require('gulp-minify-html');
 var sftp       = require('gulp-sftp');
+var cache = require('gulp-cached');
 
 module.exports = function (gulp, appPrefix) {
 
   gulp.task(appPrefix + 'build-html', function () {
     return gulp.src(config.htmlFiles)
+    	.pipe(cache('html'))
 	    .pipe(minifyHTML({
 	        conditionals: true,
 	        spare: true,
@@ -21,7 +23,7 @@ module.exports = function (gulp, appPrefix) {
          host: config.host,
          user: config.user,
          key: config.key,
-         remotePath: config.remotePath+'/js/'
+         remotePath: config.remotePath+'/'
       }))
 	    .pipe(notify("HTML Procesado"));
   });

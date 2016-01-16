@@ -21,7 +21,7 @@ module.exports = function (gulp, appPrefix) {
          host: config.host,
          user: config.user,
          key: config.key,
-         remotePath: config.remotePath+'/js/'
+         remotePath: config.remotePath+'/css/'
       }))
       .pipe(notify("CSS Procesado"));
     });

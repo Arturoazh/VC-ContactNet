@@ -35,6 +35,7 @@
     "gulp-notify": "2.2.0",
     "gulp-watch": "3.0.0",
     "gulp-minify-html": "^1.0.4",
-    "gulp-sftp": "0.1.5"
+    "gulp-sftp": "0.1.5",
+    "gulp-cached": "1.1.0"
   }
 }
