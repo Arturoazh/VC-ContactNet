@@ -12,7 +12,7 @@
 	        restrict: 'EA',
 	        scope: false,
 	        link: link,
-	        templateUrl: 'modules/contactNets/directives/cnContactNetMailCardChannelConfiguration/cnContactNetMailCardChannelConfiguration.html',
+	        templateUrl: '/contactNetConfig/modules/contactNets/directives/cnContactNetMailCardChannelConfiguration/cnContactNetMailCardChannelConfiguration.html',
         	controller: controller
 	    };
 

@@ -11,7 +11,7 @@
     	var directive = {
 	        restrict: 'EA',
 	        link: link,
-	        templateUrl: 'modules/contactNets/directives/cnContactNetVoiceCardChannelConfiguration/cnContactNetVoiceCardChannelConfiguration.html',
+	        templateUrl: '/contactNetConfig/modules/contactNets/directives/cnContactNetVoiceCardChannelConfiguration/cnContactNetVoiceCardChannelConfiguration.html',
         	controller: controller
 	    };
 
