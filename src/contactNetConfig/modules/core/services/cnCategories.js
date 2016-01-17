@@ -3,41 +3,40 @@
 
 	 /**
    * @ngdoc service
-   * @name $cnChannels
+   * @name $cnCategories
    * @module core
    *
    * @description
-   * Provides the channels for the application
+   * Provides the categories for the application
    *
-   * @param {object} channels 
+   * @param {object} categories 
    *
    */
 
   angular
   	.module('virtual-center')
-    .service('$cnChannels', service);
+    .service('$cnCategories', service);
 
   /* ngInject */
   function service($q, $http){
 
 		var scope = this;
 
-		scope.channels = [];
+		scope.categories = [];
 		scope.get = get;
 		scope.save = save;
 		scope.remove = remove;
-		scope.getById = getById;
 
 		/**
 		* @ngdoc method
-		* @name $cnChannels#get
+		* @name $cnCategories#get
 		*
 		* @return {promise} elements
 		*/
 		function get(){
 			var deferred = $q.defer();
 
-			$http.get('/ivr/getnetworkmultimedias').then(function(){
+			$http.get('/ivr/getcategories').then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 
@@ -46,9 +45,9 @@
 
 		/**
 		* @ngdoc method
-		* @name $cnChannels#get
+		* @name $cnCategories#get
 		*
-		* @param {object} channel
+		* @param {object} category
 		*
 		* @return {promise} elements
 		*/
@@ -56,7 +55,13 @@
 			var args = arguments
 			var deferred = $q.defer();
 
-			$http.post('/ivr/savenetworkmultimedia', args[0]).then(function(){
+			if(!~args[0].id){
+				args[0].action = 'ADD';
+			}else{
+				args[0].action = 'MOD';
+			}
+
+			$http.post('/ivr/savecategories', args[0]).then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 
@@ -68,17 +73,7 @@
 
 			arguments[0].action = 'DEL';
 
-			$http.post('/ivr/savenetworkmultimedia', arguments[0]).then(function(){
-				deferred.resolve(arguments[0].data);
-			});			
-
-			return deferred.promise;
-		}
-
-		function getById(){
-			var deferred = $q.defer();
-
-			$http.get('/ivr/getnetworkmultimediabyid/id/'+arguments[0]).then(function(){
+			$http.post('/ivr/savecategories', arguments[0]).then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 

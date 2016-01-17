@@ -9,19 +9,19 @@
 	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter){
 
 		$scope.repos = {
-			'cualification': {
+			'qualifications': {
 				icon: 'school',
 				title: 'Cualificaciones de casos',
 				openCard: false,
 				downloadedData: false
 			},
-			'categorization': {
+			'categorizations': {
 				icon: 'local_offer',
 				title: 'Categorización de casos',
 				openCard: false,
 				downloadedData: false
 			},
-			'pause_state': {
+			'pause_states': {
 				icon: 'pause_state',
 				title: 'Estados de pausa',
 				openCard: false,

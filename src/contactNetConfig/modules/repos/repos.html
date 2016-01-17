@@ -11,10 +11,14 @@
 
 			<md-progress-linear md-mode="indeterminate" ng-if="v.openCard && !v.downloadedData"></md-progress-linear>
 
-			<div class="item-card" ng-show="v.downloadedData" layout="column" layout-fill>
+			<div class="item-card" ng-if="v.openCard" ng-show="v.downloadedData" layout="column" layout-fill>
 				<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="!loadingCards.length">
 
-					<cn-repo-cualification ng-if="k === 'cualification'" downloaded-data="v.downloadedData"></cn-repo-cualification>
+					<cn-repo-qualifications flex ng-if="k === 'qualifications'" downloaded-data="v.downloadedData"></cn-repo-qualifications>
+					<cn-repo-skills flex ng-if="k === 'skills'" downloaded-data="v.downloadedData"></cn-repo-skills>
+					<cn-repo-categorizations flex ng-if="k === 'categorizations'" downloaded-data="v.downloadedData"></cn-repo-categorizations>
+					<cn-repo-pause-states flex ng-if="k === 'pause_states'" downloaded-data="v.downloadedData"></cn-repo-pause-states>
+
 
 				</div>
 

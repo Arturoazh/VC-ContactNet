@@ -47,8 +47,10 @@
 
 						<div ng-if="v.channelId == 3" flex layout="column" layout-align="start" ng-include="'/contactNetConfig/modules/channels/partials/mail.html'"></div>
 
-						<div flex layout="row">
+						<div flex layout="row" class="action-buttons">
 							<span flex></span>
+							<md-button class="md-accent md-hue-2" ng-click="v.openCard = false">Cancelar</md-button>
+							<span flex="5"></span>
 							<md-button class="md-accent md-raised md-hue-2" ng-click="save(v)">Guardar</md-button>
 						</div>
 

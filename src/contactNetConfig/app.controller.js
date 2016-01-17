@@ -51,13 +51,13 @@
 					$scope.selectedIndex = 0;
 					$scope.environment.actualSection = 'ContactNets';
 				break;
-				case '/channels':
-					$scope.selectedIndex = 1;
-					$scope.environment.actualSection = 'Reglas';
-				break;
 				case '/rules':
-					$scope.selectedIndex = 2;
+					$scope.selectedIndex = 1;
 					$scope.environment.actualSection = 'Canales';
+				break;
+				case '/channels':
+					$scope.selectedIndex = 2;
+					$scope.environment.actualSection = 'Reglas';
 				break;
 				case '/repos':
 					$scope.selectedIndex = 3;

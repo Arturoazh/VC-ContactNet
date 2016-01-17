@@ -29,7 +29,7 @@
 		}];
 
   	$cnChannels.get().then(function () {
-      //$scope.$cnChannels.channels = arguments[0];
+      $scope.$cnChannels.channels = arguments[0];
   	});
 
 
@@ -94,7 +94,9 @@
 		}
 
     function save(){
-      console.log(arguments[0]);
+    	var item = angular.copy(arguments[0]);
+    	delete item.openCard;
+      $cnChannels.save(item);
     }
 
 

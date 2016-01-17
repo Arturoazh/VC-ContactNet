@@ -3,26 +3,26 @@
 
 	 /**
    * @ngdoc service
-   * @name $cnChannels
+   * @name $cnSkills
    * @module core
    *
    * @description
-   * Provides the channels for the application
+   * Provides the skills for the application
    *
-   * @param {object} channels 
+   * @param {object} skills 
    *
    */
 
   angular
   	.module('virtual-center')
-    .service('$cnChannels', service);
+    .service('$cnSkills', service);
 
   /* ngInject */
   function service($q, $http){
 
 		var scope = this;
 
-		scope.channels = [];
+		scope.skills = [];
 		scope.get = get;
 		scope.save = save;
 		scope.remove = remove;
@@ -30,14 +30,14 @@
 
 		/**
 		* @ngdoc method
-		* @name $cnChannels#get
+		* @name $cnSkills#get
 		*
 		* @return {promise} elements
 		*/
 		function get(){
 			var deferred = $q.defer();
 
-			$http.get('/ivr/getnetworkmultimedias').then(function(){
+			$http.get('/ivr/getskills').then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 
@@ -46,9 +46,9 @@
 
 		/**
 		* @ngdoc method
-		* @name $cnChannels#get
+		* @name $cnSkills#get
 		*
-		* @param {object} channel
+		* @param {object} skill
 		*
 		* @return {promise} elements
 		*/
@@ -56,7 +56,13 @@
 			var args = arguments
 			var deferred = $q.defer();
 
-			$http.post('/ivr/savenetworkmultimedia', args[0]).then(function(){
+			if(!~args[0].id){
+				args[0].action = 'ADD';
+			}else{
+				args[0].action = 'MOD';
+			}
+
+			$http.post('/ivr/saveskill', args[0]).then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 
@@ -68,19 +74,19 @@
 
 			arguments[0].action = 'DEL';
 
-			$http.post('/ivr/savenetworkmultimedia', arguments[0]).then(function(){
+			$http.post('/ivr/saveskill', arguments[0]).then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 
 			return deferred.promise;
 		}
 
-		function getById(){
+		function getById() {
 			var deferred = $q.defer();
 
-			$http.get('/ivr/getnetworkmultimediabyid/id/'+arguments[0]).then(function(){
-				deferred.resolve(arguments[0].data);
-			});			
+			$cnMocks.get('skillsId').then(function(){
+				deferred.resolve(arguments[0]);
+			});
 
 			return deferred.promise;
 		}
