@@ -89,7 +89,7 @@
     </md-tabs>
 
 
-		<md-fab-speed-dial md-direction="down" md-open="fab.isOpen" class="md-scale fabButtonCreate">
+		<md-fab-speed-dial ng-if="!fab.hide" md-direction="down" md-open="fab.isOpen" class="md-scale fabButtonCreate">
 		  <md-fab-trigger>
 		    <md-button aria-label="trigger" ng-click="fab.trigger.action()" class="md-fab md-accent">
 					<md-icon md-svg-icon="{{fab.trigger.icon}}"></md-icon>

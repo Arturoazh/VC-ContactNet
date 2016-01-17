@@ -61,7 +61,6 @@
 					$scope.selectedIndex = 3;
 					$scope.environment.actualSection = 'Repositorio';
 				break;
-
 			}
 		});
 

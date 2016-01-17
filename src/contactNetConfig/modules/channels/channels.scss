@@ -1,5 +1,36 @@
 #channels{
+	md-input-container{
+		margin-bottom: 0;
+	}
   .open-item{
     background-color: white;
+  }
+
+  .code{
+  	padding: 10px;
+  	color: white;
+  	background-color: #0C2238;
+  	min-height: 100px;
+  	max-height: 100px;
+  	overflow-y: auto;
+    margin: 15px 0;
+  }
+
+  cn-color-picker{
+  	padding: 10px 0 20px;
+  }
+
+  .chatPreviewHeader{
+  	margin-top: 10px;
+    padding: 10px 20px;
+  }
+  .chatPreviewBody{
+  	padding: 30px 20px;
+  }
+
+  .border-container{
+    padding: 20px 30px;
+    margin-bottom: 30px;
+  	border: 1px solid #ccc;
   }
 }

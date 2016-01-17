@@ -13,7 +13,7 @@
 	        scope: {
 	        	rule: '=cnRule'
 	        },
-	        templateUrl: 'modules/rules/directives/selectLanguages/selectLanguages.html',
+	        templateUrl: '/contactNetConfig/modules/rules/directives/selectLanguages/selectLanguages.html',
 	        link: link
 	    };
 

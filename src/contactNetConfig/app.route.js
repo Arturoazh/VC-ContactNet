@@ -29,6 +29,11 @@
 				url: "/rules",
 				templateUrl: "/contactNetConfig/modules/rules/rules.html",
 				controller: "rulesController"
+			})
+			.state('contactnets.repos', {
+				url: "/repos",
+				templateUrl: "/contactNetConfig/modules/repos/repos.html",
+				controller: "reposController"
 			});
 
 		$urlRouterProvider.otherwise("/contactnets");
