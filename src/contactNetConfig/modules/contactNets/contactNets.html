@@ -2,13 +2,20 @@
 
 		<section flex>
 
-			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets track by $index" ng-class="{'open-item': v.openCard}">
+			<md-whiteframe class="md-whiteframe-z2 filterSearch" flex layout cn-scroll>
+				<div flex layout="row" layout-align="center center">
+					<md-icon md-svg-icon="search" aria-label="search" class="md-hue-3"></md-icon>
+					<input type="text" ng-model="filterSearch.description" placeholder="Buscar" flex/>
+				</div>
+			</md-whiteframe>
+
+			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets | filter:filterSearch" ng-class="{'open-item': v.openCard}">
 				<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-contact-net-info="v" cn-open-contact-nets>
 					<div flex ng-class="{'hText' : v.contactNetInfo}">{{v.description}}</div>
 					<span flex></span>
-					<md-icon md-svg-icon="phone" aria-label="Open Chat" class="greenVC-color"></md-icon>
-					<md-icon md-svg-icon="mail" aria-label="Open Chat" class="md-hue-3 greenVC-color"></md-icon>
-					<md-icon md-svg-icon="message" aria-label="Open Chat" class="greenVC-color"></md-icon>
+					<md-icon md-svg-icon="phone" aria-label="Open Chat" ng-class="{'greenVC-color' : v.channels[1] == 1}" class="md-hue-3"></md-icon>
+					<md-icon md-svg-icon="mail" aria-label="Open Chat" ng-class="{'greenVC-color' : v.channels[2] == 2}" class="md-hue-3"></md-icon>
+					<md-icon md-svg-icon="message" aria-label="Open Chat" ng-class="{'greenVC-color' : v.channels[3] == 3}" class="md-hue-3"></md-icon>
 
 					<md-menu class="md-secondary" >
 	          <md-button aria-label="Open menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
@@ -53,12 +60,12 @@
 				      	</div>
 				      	<div flex layout="row" layout-align="center center">
 				      		<span layout-margin>2</span>
-				      		<span>Estrategia</span>
+				      		<span>Supervisores</span>
 				      	</div>
-				      	<div flex layout="row" layout-align="center center">
+<!-- 				      	<div flex layout="row" layout-align="center center">
 				      		<span layout-margin>3</span>
 				      		<span>BackOffice</span>
-				      	</div>
+				      	</div> -->
 				      </div>
 						</div>
 						<div cn-contact-net-voice-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetVoiceCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetVoiceCardChannelConfiguration.openCard}"></div>

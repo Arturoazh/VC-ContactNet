@@ -47,6 +47,7 @@
       .icon('shape', '/contactNetConfig/assets/icons/shape.svg')
       .icon('insert', '/contactNetConfig/assets/icons/insert-drive-file.svg')
       .icon('edit', '/contactNetConfig/assets/icons/edit.svg')
+      .icon('search', '/contactNetConfig/assets/icons/search.svg')
 			.icon('delete', '/contactNetConfig/assets/icons/delete.svg');
 
   }

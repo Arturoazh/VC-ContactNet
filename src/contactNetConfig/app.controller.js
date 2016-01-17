@@ -51,12 +51,17 @@
 				break;
 				case '/channels':
 					$scope.selectedIndex = 1;
-					$scope.environment.actualSection = 'Canales';
+					$scope.environment.actualSection = 'Reglas';
 				break;
 				case '/rules':
 					$scope.selectedIndex = 2;
-					$scope.environment.actualSection = 'Reglas';
+					$scope.environment.actualSection = 'Canales';
 				break;
+				case '/repos':
+					$scope.selectedIndex = 3;
+					$scope.environment.actualSection = 'Repositorio';
+				break;
+
 			}
 		});
 

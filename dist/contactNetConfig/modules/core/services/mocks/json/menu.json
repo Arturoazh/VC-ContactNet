@@ -42,12 +42,12 @@
 		          "uri": "contactnets"
 		        },
 		        "1": {
-		          "name": "Canales",
-		          "uri": "channels"
-		        },
-		        "2": {
 		          "name": "Reglas",
 		          "uri": "rules"
+		        },
+		       	"2": {
+		          "name": "Canales",
+		          "uri": "channels"
 		        }
 		      }
 				},
