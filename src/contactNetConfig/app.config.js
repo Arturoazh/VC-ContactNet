@@ -47,7 +47,12 @@
       .icon('shape', '/contactNetConfig/assets/icons/shape.svg')
       .icon('insert', '/contactNetConfig/assets/icons/insert-drive-file.svg')
       .icon('edit', '/contactNetConfig/assets/icons/edit.svg')
-			.icon('delete', '/contactNetConfig/assets/icons/delete.svg');
+			.icon('delete', '/contactNetConfig/assets/icons/delete.svg')
+			.icon('repos', '/contactNetConfig/assets/icons/repos.svg')
+			.icon('skills', '/contactNetConfig/assets/icons/skills.svg')
+			.icon('pause_state', '/contactNetConfig/assets/icons/pause_state.svg')
+			.icon('school', '/contactNetConfig/assets/icons/school.svg')
+			.icon('local_offer', '/contactNetConfig/assets/icons/local_offer.svg');
 
   }
 

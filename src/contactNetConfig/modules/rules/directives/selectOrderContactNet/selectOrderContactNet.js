@@ -14,7 +14,7 @@
 	        	rule: '=cnRule',
 						channelId: '=cnChannelId'
 	        },
-	        templateUrl: 'modules/rules/directives/selectOrderContactNet/selectOrderContactNet.html',
+	        templateUrl: '/contactNetConfig/modules/rules/directives/selectOrderContactNet/selectOrderContactNet.html',
 	        link: link
 	    };
 

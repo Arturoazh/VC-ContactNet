@@ -14,7 +14,7 @@
 	        	rule: '=cnRule',
 						vocabulary: '=cnVocabulary'
 	        },
-	        templateUrl: 'modules/rules/directives/categorization/categorization.html',
+	        templateUrl: '/contactNetConfig/modules/rules/directives/categorization/categorization.html',
 	        link: link
 	    };
 

@@ -16,7 +16,7 @@
 						vocabulary: '=cnVocabulary'
           },
 	        link: link,
-	        templateUrl: 'modules/rules/directives/routingRules/routingRules.html',
+	        templateUrl: '/contactNetConfig/modules/rules/directives/routingRules/routingRules.html',
         	controller: controller
 	    };
 

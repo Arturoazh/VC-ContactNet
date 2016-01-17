@@ -57,6 +57,10 @@
 					$scope.selectedIndex = 2;
 					$scope.environment.actualSection = 'Reglas';
 				break;
+				case '/repos':
+					$scope.selectedIndex = 3;
+					$scope.environment.actualSection = 'Repositorio';
+				break;
 			}
 		});
 

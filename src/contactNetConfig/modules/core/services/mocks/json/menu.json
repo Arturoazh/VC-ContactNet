@@ -48,6 +48,10 @@
 		        "2": {
 		          "name": "Reglas",
 		          "uri": "rules"
+		        },
+		        "3": {
+		          "name": "Repositorio",
+		          "uri": "repos"
 		        }
 		      }
 				},
