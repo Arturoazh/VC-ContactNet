@@ -165,11 +165,15 @@
 					<div layout="row" flex layout-wrap>
 						<md-input-container flex="50">
 			        <label>Seleccionar ANI</label>
-			        <input ng-model="v.selectAni">
+			        <md-select ng-model="v.selectAni">
+			        	<md-option value="1">91 114 22 99</md-option>
+			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Llamar primero</label>
-			        <input ng-model="v.selectAgent">
+        			<md-select ng-model="v.selectAgent">
+			        	<md-option value="1">Agente</md-option>
+			        </md-select>
 			      </md-input-container>
 			      <md-checkbox layout="row" flex="100" ng-model="v.callSelected" ng-change="" layout-padding>
 				      	Grabación de llamadas
@@ -180,22 +184,37 @@
 			      </md-radio-group>
 			      <md-input-container flex="50" layout-align="center center">
 			        <label>Porcentaje de llamadas a grabar</label>
-			        <input ng-model="v.recordCalls">
+        			<md-select ng-model="v.percentCalls">
+			        	<md-option value="1">10%</md-option>
+			        	<md-option value="2">25%</md-option>
+			        	<md-option value="3">50%</md-option>
+			        	<md-option value="4">100%</md-option>
+			        </md-select>
 			      </md-input-container>
 		      	<md-checkbox layout="row" flex="100" ng-model="v.comunity" ng-change="" layout-padding>
 			      	Comunidad
 			      </md-checkbox>
 		        <md-input-container flex="50" layout-padding layout-align="center center">
 			        <label>Selecciona comunidad</label>
-			        <input ng-model="v.city">
+			        <md-select ng-model="v.city">
+			        	<md-option value="1">Madrid</md-option>
+			        	<md-option value="2">Barcelona</md-option>
+			        	<md-option value="3">Sevilla</md-option>
+			        	<md-option value="4">Valencia</md-option>
+			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50" layout-padding layout-align="center center">
 			        <label>Transferencia</label>
-			        <input ng-model="v.atendida">
+			        <md-select ng-model="v.trans">
+			        	<md-option value="1">Atendida</md-option>
+			        	<md-option value="1">Sin Atender</md-option>
+			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50" layout-padding>
 			        <label>Tipos de numeración</label>
-			        <input ng-model="v.typeNumeration">
+			        <md-select ng-model="v.typeNumeration">
+			        	<md-option value="1">Móvil</md-option>
+			        </md-select>
 			      </md-input-container>
 					</div>
 				</div>
