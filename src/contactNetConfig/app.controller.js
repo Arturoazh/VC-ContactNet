@@ -15,6 +15,7 @@
 
 		$rootScope.fab = {
 			isOpen: false,
+			hide: false,
 			trigger: {
 				icon: 'add',
 				action: function(){}
@@ -42,6 +43,7 @@
 
 		$rootScope.$on('$stateChangeSuccess', function () {
 			$rootScope.fab.isOpen = false;
+			$rootScope.fab.hide = false;
 			$rootScope.fab.actions = [];
 
 			switch(arguments[1].url) {
