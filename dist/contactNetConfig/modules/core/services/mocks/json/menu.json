@@ -45,15 +45,12 @@
 		          "name": "Reglas",
 		          "uri": "rules"
 		        },
-<<<<<<< HEAD
 		       	"2": {
 		          "name": "Canales",
-		          "uri": "channels"
-=======
+		          "uri": "channels",
 		        "3": {
 		          "name": "Repositorio",
 		          "uri": "repos"
->>>>>>> origin/master
 		        }
 		      }
 				},
