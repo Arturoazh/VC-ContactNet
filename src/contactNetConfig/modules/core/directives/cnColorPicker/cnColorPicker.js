@@ -14,7 +14,8 @@
       scope: {
         options: '=',
         ngModel: '=',
-        onColorChanged: '&'
+        onColorChanged: '&',
+        ngDisabled: '='
       }
     };
 
@@ -22,7 +23,7 @@
     function link(scope, element, attr, ctrl) {
 
       scope.changeColor = function (option) {
-        if(scope.ngModel != option) {
+        if(scope.ngModel != option && !ngDisabled) {
           var old = scope.ngModel;
           scope.ngModel = option;
           scope.onColorChanged({newColor: option, oldColor: old});

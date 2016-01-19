@@ -16,7 +16,7 @@
 					</md-button>
 					<md-menu-content width="4" >
 						<md-menu-item >
-							<md-button ng-click="">
+							<md-button ng-click="v.openCard = true">
 									<div layout="row">
 										<md-icon md-menu-align-target md-svg-icon="edit"></md-icon>
 										<p flex>Editar</p>
@@ -24,7 +24,7 @@
 							</md-button>
 						</md-menu-item>
 						<md-menu-item >
-							<md-button ng-click="">
+							<md-button ng-disabled="!v.configModificable" ng-click="remove(k)">
 									<div layout="row">
 										<md-icon md-menu-align-target md-svg-icon="delete"></md-icon>
 										<p flex>Eliminar</p>
@@ -51,7 +51,7 @@
 							<span flex></span>
 							<md-button class="md-accent md-hue-2" ng-click="v.openCard = false">Cancelar</md-button>
 							<span flex="5"></span>
-							<md-button class="md-accent md-raised md-hue-2" ng-click="save(v)">Guardar</md-button>
+							<md-button ng-disabled="!v.configModificable" class="md-accent md-raised md-hue-2" ng-click="save(v)">Guardar</md-button>
 						</div>
 
 					</div>

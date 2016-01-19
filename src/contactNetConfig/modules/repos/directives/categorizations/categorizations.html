@@ -4,14 +4,21 @@
   <div class="border-container" layout="row" ng-repeat="(k,v) in categories" layout-align="space-between center">
     <md-input-container flex>
       <label>Nombre</label>
-      <input ng-model="v.label">
+      <input ng-disabled="!v.modificable" ng-model="v.label">
     </md-input-container>
-    <md-button class="md-icon-button" aria-label="Delete" ng-click="remove(k)">
+    <md-button class="md-icon-button" ng-disabled="!v.modificable" aria-label="Delete" ng-click="remove(k)">
       <md-icon md-svg-icon="delete"></md-icon>
     </md-button>
   </div>
 
   <p class="md-caption blueVC-color" ng-click="addNew()">Añadir categoría</p>
+
+  <div flex layout="row" class="action-buttons">
+    <span flex></span>
+    <md-button class="md-accent md-hue-2" ng-click="card.openCard = false">Cancelar</md-button>
+    <span flex="5"></span>
+    <md-button class="md-accent md-raised md-hue-2" ng-click="save()">Guardar</md-button>
+  </div>
 
 </div>
 

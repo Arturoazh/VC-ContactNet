@@ -11,7 +11,8 @@
   	var directiveObj = {
         restrict: 'EA',
         scope: {
-          downloadedData: '='
+          downloadedData: '=',
+          card: '='
         },
         link: link,
         templateUrl: '/contactNetConfig/modules/repos/directives/qualifications/qualifications.html',
@@ -26,8 +27,9 @@
     }
 
     /* @ngInject */
-    function controller ($scope, $cnQualifications) {
+    function controller ($scope, $cnQualifications, $filter) {
 
+      var oldQualifications = [];
     	$scope.qualifications = [];
 
       $scope.addNew = addNew;
@@ -39,21 +41,29 @@
       function init(){
         $cnQualifications.get().then(function(){
           $scope.qualifications = arguments[0];
+          oldQualifications = angular.copy($scope.qualifications);
           $scope.downloadedData = true;
         });
       }
 
       function addNew(){
-        $scope.qualifications.unshift({
+        $scope.qualifications.push({
           id: -1,
-          label: ""
+          label: "",
+          value: 'POSITIVE',
+          modificable: true
         });
       }
 
       function save(){
-        var args = arguments;
-        $cnQualifications.save($scope.qualifications[arguments[0]]).then(function(){
-          $scope.qualifications[args[0]].id = arguments[0].id;  
+        angular.forEach($scope.qualifications, function(){
+          var args = arguments;
+          if(args[0].id === -1 || $filter('filter')(oldQualifications, {id: args[0].id})[0].label !== args[0].label
+              || $filter('filter')(oldQualifications, {id: args[0].id})[0].value !== args[0].value ){
+            $cnQualifications.save(args[0]).then(function(){
+              $scope.qualifications[args[1]].id = arguments[0].id;  
+            });
+          }
         });
       }
 

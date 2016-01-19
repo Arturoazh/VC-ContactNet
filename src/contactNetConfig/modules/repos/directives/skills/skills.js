@@ -11,7 +11,8 @@
   	var directiveObj = {
         restrict: 'EA',
         scope: {
-          downloadedData: '='
+          downloadedData: '=',
+          card: '='
         },
         link: link,
         templateUrl: '/contactNetConfig/modules/repos/directives/skills/skills.html',
@@ -26,8 +27,9 @@
     }
 
     /* @ngInject */
-    function controller ($scope, $cnSkills) {
+    function controller ($scope, $cnSkills, $filter) {
 
+      var oldSkills = [];
     	$scope.skills = [];
 
     	$scope.addNew = addNew;
@@ -39,21 +41,27 @@
       function init(){
         $cnSkills.get().then(function(){
           $scope.skills = arguments[0];
+          oldSkills = angular.copy($scope.skills);
           $scope.downloadedData = true;
         });
       }
 
     	function addNew(){
-    		$scope.skills.unshift({
+    		$scope.skills.push({
 					id: -1,
-					label: ""
+					label: "",
+          modificable: true
 				});
     	}
 
       function save(){
-        var args = arguments;
-        $cnSkills.save($scope.skills[arguments[0]]).then(function(){
-          $scope.skills[args[0]].id = arguments[0].id;  
+        angular.forEach($scope.skills, function(){
+          var args = arguments;
+          if(args[0].id === -1 || $filter('filter')(oldSkills, {id: args[0].id})[0].label !== args[0].label ){
+            $cnSkills.save(args[0]).then(function(){
+              $scope.skills[args[1]].id = arguments[0].id;  
+            });
+          }
         });
       }
 

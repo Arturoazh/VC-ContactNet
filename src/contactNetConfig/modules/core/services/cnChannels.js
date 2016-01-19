@@ -63,12 +63,14 @@
 			return deferred.promise;
 		}
 
+		/*
+		* @param {string|<Array>string} multimedia_ids
+		*/
 		function remove(){
 			var deferred = $q.defer();
+			var remove = angular.isArray(arguments[0]) ? arguments[0] : [arguments[0]];
 
-			arguments[0].action = 'DEL';
-
-			$http.post('/ivr/savenetworkmultimedia', arguments[0]).then(function(){
+			$http.post('/ivr/deletenetworkmultimedia', remove).then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 

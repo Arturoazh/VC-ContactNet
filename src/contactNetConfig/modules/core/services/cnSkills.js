@@ -72,11 +72,15 @@
 		function remove(){
 			var deferred = $q.defer();
 
-			arguments[0].action = 'DEL';
+			// arguments[0].action = 'DEL';
 
-			$http.post('/ivr/saveskill', arguments[0]).then(function(){
+			// $http.post('/ivr/saveskill', arguments[0]).then(function(){
+			// 	deferred.resolve(arguments[0].data);
+			// });
+
+			$http.post('/ivr/deleteskill', {id:arguments[0].id}).then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			});				
 
 			return deferred.promise;
 		}

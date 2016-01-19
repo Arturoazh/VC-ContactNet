@@ -11,7 +11,8 @@
   	var directiveObj = {
         restrict: 'EA',
         scope: {
-          downloadedData: '='
+          downloadedData: '=',
+          card: '='
         },
         link: link,
         templateUrl: '/contactNetConfig/modules/repos/directives/categorizations/categorizations.html',
@@ -26,8 +27,9 @@
     }
 
     /* @ngInject */
-    function controller ($scope, $cnCategories) {
+    function controller ($scope, $cnCategories, $filter) {
 
+      var oldCategories = [];
     	$scope.categories = [];
 
       $scope.addNew = addNew;
@@ -39,21 +41,27 @@
       function init(){
         $cnCategories.get().then(function(){
           $scope.categories = arguments[0];
+          oldCategories = angular.copy($scope.categories);
           $scope.downloadedData = true;
         });
       }
 
       function addNew(){
-        $scope.categories.unshift({
+        $scope.categories.push({
           id: -1,
-          label: ""
+          label: "",
+          modificable: true
         });
       }
 
       function save(){
-        var args = arguments;
-        $cnCategories.save($scope.categories[arguments[0]]).then(function(){
-          $scope.categories[args[0]].id = arguments[0].id;  
+        angular.forEach($scope.categories, function(){
+          var args = arguments;
+          if(args[0].id === -1 || $filter('filter')(oldCategories, {id: args[0].id})[0].label !== args[0].label ){
+            $cnCategories.save(args[0]).then(function(){
+              $scope.categories[args[1]].id = arguments[0].id;  
+            });
+          }
         });
       }
 

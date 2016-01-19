@@ -67,6 +67,13 @@ body {
       background: white;
     }
   }
+  md-tab-item{
+    &:last-of-type{
+      md-icon, .md-button{
+        color: #888 !important;  
+      }
+    }
+  }
 }
 
 .layoutMenu {
