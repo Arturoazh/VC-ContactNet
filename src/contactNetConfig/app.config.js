@@ -53,7 +53,8 @@
 			.icon('skills', '/contactNetConfig/assets/icons/skills.svg')
 			.icon('pause_state', '/contactNetConfig/assets/icons/pause_state.svg')
 			.icon('school', '/contactNetConfig/assets/icons/school.svg')
-			.icon('local_offer', '/contactNetConfig/assets/icons/local_offer.svg');
+			.icon('local_offer', '/contactNetConfig/assets/icons/local_offer.svg')
+			.icon('content_copy', '/contactNetConfig/assets/icons/content_copy.svg');
 
   }
 

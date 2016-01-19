@@ -6,7 +6,7 @@
     .controller('channelsController', controller);
 
   /* ngInject */
-	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter){
+	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter, $mdDialog){
 
   	$scope.contactNets = [];
   	$scope.colorOptions = ['FFFFFF', 'FF8A80', 'FFD180', 'FFFF8D', 'CFD8DC', '80D8FF', 'A7FFEB', 'CCFF90'];
@@ -14,6 +14,7 @@
     $scope.$cnChannels = $cnChannels;
 
 		$scope.save = save;
+		$scope.remove = remove;
 		$scope.openFab = openFab;
 
     $rootScope.fab.trigger.action = function(){};
@@ -34,14 +35,16 @@
 
 
 		function newPhone(){
-			$cnChannels.channels.unshift({
-				"multimedia": "Nuevo Phone",
-				"downloadedData": true,
-				"openCard": true,
-			  "multimediaId": (new Date()).getTime(),
-			  "channelId": 1,
-			  "configModificable": false
-			});
+			var args = arguments;
+			$mdDialog.show(
+	      $mdDialog.alert()
+	        .clickOutsideToClose(true)
+	        .title('Acción no permitida')
+	        .textContent('Para contratar un nuevo canal telefónico deberá contactar con su proveedor de servicios.')
+	        .ariaLabel('Alert dialog')
+	        .ok('Cerrar')
+	        .targetEvent(args[0])
+	    );
 		}
 
 		function newChat(){
@@ -51,7 +54,7 @@
 				"openCard": true,
 			  "multimediaId": (new Date()).getTime(),
 			  "channelId": 2,
-			  "configModificable": false,
+			  "configModificable": true,
 			  "multimediaParams": {
 					"ChatType":"Chat",
 					"ChatConfig":{
@@ -79,7 +82,7 @@
 				"openCard": true,
 			  "multimediaId": (new Date()).getTime(),
 			  "channelId": 3,
-			  "configModificable": false,
+			  "configModificable": true,
 			  "multimediaParams": {
 					"MailType":"SendGrid",
 					"MailConfig":{
@@ -97,6 +100,13 @@
     	var item = angular.copy(arguments[0]);
     	delete item.openCard;
       $cnChannels.save(item);
+    }
+
+    function remove(){
+    	var args = arguments;
+    	$cnChannels.remove($scope.$cnChannels.channels[args[0]].multimediaId).then(function(){
+        $scope.$cnChannels.channels.splice(args[0], 1);  
+      });
     }
 
 

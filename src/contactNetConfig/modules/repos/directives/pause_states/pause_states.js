@@ -11,7 +11,8 @@
   	var directiveObj = {
         restrict: 'EA',
         scope: {
-          downloadedData: '='
+          downloadedData: '=',
+          card: '='
         },
         link: link,
         templateUrl: '/contactNetConfig/modules/repos/directives/pause_states/pause_states.html',
@@ -26,8 +27,9 @@
     }
 
     /* @ngInject */
-    function controller ($scope, $cnPauseStatus) {
+    function controller ($scope, $cnPauseStatus, $filter) {
 
+      var oldPause_states = [];
     	$scope.pause_states = [];
 
       $scope.addNew = addNew;
@@ -39,21 +41,27 @@
       function init(){
         $cnPauseStatus.get().then(function(){
           $scope.pause_states = arguments[0];
+          oldPause_states = angular.copy($scope.pause_states);
           $scope.downloadedData = true;
         });
       }
 
       function addNew(){
-        $scope.pause_states.unshift({
+        $scope.pause_states.push({
           id: -1,
-          label: ""
+          label: "",
+          modificable: true
         });
       }
 
       function save(){
-        var args = arguments;
-        $cnPauseStatus.save($scope.pause_states[arguments[0]]).then(function(){
-          $scope.pause_states[args[0]].id = arguments[0].id;  
+        angular.forEach($scope.pause_states, function(){
+          var args = arguments;
+          if(args[0].id === -1 || $filter('filter')(oldPause_states, {id: args[0].id})[0].label !== args[0].label ){
+            $cnPauseStatus.save(args[0]).then(function(){
+              $scope.pause_states[args[1]].id = arguments[0].id;  
+            });
+          }
         });
       }
 

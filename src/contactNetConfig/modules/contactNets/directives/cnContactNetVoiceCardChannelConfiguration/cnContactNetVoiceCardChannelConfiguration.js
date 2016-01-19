@@ -35,6 +35,10 @@
 	    			console.log('lalalalalalalala', arguments[0]);
 	    		});
 	    	}
+
+	    	$cnContactNets.getStrategy($scope.v.voiceChannelParams).then(function () {
+	    		console.log('getStrategy', arguments[0]);
+	    	})
 	    	// $scope = $scope.$parent;
 	    	// console.log($scope);
 

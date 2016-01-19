@@ -11,13 +11,13 @@
 
 			<md-progress-linear md-mode="indeterminate" ng-if="v.openCard && !v.downloadedData"></md-progress-linear>
 
-			<div class="item-card" ng-if="v.openCard" ng-show="v.downloadedData" layout="column" layout-fill>
-				<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="!loadingCards.length">
+			<div class="item-card" ng-if="v.openCard"  layout="column" layout-fill>
+				<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="v.downloadedData">
 
-					<cn-repo-qualifications flex ng-if="k === 'qualifications'" downloaded-data="v.downloadedData"></cn-repo-qualifications>
-					<cn-repo-skills flex ng-if="k === 'skills'" downloaded-data="v.downloadedData"></cn-repo-skills>
-					<cn-repo-categorizations flex ng-if="k === 'categorizations'" downloaded-data="v.downloadedData"></cn-repo-categorizations>
-					<cn-repo-pause-states flex ng-if="k === 'pause_states'" downloaded-data="v.downloadedData"></cn-repo-pause-states>
+					<cn-repo-qualifications flex ng-if="k === 'qualifications'" card="v" downloaded-data="v.downloadedData"></cn-repo-qualifications>
+					<cn-repo-skills flex ng-if="k === 'skills'" card="v" downloaded-data="v.downloadedData"></cn-repo-skills>
+					<cn-repo-categorizations flex ng-if="k === 'categorizations'" card="v" downloaded-data="v.downloadedData"></cn-repo-categorizations>
+					<cn-repo-pause-states flex ng-if="k === 'pause_states'" card="v" downloaded-data="v.downloadedData"></cn-repo-pause-states>
 
 
 				</div>
