@@ -78,7 +78,7 @@
 		function getById(){
 			var deferred = $q.defer();
 
-			$http.get('/ivr/getnetworkmultimediabyid/id/'+arguments[0]).then(function(){
+			$http.post('/ivr/getnetworkmultimediabyid', {id : arguments[0]}).then(function(){
 				deferred.resolve(arguments[0].data);
 			});			
 

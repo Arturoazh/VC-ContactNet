@@ -26,6 +26,8 @@
 		scope.get = get;
 		scope.getById = getById;
 		scope.getSpeech = getSpeech;
+		scope.getStreamSpeech = getStreamSpeech;
+		scope.getStrategy = getStrategy;
 
 		/**
 		* @ngdoc method
@@ -57,16 +59,57 @@
 
 		function getSpeech() {
 			var deferred = $q.defer();
-			console.log('ID Enviado', arguments[0]);
-
-			$http.get('/ivr/getspeech/id/'+arguments[0]).then(function(){
+			// console.log('ID Enviado', arguments[0]);
+			console.log(arguments[0]);
+			//OPCIONAL con comas type audio
+			$http.post('/ivr/getspeech', {type : 'MOH'}).then(function(){
 				deferred.resolve(arguments[0].data);
 			});
 
 			return deferred.promise;
 		}
 
-		// getspeech
+		function getStreamSpeech() {
+			var deferred = $q.defer();
+			// console.log('ID Enviado', arguments[0]);
+			console.log(arguments[0]);
+			//OPCIONAL con comas type audio
+			$http.post('/home/stream/streamspeech', {id : arguments[0]}).then(function(){
+				deferred.resolve(arguments[0].data);
+			});
+
+			return deferred.promise;
+		}
+
+		function getStrategy () {
+			var deferred = $q.defer();
+			// console.log('ID Enviado', arguments[0]);
+			console.log('channelId', arguments[0]);
+			//OPCIONAL con comas type audio
+			$http.post('/ivr/getstrategy', {channelId : arguments[0]}).then(function(){
+				deferred.resolve(arguments[0].data);
+			});
+
+			return deferred.promise;
+		}
+
+		// get stream by id
+		// /stream/streamspeech?id=1 : GET
+
+		// getstrategy PARAM: channelId
+		// /ivr/getstrategy : POST
+
+		// getstrategy
+		// /ivr/getvoices
+
+		// TRAFICO SALIENTE
+		// /ivr/getoutgoingnumbering : GET
+		// GUARDAR EN outgoingConfiguration.outgoingConfig como array
+
+		//	getshortnumberingitemsbyconfig
+		//
+
+
 
 
 		return scope;

@@ -39,6 +39,11 @@
 			  				$cnContactNets.getById(cncontactnetinfo.id).then(function () {
 			  					console.log('ELEMENT', arguments[0]);
 			  					$cnContactNets.contactNets[argsForEach[1]].contactNetInfo = arguments[0];
+			  					$cnContactNets.getSpeech().then(function () {
+			  						console.log('SPEECHS', arguments[0]);
+			  						cncontactnetinfo.speechs = arguments[0];
+			  						console.log(cncontactnetinfo);
+			  					});
 								});
 		  				};
 		  				scope.$apply();

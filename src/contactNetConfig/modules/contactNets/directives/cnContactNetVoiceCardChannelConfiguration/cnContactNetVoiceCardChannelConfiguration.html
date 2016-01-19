@@ -15,8 +15,11 @@
 				<div layout layout="row">
 					<md-input-container flex layout-align="center strech">
 		        <label>Curso del tráfico</label>
+		        <!-- Trafico entrante y saliente definir objecto -->
 		        <md-select ng-model="v.trafic">
-		        	<md-option value="1">Entrante y Saliente</md-option>
+		        	<md-option value="1">Entrante</md-option>
+		        	<md-option value="2">Saliente</md-option>
+		        	<md-option value="3">Entrante y Saliente</md-option>
 		        </md-select>
 		      </md-input-container>
 				</div>
@@ -25,10 +28,8 @@
 					<div layout="row" flex layout-wrap layout-align="strech">
 						<md-input-container flex="33">
 			        <label>Música en espera</label>
-			        <md-select ng-model="v.music">
-			        	<md-option value="1">Nombre de música 1</md-option>
-			        	<md-option value="2">Nombre de música 2</md-option>
-			        	<md-option value="3">Nombre de música 3</md-option>
+			        <md-select ng-model="v.contactNetInfo.voiceChannelParams.moh" ng-change="onSpeechChange({{v.contactNetInfo.voiceChannelParams.moh}})">
+			        	<md-option ng-repeat="(kk,vv) in v.speechs" value="{{vv.id}}">{{vv.description}}</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="33">
@@ -41,17 +42,13 @@
 			        	<md-option value="1">Aleatorio mismo peso</md-option>
 			        </md-select>
 			      </md-input-container>
-			      <md-input-container flex="33">
+			      <md-input-container flex="50">
 			        <label>Tiempo Administrativo</label>
-			        <input type="number" ng-model="v.administrativeTime">
+			        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.wrapupTime">
 			      </md-input-container>
-			      <md-input-container flex="33">
+			      <md-input-container flex="50">
 			        <label>Tiempo medio</label>
-			        <input type="number" ng-model="v.mediumTime">
-			      </md-input-container>
-			      <md-input-container flex="33">
-			        <label>Máximo número</label>
-			        <input type="number" ng-model="v.maxTime">
+			        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.averageTalkingTime">
 			      </md-input-container>
 					</div>
 				</div>
@@ -61,29 +58,36 @@
 						<div ng-class="{'arrowDown': traficoEntrante, 'arrowUp' : !traficoEntrante}"></div>
 					</h4>
 					<div layout="row" flex layout-wrap ng-show="traficoEntrante">
-						<div flex="25">
-							<md-input-container>
+						<div flex="50">
+							<md-input-container flex>
 				        <label>Comportamiento según disponibilidad</label>
-				        <md-select ng-model="v.disponibility">
-				        	<md-option value="1">Si</md-option>
-				        	<md-option value="2">No</md-option>
+				        <md-select ng-model="v.contactNetInfo.voiceChannelParams.joinEmpty">
+				        	<md-option value="YES">Si</md-option>
+				        	<md-option value="NO">No</md-option>
+				        	<md-option value="STRICT">Estricto</md-option>
 				        </md-select>
 				      </md-input-container>
 						</div>
-			      <div layout="row" flex="25" layout-align="center center">
-			      	<md-checkbox layout="row" flex ng-model="v.callSelected" ng-change="">
-				      	Puede colgar la llamada
+			      <div layout="row" flex="50" layout-align="center center">
+			      	<md-checkbox layout="row" ng-true-value="1" ng-false-value="0" flex ng-model="v.contactNetInfo.voiceChannelParams.canHangUp" ng-change="">
+				      	Puede colgar la llamada {{v.contactNetInfo.voiceChannelParams.canHangUp}}
 				      </md-checkbox>
 			      </div>
-			      <div layout="row" flex="25" layout-align="center center">
-			      	<md-checkbox layout="row" flex ng-model="v.timeoutSelected" ng-change="">
+			      <div layout="row" flex="100" layout-align="center center">
+			      	<md-checkbox layout="row" flex ng-model="v.contactNetInfo.voiceChannelParams.automaticQueueBuffer" ng-change="">
   							TimeOut Dinámico
   						</md-checkbox>
 			      </div>
-			      <div flex="25">
+			      <div flex="50">
 			      	<md-input-container>
 				        <label>Timeout (seg)</label>
-				        <input type="number" ng-model="v.time">
+				        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.timeout">
+				      </md-input-container>
+			      </div>
+			      <div flex="50">
+			      	<md-input-container flex="33">
+				        <label>Máximo número</label>
+				        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.maxlength">
 				      </md-input-container>
 			      </div>
 			      <div flex="100" layout="column" layout-padding>
@@ -94,28 +98,30 @@
 					      <div flex="22" layout="row">
 									<md-input-container>
 						        <label>Tipo de notificación</label>
-						        <md-select ng-model="v.typeNotification">
-						        	<md-option value="1">Tiempo medio en cola usando TTS</md-option>
+						        <md-select ng-model="v.contactNetInfo.voiceChannelParams.notifications.type">
+						        	<md-option value="pos">Posición en cola usando TTS</md-option>
+						        	<md-option value="audio">Tiempo medio en cola usando TTS</md-option>
+						        	<md-option value="AUDIOprueba">Audio</md-option>
 						        </md-select>
 						      </md-input-container>
 								</div>
 					      <div flex="22" layout="row">
 									<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <md-select ng-model="v.audio">
+						        <md-select ng-model="v.contactNetInfo.voiceChannelParams.notifications.audio">
 						        	<md-option value="1">Gracias por esperar</md-option>
 						        </md-select>
 						      </md-input-container>
 								</div>
 					      <div flex="22" layout="row" layout-align="center center">
 					      	<md-checkbox layout="row" flex ng-model="v.timeoutSelected" ng-change="">
-		  							TimeOut Dinámico
+		  							Reproducir audio
 		  						</md-checkbox>
 					      </div>
 					      <div flex="22" layout="row">
 					      	<md-input-container >
 						        <label>Frecuencia de aviso</label>
-						        <input type="number" ng-model="v.freNot">
+						        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.advertFrequency">
 						      </md-input-container>
 					      </div>
 					      <div flex="12" layout="row">
@@ -130,25 +136,26 @@
 				      <div ng-show="v.quiz" style="border:1px solid rgba(0,0,0,0.3);" layout-padding layout="row" layout-align="center center">
 					      <div flex="22">
 									<md-input-container>
-						        <label>Tipo de notificación</label>
-						        <input ng-model="v.disponible4">
+						        <label>Pregunta</label>
+						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.question">
 						      </md-input-container>
 								</div>
 					      <div flex="22">
 									<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <input ng-model="v.disponible5">
+						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.speech">
 						      </md-input-container>
 								</div>
 					      <div layout="row" flex="22" layout-align="center center">
-					      	<md-checkbox layout="row" flex ng-model="v.timeoutSelected" ng-change="">
-		  							TimeOut Dinámico
-		  						</md-checkbox>
+					      	<md-input-container>
+						        <label>Seleccionar audio</label>
+						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.minValue">
+						      </md-input-container>
 					      </div>
 					      <div flex="22">
 					      	<md-input-container>
-						        <label>Frecuencia de aviso</label>
-						        <input type="number" ng-model="v.freNot">
+						        <label>Seleccionar audio</label>
+						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.maxValue">
 						      </md-input-container>
 					      </div>
 					      <div flex="12">
