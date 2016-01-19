@@ -41,6 +41,7 @@
 		$rootScope.fab.hide = true;
  	
   	function open(){
+  		$scope.repos[arguments[0]].downloadedData = false;
   		$scope.repos[arguments[0]].openCard = !$scope.repos[arguments[0]].openCard;
   	}
 
