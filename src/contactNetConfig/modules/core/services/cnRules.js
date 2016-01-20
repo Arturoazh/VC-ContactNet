@@ -1,7 +1,7 @@
 (function(){
-	"use strict";
+  "use strict";
 
-	 /**
+   /**
    * @ngdoc service
    * @name $cnRules
    * @module core
@@ -14,46 +14,104 @@
    */
 
   angular
-  	.module('virtual-center')
+    .module('virtual-center')
     .service('$cnRules', service);
 
   /* ngInject */
-  function service($q, $cnMocks){
+  function service($q, $http){
 
-		var scope = this;
+    var scope = this;
 
-		scope.rules = [];
-		scope.get = get;
-		scope.getById = getById;
+    scope.rules = [];
+    scope.get = get;
+    scope.getById = getById;
+    scope.save = save;
+    scope.duplicate = duplicate;
+    scope.remove = remove;
+    
 
-		/**
-		* @ngdoc method
-		* @name $cnRules#get
-		*
-		* @return {promise} elements
-		*/
-		function get(){
-			var deferred = $q.defer();
+    /**
+    * @ngdoc method
+    * @name $cnRules#get
+    *
+    * @return {promise} elements
+    */
+    function get(){
+      var deferred = $q.defer();
 
-			$cnMocks.get('rules').then(function(){
-				deferred.resolve(arguments[0]);
-			});			
+      $http.get('/ivr/getconfiguration').then(function(){
+        deferred.resolve(arguments[0].data);
+      });     
 
-			return deferred.promise;
-		}
+      return deferred.promise;
+    }
 
-		function getById() {
-			var deferred = $q.defer();
+    /**
+    * @ngdoc method
+    * @name $cnRules#get
+    *
+    * @param {object} rule
+    *
+    * @return {promise} elements
+    */
+    function save(){
+      var args = arguments
+      var deferred = $q.defer();
 
-			$cnMocks.get('rulesId').then(function(){
-				deferred.resolve(arguments[0]);
-			});
+      $http.post('/ivr/saveconfigurationmultimedia', args[0]).then(function(){
+        deferred.resolve(arguments[0].data);
+      });     
 
-			return deferred.promise;
-		}
+      return deferred.promise;
+    }
 
 
-		return scope;
+    /**
+    * @ngdoc method
+    * @name $cnRules#duplicate
+    *
+    * @param {string|number} id
+    * @param {string} name
+    *
+    * @return {promise} elements
+    */
+    function duplicate(){
+      var args = arguments
+      var deferred = $q.defer();
+
+      $http.post('/ivr/duplicateconfig', {configurationId: args[0], configurationName: args[0]} ).then(function(){
+        deferred.resolve(arguments[0].data);
+      });     
+
+      return deferred.promise;
+    }
+
+    /*
+    * @param {string|<Array>string} multimedia_ids
+    */
+    function remove(){
+      var deferred = $q.defer();
+
+      $http.post('/ivr/deleteconfiguration', {id: arguments[0].id}).then(function(){
+        deferred.resolve(arguments[0].data);
+      });     
+
+      return deferred.promise;
+    }
+
+
+    function getById(){
+      var deferred = $q.defer();
+
+      $http.post('/ivr/getmultimediatree', {id : arguments[0]}).then(function(){
+        deferred.resolve(arguments[0].data);
+      });     
+
+      return deferred.promise;
+    }
+
+
+    return scope;
 
   }
 

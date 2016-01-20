@@ -29,8 +29,13 @@
 			action: newMail
 		}];
 
+    if(!$scope.$cnChannels.channels.length){
+      $scope.loading = true;
+    }
+
   	$cnChannels.get().then(function () {
       $scope.$cnChannels.channels = arguments[0];
+      $scope.loading = false;
   	});
 
 
@@ -52,6 +57,7 @@
 				"multimedia": "Nuevo Chat",
 				"downloadedData": true,
 				"openCard": true,
+        "newItem": true,
 			  "multimediaId": (new Date()).getTime(),
 			  "channelId": 2,
 			  "configModificable": true,
@@ -99,6 +105,9 @@
     function save(){
     	var item = angular.copy(arguments[0]);
     	delete item.openCard;
+      if(item.newItem){
+        item.multimediaId = -1;
+      }
       $cnChannels.save(item);
     }
 

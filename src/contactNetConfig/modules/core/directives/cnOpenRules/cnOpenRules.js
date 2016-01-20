@@ -35,8 +35,8 @@
 		  					$cnRules.rules[argsForEach[1]].openCard = !$cnRules.rules[argsForEach[1]].openCard;
 		  				}else {
 		  					$cnRules.rules[argsForEach[1]].openCard = !$cnRules.rules[argsForEach[1]].openCard;
-			  				$cnRules.getById().then(function () {
-			  					$cnRules.rules[argsForEach[1]] = arguments[0][0];
+			  				$cnRules.getById($cnRules.rules[argsForEach[1]].id).then(function () {
+			  					$cnRules.rules[argsForEach[1]] = arguments[0];
 			  					$cnRules.rules[argsForEach[1]].downloadedData = true;
 			  					$cnRules.rules[argsForEach[1]].openCard = !$cnRules.rules[argsForEach[1]].openCard;
 			  					console.log($cnRules.rules, $cnRules.rules[argsForEach[1]]);

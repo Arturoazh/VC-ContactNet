@@ -1,7 +1,13 @@
 
-<div flex layout="column" ng-if="qualifications.length">
+<div class="no-items" flex layout="column" ng-if="!filtered.length">
+  <p>No hay ninguna Cualificación de casos guardada, puedes <span class="blueVC-color" ng-click="addNew()">crear la primera ahora</span></p>
+  <p class="md-caption">Las cualificaciones le ayudarán a optimizar su ContactNet</p>
+</div>
 
-  <div class="border-container" layout="row" ng-repeat="(k,v) in qualifications" layout-align="space-between center">
+
+<div flex layout="column">
+
+  <div class="border-container" layout="row" ng-repeat="(k,v) in filtered = (qualifications | filter:{'action': '!DEL'})" layout-align="space-between center">
     <md-input-container flex="60">
       <label>Nombre</label>
       <input ng-disabled="!v.modificable" ng-model="v.label">
@@ -13,14 +19,14 @@
         <md-option value="NEGATIVE">Negativa</md-option>
       </md-select>
     </md-input-container>
-    <md-button ng-disabled="!v.modificable" class="md-icon-button" aria-label="Delete" ng-click="remove(k)">
+    <md-button ng-disabled="!v.modificable" class="md-icon-button" aria-label="Delete" ng-click="remove(v)">
       <md-icon md-svg-icon="delete"></md-icon>
     </md-button>
   </div>
 
-  <p class="md-caption blueVC-color" ng-click="addNew()">Añadir cualificación de casos</p>
+  <p class="md-caption blueVC-color" ng-show="filtered.length" ng-click="addNew()">Añadir cualificación de casos</p>
 
-  <div flex layout="row" class="action-buttons">
+  <div flex layout="row" class="action-buttons" ng-show="qualifications.length">
     <span flex></span>
     <md-button class="md-accent md-hue-2" ng-click="card.openCard = false">Cancelar</md-button>
     <span flex="5"></span>
@@ -30,8 +36,5 @@
 </div>
 
 
-<div class="no-items" flex layout="column" ng-if="!qualifications.length">
-  <p>No hay ninguna Cualificación de casos guardada, puedes <span class="blueVC-color" ng-click="addNew()">crear la primera ahora</span></p>
-  <p class="md-caption">Las cualificaciones le ayudarán a optimizar su ContactNet</p>
-</div>
+
   

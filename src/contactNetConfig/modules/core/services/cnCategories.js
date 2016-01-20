@@ -24,6 +24,7 @@
 
 		scope.categories = [];
 		scope.get = get;
+    scope.getContactnets = getContactnets;
 		scope.save = save;
 		scope.remove = remove;
 
@@ -38,10 +39,33 @@
 
 			$http.get('/ivr/getcategories').then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });			
 
 			return deferred.promise;
 		}
+
+    /**
+    * @ngdoc method
+    * @name $cnPauseStatus#getContactnets
+    *
+    * @param {object} skill
+    *
+    * @return {promise} elements
+    */
+    function getContactnets(){
+      var args = arguments
+      var deferred = $q.defer();
+
+      $http.post('/ivr/getcontactnetsusedbycategory/', {id: args[0].id} ).then(function(){
+        deferred.resolve(arguments[0].data);
+      }, function(){
+        deferred.reject(arguments[0].data);
+      });     
+
+      return deferred.promise;
+    }
 
 		/**
 		* @ngdoc method
@@ -63,7 +87,9 @@
 
 			$http.post('/ivr/savecategory', args[0]).then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });			
 
 			return deferred.promise;
 		}
@@ -79,7 +105,9 @@
 
 			$http.post('/ivr/deletecategory', {id:arguments[0].id}).then(function(){
 				deferred.resolve(arguments[0].data);
-			});	
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });	
 
 			return deferred.promise;
 		}

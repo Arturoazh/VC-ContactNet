@@ -24,6 +24,7 @@
 
 		scope.skills = [];
 		scope.get = get;
+    scope.getContactnets = getContactnets;
 		scope.save = save;
 		scope.remove = remove;
 		scope.getById = getById;
@@ -39,10 +40,33 @@
 
 			$http.get('/ivr/getskills').then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });			
 
 			return deferred.promise;
 		}
+
+    /**
+    * @ngdoc method
+    * @name $cnPauseStatus#getContactnets
+    *
+    * @param {object} skill
+    *
+    * @return {promise} elements
+    */
+    function getContactnets(){
+      var args = arguments
+      var deferred = $q.defer();
+
+      $http.post('/ivr/getcontactnetsusedbyskill/', {id: args[0].id} ).then(function(){
+        deferred.resolve(arguments[0].data);
+      }, function(){
+        deferred.reject(arguments[0].data);
+      });     
+
+      return deferred.promise;
+    }
 
 		/**
 		* @ngdoc method
@@ -64,7 +88,9 @@
 
 			$http.post('/ivr/saveskill', args[0]).then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });			
 
 			return deferred.promise;
 		}
@@ -80,7 +106,9 @@
 
 			$http.post('/ivr/deleteskill', {id:arguments[0].id}).then(function(){
 				deferred.resolve(arguments[0].data);
-			});				
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });				
 
 			return deferred.promise;
 		}
