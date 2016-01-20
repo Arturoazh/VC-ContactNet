@@ -27,7 +27,7 @@
 		scope.getById = getById;
 		scope.getSpeech = getSpeech;
 		scope.getStreamSpeech = getStreamSpeech;
-		scope.getStrategy = getStrategy;
+		scope.getStrategies = getStrategies;
 
 		/**
 		* @ngdoc method
@@ -74,19 +74,19 @@
 			// console.log('ID Enviado', arguments[0]);
 			console.log(arguments[0]);
 			//OPCIONAL con comas type audio
-			$http.post('/home/stream/streamspeech', {id : arguments[0]}).then(function(){
+			$http.get('/home/stream/streamspeech?id='+arguments[0]).then(function(){
 				deferred.resolve(arguments[0].data);
 			});
 
 			return deferred.promise;
 		}
 
-		function getStrategy () {
+		function getStrategies () {
 			var deferred = $q.defer();
 			// console.log('ID Enviado', arguments[0]);
 			console.log('channelId', arguments[0]);
 			//OPCIONAL con comas type audio
-			$http.post('/ivr/getstrategy', {channelId : arguments[0]}).then(function(){
+			$http.post('/ivr/getstrategies', {channelId : arguments[0]}).then(function(){
 				deferred.resolve(arguments[0].data);
 			});
 

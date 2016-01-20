@@ -10,6 +10,10 @@
     	
     	var directive = {
 	        restrict: 'EA',
+	        scope : {
+	        	contactnet : '=',
+	        	ngModel: '='
+	        },
 	        link: link,
 	        templateUrl: '/contactNetConfig/modules/contactNets/directives/cnContactNetVoiceCardChannelConfiguration/cnContactNetVoiceCardChannelConfiguration.html',
         	controller: controller
@@ -25,22 +29,19 @@
 	    /* @ngInject */
 	    function controller ($scope) {
 
-	    	$scope.$cnContactNets = $cnContactNets;
-	    	console.log('EN DIRECTIVA CANAL CONTACTNETS', $scope.$cnContactNets);
 	    	console.log($scope);
 	    	$scope.onSpeechChange = function () {
-	    		console.log($scope.v);
+	    		console.log($scope.contactnet);
 	    		console.log('HA CAMBIADO', arguments[0]);
 	    		$cnContactNets.getStreamSpeech(arguments[0]).then(function () {
-	    			console.log('lalalalalalalala', arguments[0]);
+	    			// console.log('lalalalalalalala', arguments[0]);
 	    		});
 	    	}
 
-	    	$cnContactNets.getStrategy($scope.v.voiceChannelParams).then(function () {
-	    		console.log('getStrategy', arguments[0]);
-	    	})
-	    	// $scope = $scope.$parent;
-	    	// console.log($scope);
+	    	$cnContactNets.getStrategies($scope.contactnet.contactNetInfo.voiceChannelParams.channelId).then(function () {
+	    		$scope.contactnet.contactNetInfo.voiceChannelParams.strategies = arguments[0];
+	    		console.log('getStrategies', arguments[0]);
+	    	});
 
 	    }
     }

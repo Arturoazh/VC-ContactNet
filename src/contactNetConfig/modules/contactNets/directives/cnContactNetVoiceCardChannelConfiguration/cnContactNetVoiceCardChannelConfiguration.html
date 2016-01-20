@@ -1,13 +1,13 @@
 
-<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard" ng-class="{'disable-hover' : !data.cb1}">
+<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="ngModel.openCard = !ngModel.openCard" ng-class="{'disable-hover' : !data.cb1}">
 	<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
 	<span layout-margin flex>Voz</span>
-	<md-switch class="md-secondary enable-hover" ng-model="data.cb1" aria-label="Switch 1" ng-show="!cnContactNetVoiceCardChannelConfiguration.openCard">
+	<md-switch class="md-secondary enable-hover" ng-model="data.cb1" aria-label="Switch 1" ng-show="!ngModel.openCard">
   </md-switch>
 
 </md-list-item>
 
-<div class="item-card" ng-if="cnContactNetVoiceCardChannelConfiguration.openCard" layout="column" layout-fill>
+<div class="item-card" ng-if="ngModel.openCard" layout="column" layout-fill>
 	<div layout-xs="column" layout-gt-xs="row" ng-show="!loadingCards.length">
 
 		<div flex layout="column" layout-align="space-between" layout-padding>
@@ -28,8 +28,8 @@
 					<div layout="row" flex layout-wrap layout-align="strech">
 						<md-input-container flex="33">
 			        <label>Música en espera</label>
-			        <md-select ng-model="v.contactNetInfo.voiceChannelParams.moh" ng-change="onSpeechChange({{v.contactNetInfo.voiceChannelParams.moh}})">
-			        	<md-option ng-repeat="(kk,vv) in v.speechs" value="{{vv.id}}">{{vv.description}}</md-option>
+			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.moh" ng-change="onSpeechChange(contactnet.contactNetInfo.voiceChannelParams.moh)">
+			        	<md-option ng-repeat="(kk,vv) in contactnet.speechs track by $index" value="{{vv.id}}">{{vv.description}}</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="33">
@@ -39,16 +39,16 @@
 			      <md-input-container flex="33">
 			        <label>Regla</label>
 			        <md-select ng-model="v.rules">
-			        	<md-option value="1">Aleatorio mismo peso</md-option>
+			        	<md-option ng-repeat="(kk,vv) in contactnet.contactNetInfo.voiceChannelParams.strategies track by $index" value="{{vv.value}}">{{vv.value}}</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Tiempo Administrativo</label>
-			        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.wrapupTime">
+			        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.wrapupTime">
 			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Tiempo medio</label>
-			        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.averageTalkingTime">
+			        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.averageTalkingTime">
 			      </md-input-container>
 					</div>
 				</div>
@@ -61,7 +61,7 @@
 						<div flex="50">
 							<md-input-container flex>
 				        <label>Comportamiento según disponibilidad</label>
-				        <md-select ng-model="v.contactNetInfo.voiceChannelParams.joinEmpty">
+				        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.joinEmpty">
 				        	<md-option value="YES">Si</md-option>
 				        	<md-option value="NO">No</md-option>
 				        	<md-option value="STRICT">Estricto</md-option>
@@ -69,25 +69,25 @@
 				      </md-input-container>
 						</div>
 			      <div layout="row" flex="50" layout-align="center center">
-			      	<md-checkbox layout="row" ng-true-value="1" ng-false-value="0" flex ng-model="v.contactNetInfo.voiceChannelParams.canHangUp" ng-change="">
-				      	Puede colgar la llamada {{v.contactNetInfo.voiceChannelParams.canHangUp}}
+			      	<md-checkbox layout="row" ng-true-value="1" ng-false-value="0" flex ng-model="contactnet.contactNetInfo.voiceChannelParams.canHangUp" ng-change="">
+				      	Puede colgar la llamada {{contactnet.contactNetInfo.voiceChannelParams.canHangUp}}
 				      </md-checkbox>
 			      </div>
 			      <div layout="row" flex="100" layout-align="center center">
-			      	<md-checkbox layout="row" flex ng-model="v.contactNetInfo.voiceChannelParams.automaticQueueBuffer" ng-change="">
+			      	<md-checkbox layout="row" flex ng-model="contactnet.contactNetInfo.voiceChannelParams.automaticQueueBuffer" ng-change="">
   							TimeOut Dinámico
   						</md-checkbox>
 			      </div>
 			      <div flex="50">
 			      	<md-input-container>
 				        <label>Timeout (seg)</label>
-				        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.timeout">
+				        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.timeout">
 				      </md-input-container>
 			      </div>
 			      <div flex="50">
 			      	<md-input-container flex="33">
 				        <label>Máximo número</label>
-				        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.maxlength">
+				        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.maxlength">
 				      </md-input-container>
 			      </div>
 			      <div flex="100" layout="column" layout-padding>
@@ -98,7 +98,7 @@
 					      <div flex="22" layout="row">
 									<md-input-container>
 						        <label>Tipo de notificación</label>
-						        <md-select ng-model="v.contactNetInfo.voiceChannelParams.notifications.type">
+						        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.notifications.type">
 						        	<md-option value="pos">Posición en cola usando TTS</md-option>
 						        	<md-option value="audio">Tiempo medio en cola usando TTS</md-option>
 						        	<md-option value="AUDIOprueba">Audio</md-option>
@@ -108,7 +108,7 @@
 					      <div flex="22" layout="row">
 									<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <md-select ng-model="v.contactNetInfo.voiceChannelParams.notifications.audio">
+						        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.notifications.audio">
 						        	<md-option value="1">Gracias por esperar</md-option>
 						        </md-select>
 						      </md-input-container>
@@ -121,7 +121,7 @@
 					      <div flex="22" layout="row">
 					      	<md-input-container >
 						        <label>Frecuencia de aviso</label>
-						        <input type="number" ng-model="v.contactNetInfo.voiceChannelParams.advertFrequency">
+						        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.advertFrequency">
 						      </md-input-container>
 					      </div>
 					      <div flex="12" layout="row">
@@ -137,25 +137,25 @@
 					      <div flex="22">
 									<md-input-container>
 						        <label>Pregunta</label>
-						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.question">
+						        <input ng-model="contactnet.contactNetInfo.voiceChannelParams.survey.question">
 						      </md-input-container>
 								</div>
 					      <div flex="22">
 									<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.speech">
+						        <input ng-model="contactnet.contactNetInfo.voiceChannelParams.survey.speech">
 						      </md-input-container>
 								</div>
 					      <div layout="row" flex="22" layout-align="center center">
 					      	<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.minValue">
+						        <input ng-model="contactnet.contactNetInfo.voiceChannelParams.survey.minValue">
 						      </md-input-container>
 					      </div>
 					      <div flex="22">
 					      	<md-input-container>
 						        <label>Seleccionar audio</label>
-						        <input ng-model="v.contactNetInfo.voiceChannelParams.survey.maxValue">
+						        <input ng-model="contactnet.contactNetInfo.voiceChannelParams.survey.maxValue">
 						      </md-input-container>
 					      </div>
 					      <div flex="12">
