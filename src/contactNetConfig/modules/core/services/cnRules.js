@@ -79,7 +79,7 @@
       var args = arguments
       var deferred = $q.defer();
 
-      $http.post('/ivr/duplicateconfig', {configurationId: args[0], configurationName: args[0]} ).then(function(){
+      $http.post('/ivr/duplicateconfig', {configurationId: args[0], configurationName: args[1]} ).then(function(){
         deferred.resolve(arguments[0].data);
       });     
 
