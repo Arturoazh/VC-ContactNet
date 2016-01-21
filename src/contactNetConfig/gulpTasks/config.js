@@ -1,10 +1,12 @@
 var UriConfigUser = {
   'Macbook Mike' : 'mamonteagudo',
+  mamonteagudo : 'mamonteagudo',
   azarzalejo : 'azarzalejo'
 };
 
 var keyConfigUser = {
   'Macbook Mike' : 'mpeula',
+  mamonteagudo : 'mamonteagudo',
   azarzalejo : 'azarzalejo'
 }
 

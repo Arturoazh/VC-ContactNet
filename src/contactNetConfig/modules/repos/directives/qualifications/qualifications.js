@@ -27,7 +27,7 @@
     }
 
     /* @ngInject */
-    function controller ($scope, $cnQualifications, $filter) {
+    function controller ($scope, $cnQualifications, $filter, $q, $mdToast) {
 
       var oldQualifications = [];
     	$scope.qualifications = [];
@@ -56,23 +56,47 @@
       }
 
       function save(){
+        var promises = [];
         angular.forEach($scope.qualifications, function(){
           var args = arguments;
-          if(args[0].id === -1 || $filter('filter')(oldQualifications, {id: args[0].id})[0].label !== args[0].label
-              || $filter('filter')(oldQualifications, {id: args[0].id})[0].value !== args[0].value ){
-            $cnQualifications.save(args[0]).then(function(){
+          if(args[0].action === 'DEL'){
+            if(args[0].id !== -1){
+              promises.push($cnQualifications.remove(args[0]).then(function(){
+                $scope.qualifications.splice(args[1], 1);  
+              }, function(){
+                delete $scope.qualifications[args[1]].action;  
+              }));  
+            }
+          }else if(args[0].id === -1 || $filter('filter')(oldQualifications, {id: args[0].id})[0].label !== args[0].label ){
+            promises.push($cnQualifications.save(args[0]).then(function(){
               $scope.qualifications[args[1]].id = arguments[0].id;  
-            });
+            }));
           }
         });
+
+        $q.all(promises).then(function(){
+          $scope.card.openCard = false;
+        });
+
       }
 
       function remove(){
         var args = arguments;
-        $cnQualifications.remove($scope.qualifications[arguments[0]]).then(function(){
-          $scope.qualifications.splice(args[0], 1);  
+        $cnQualifications.getContactnets(args[0]).then(function(){
+          if(!arguments[0].length)
+            args[0].action = 'DEL';
+          else{
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent('Cualificación en uso por '+arguments[0].length+' contactNet'+(arguments[0].length == 1 ? '' :'s') )
+                .position('bottom left')
+                .hideDelay(2500)
+            );
+          }
         });
+        
       }
+
 
     }
   }

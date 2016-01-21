@@ -24,8 +24,10 @@
 
 		scope.pauseStatus = [];
 		scope.get = get;
+    scope.getContactnets = getContactnets;
 		scope.save = save;
 		scope.remove = remove;
+    
 
 		/**
 		* @ngdoc method
@@ -38,7 +40,9 @@
 
 			$http.get('/ivr/getpausestatus').then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });			
 
 			return deferred.promise;
 		}
@@ -63,10 +67,34 @@
 
 			$http.post('/ivr/savepausestatus', args[0]).then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });			
 
 			return deferred.promise;
 		}
+
+    /**
+    * @ngdoc method
+    * @name $cnPauseStatus#getContactnets
+    *
+    * @param {object} skill
+    *
+    * @return {promise} elements
+    */
+    function getContactnets(){
+      var args = arguments
+      var deferred = $q.defer();
+
+      $http.post('/ivr/getcontactnetsusedbypausestatus/', {id: args[0].id} ).then(function(){
+        deferred.resolve(arguments[0].data);
+      }, function(){
+        deferred.reject(arguments[0].data);
+      });     
+
+      return deferred.promise;
+    }
+
 
 		function remove(){
 			var deferred = $q.defer();
@@ -79,7 +107,9 @@
 
 			$http.post('/ivr/deletepausestatus', {id:arguments[0].id}).then(function(){
 				deferred.resolve(arguments[0].data);
-			});			
+			}, function(){
+        deferred.reject(arguments[0].data);
+      });			
 
 			return deferred.promise;
 		}

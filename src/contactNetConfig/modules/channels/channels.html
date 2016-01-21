@@ -24,7 +24,7 @@
 							</md-button>
 						</md-menu-item>
 						<md-menu-item >
-							<md-button ng-disabled="!v.configModificable" ng-click="remove(k)">
+							<md-button ng-disabled="!v.configModificable && false" ng-click="remove(k)">
 									<div layout="row">
 										<md-icon md-menu-align-target md-svg-icon="delete"></md-icon>
 										<p flex>Eliminar</p>
@@ -51,7 +51,7 @@
 							<span flex></span>
 							<md-button class="md-accent md-hue-2" ng-click="v.openCard = false">Cancelar</md-button>
 							<span flex="5"></span>
-							<md-button ng-disabled="!v.configModificable" class="md-accent md-raised md-hue-2" ng-click="save(v)">Guardar</md-button>
+							<md-button ng-disabled="!v.configModificable && false" class="md-accent md-raised md-hue-2" ng-click="save(v)">Guardar</md-button>
 						</div>
 
 					</div>
@@ -63,7 +63,7 @@
 		</div>
 
 
-		<div ng-if="!$cnChannels.channels.length" class="md-whiteframe-z1 empty-section" layout-padding layout="row" layout-align="center">
+		<div ng-if="!$cnChannels.channels.length  && !loading" class="md-whiteframe-z1 empty-section" layout-padding layout="row" layout-align="center">
 			<div flex="80" layout="column">
 				<md-icon class="planet-size-icon" style="color:#417505;" md-svg-icon="channels" aria-label="channels"></md-icon>
 
@@ -102,6 +102,11 @@
 
 			</div>
 
+		</div>
+
+
+		<div layout="row" layout-padding layout-align="space-around" ng-if="loading" flex layout-fill>
+			<md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="80"></md-progress-circular>
 		</div>
 
 	</section>

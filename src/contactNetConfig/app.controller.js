@@ -6,12 +6,13 @@
     .controller('appController', controller);
 
   /* ngInject */
-  function controller($rootScope, $scope, $timeout, $mdSidenav, $cnMenu, $cnNavigate, $location, $interval){
+  function controller($rootScope, $scope, $timeout, $mdSidenav, $cnMenu, $cnNavigate, $location, $interval, $window){
 
 		$scope.toggleLeft = buildToggler('left');
 		$scope.menu = {};
 		$scope.cnNavigate = $cnNavigate;
 		$scope.environment = {};
+		$scope.session = $window.session;
 
 		$rootScope.fab = {
 			isOpen: false,

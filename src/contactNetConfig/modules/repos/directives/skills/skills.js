@@ -27,7 +27,7 @@
     }
 
     /* @ngInject */
-    function controller ($scope, $cnSkills, $filter) {
+    function controller ($scope, $cnSkills, $filter, $q, $mdToast) {
 
       var oldSkills = [];
     	$scope.skills = [];
@@ -55,22 +55,47 @@
     	}
 
       function save(){
+        var promises = [];
         angular.forEach($scope.skills, function(){
           var args = arguments;
-          if(args[0].id === -1 || $filter('filter')(oldSkills, {id: args[0].id})[0].label !== args[0].label ){
-            $cnSkills.save(args[0]).then(function(){
+          if(args[0].action === 'DEL'){
+            if(args[0].id !== -1){
+              promises.push($cnSkills.remove(args[0]).then(function(){
+                $scope.skills.splice(args[1], 1);  
+              }, function(){
+                delete $scope.skills[args[1]].action;  
+              }));  
+            }
+          }else if(args[0].id === -1 || $filter('filter')(oldSkills, {id: args[0].id})[0].label !== args[0].label ){
+            promises.push($cnSkills.save(args[0]).then(function(){
               $scope.skills[args[1]].id = arguments[0].id;  
-            });
+            }));
           }
         });
+
+        $q.all(promises).then(function(){
+          $scope.card.openCard = false;
+        });
+
       }
 
       function remove(){
         var args = arguments;
-        $cnSkills.remove($scope.skills[arguments[0]]).then(function(){
-          $scope.skills.splice(args[0], 1);  
+        $cnSkills.getContactnets(args[0]).then(function(){
+          if(!arguments[0].length)
+            args[0].action = 'DEL';
+          else{
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent('Skill en uso por '+arguments[0].length+' contactNet'+(arguments[0].length == 1 ? '' :'s') )
+                .position('bottom left')
+                .hideDelay(2500)
+            );
+          }
         });
+        
       }
+
 
     }
   }

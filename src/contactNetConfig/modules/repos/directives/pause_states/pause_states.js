@@ -27,7 +27,7 @@
     }
 
     /* @ngInject */
-    function controller ($scope, $cnPauseStatus, $filter) {
+    function controller ($scope, $cnPauseStatus, $filter, $q, $mdToast) {
 
       var oldPause_states = [];
     	$scope.pause_states = [];
@@ -55,21 +55,45 @@
       }
 
       function save(){
+        var promises = [];
         angular.forEach($scope.pause_states, function(){
           var args = arguments;
-          if(args[0].id === -1 || $filter('filter')(oldPause_states, {id: args[0].id})[0].label !== args[0].label ){
-            $cnPauseStatus.save(args[0]).then(function(){
+          if(args[0].action === 'DEL'){
+            if(args[0].id !== -1){
+              promises.push($cnPauseStatus.remove(args[0]).then(function(){
+                $scope.pause_states.splice(args[1], 1);  
+              }, function(){
+                delete $scope.pause_states[args[1]].action;  
+              }));  
+            }
+          }else if(args[0].id === -1 || $filter('filter')(oldPause_states, {id: args[0].id})[0].label !== args[0].label ){
+            promises.push($cnPauseStatus.save(args[0]).then(function(){
               $scope.pause_states[args[1]].id = arguments[0].id;  
-            });
+            }));
           }
         });
+
+        $q.all(promises).then(function(){
+          $scope.card.openCard = false;
+        });
+
       }
 
       function remove(){
         var args = arguments;
-        $cnPauseStatus.remove($scope.pause_states[arguments[0]]).then(function(){
-          $scope.pause_states.splice(args[0], 1);  
+        $cnPauseStatus.getContactnets(args[0]).then(function(){
+          if(!arguments[0].length)
+            args[0].action = 'DEL';
+          else{
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent('Estado en uso por '+arguments[0].length+' contactNet'+(arguments[0].length == 1 ? '' :'s') )
+                .position('bottom left')
+                .hideDelay(2500)
+            );
+          }
         });
+        
       }
 
     }
