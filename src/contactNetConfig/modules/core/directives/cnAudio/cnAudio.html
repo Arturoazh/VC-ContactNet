@@ -1,0 +1,12 @@
+<audio></audio>
+<md-button class="md-icon-button" aria-label="player" ng-if="!isError" ng-click="actionPlaying()">
+	<md-icon ng-if="isPlaying" md-svg-icon="phone" aria-label="Open Chat" class="greenVC-color"></md-icon>
+	<md-icon ng-if="!isPlaying" md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
+</md-button>
+<p flex layout="row" class="md-caption">
+	<span ng-if="isError">No es posible reproducir este audio</span>
+	<span ng-if="!isError">Reproducir Audio</span>
+</p>
+<!-- <button ng-click="stop()">stop</button> -->
+
+<!-- <md-progress-circular ng-if="!mediaConfig.isLoaded" class="md-hue-2" md-mode="{{vm.modes[0]}}" md-diameter="20px"></md-progress-circular> -->

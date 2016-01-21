@@ -12,3 +12,16 @@
 		background: #FFF;
 	}
 }
+
+.audioPlayer {
+	border-radius: 10px;
+	border: 1px solid rgba(0,0,0,0.4);
+	margin: 0 1em;
+	>button {
+		background: grey;
+		transform: scale(0.8);
+	}
+	>p {
+		padding-left: 0.5em;
+	}
+}

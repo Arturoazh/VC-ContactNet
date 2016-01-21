@@ -28,6 +28,9 @@
 		scope.getSpeech = getSpeech;
 		scope.getStreamSpeech = getStreamSpeech;
 		scope.getStrategies = getStrategies;
+		scope.getVoices = getVoices;
+		scope.getOutGoing = getOutGoing;
+		scope.getOutGoingNumbering = getOutGoingNumbering;
 
 		/**
 		* @ngdoc method
@@ -69,6 +72,18 @@
 			return deferred.promise;
 		}
 
+		function getVoices() {
+			var deferred = $q.defer();
+			// console.log('ID Enviado', arguments[0]);
+			console.log(arguments[0]);
+			//OPCIONAL con comas type audio
+			$http.get('/ivr/getvoices').then(function(){
+				deferred.resolve(arguments[0].data);
+			});
+
+			return deferred.promise;
+		}
+
 		function getStreamSpeech() {
 			var deferred = $q.defer();
 			// console.log('ID Enviado', arguments[0]);
@@ -91,6 +106,32 @@
 			});
 
 			return deferred.promise;
+		}
+
+		function getOutGoing () {
+			var deferred = $q.defer();
+			// console.log('ID Enviado', arguments[0]);
+			console.log('channelId', arguments[0]);
+			//OPCIONAL con comas type audio
+			$http.get('/ivr/getoutgoing').then(function(){
+				deferred.resolve(arguments[0].data);
+			});
+
+			return deferred.promise;
+		}
+
+		function getOutGoingNumbering () {
+
+			var deferred = $q.defer();
+			// console.log('ID Enviado', arguments[0]);
+			console.log('getOutGoingNumbering', arguments[0]);
+			//OPCIONAL con comas type audio
+			$http.get('/ivr/getoutgoingnumbering').then(function(){
+				deferred.resolve(arguments[0].data);
+			});
+
+			return deferred.promise;
+			
 		}
 
 		// get stream by id
