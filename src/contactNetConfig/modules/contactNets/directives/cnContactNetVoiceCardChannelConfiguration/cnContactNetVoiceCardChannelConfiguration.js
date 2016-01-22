@@ -29,6 +29,20 @@
 	    /* @ngInject */
 	    function controller ($scope) {
 
+	    	$scope.onTypeNotificationChange = function () {
+					var args = arguments;
+					console.log('arguments onTypeNotificationChange', args);
+					var call = {
+						'ADVERTISEMENT' : 'getSpeech',
+						'QUEUEMEMBER_POSITION' : 'getVoices',
+						'QUEUEMEMBER_TIME' : 'getVoices'
+					}
+					$cnContactNets[call[args[0]]](args[0]).then(function () {
+						console.log('arguments '+call[args[0]], arguments[0]);
+						args[1].selectConfig = arguments[0];
+					});
+				}
+
 	    }
     }
 

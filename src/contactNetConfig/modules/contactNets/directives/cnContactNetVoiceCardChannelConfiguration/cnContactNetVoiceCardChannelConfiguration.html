@@ -54,6 +54,7 @@
 			        <input type="number" ng-model="contactnet.voiceChannelParams.averageTalkingTime">
 			      </md-input-container>
 					</div>
+					<div cn-select-agents agents="contactnet.agents"></div>
 				</div>
 				<div layout="column">
 					<h4 layout="row" ng-click="traficoEntrante = !traficoEntrante" layout-align="start center" class="dropdownClick md-body-2">
@@ -159,7 +160,7 @@
 			        	<md-option value="0">Call Center</md-option>
 			        </md-select>
 			      </md-input-container>
-			      <md-input-container flex="50" layout-padding layout-align="center center">
+			      <md-input-container flex="50" layout-align="center center">
 			        <label>Grabación de llamadas</label>
 			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.voiceRecording.mode">
 			        	<md-option value="1">Al descolgar</md-option>
@@ -178,7 +179,7 @@
 		      	<md-checkbox layout="row" flex="100" ng-model="v.comunity" ng-change="" layout-padding>
 			      	Comunidad
 			      </md-checkbox>
-		        <md-input-container flex="50" layout-padding layout-align="center center">
+		        <md-input-container flex="50" layout-align="center center">
 			        <label>Selecciona comunidad</label>
 			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.id">
 			        	<md-option value="1">Madrid</md-option>
@@ -197,7 +198,7 @@
 			      	<div class="audioPlayer" cn-audio src="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.moh" layout-align="center center" layout="row" flex="70"></div>
 			      	<!-- <audio ng-src="/home/stream/streamspeech?id="></audio> -->
 			      </div>
-			      <md-input-container flex="50" layout-padding layout-align="center center">
+			      <md-input-container flex="50" layout-align="center center">
 			        <label>Transferencia</label>
 			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.type">
 			        	<md-option value="BLIND">Ciega</md-option>

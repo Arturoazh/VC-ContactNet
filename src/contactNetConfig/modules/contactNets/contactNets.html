@@ -9,7 +9,7 @@
 				</div>
 			</md-whiteframe>
 
-			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets | filter:filterSearch" ng-class="{'open-item': v.openCard}" ng-init="step=1">
+			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets | filter:{description: filterSearch.description}" ng-class="{'open-item': v.openCard}" ng-init="step=1">
 				<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-contact-net-info="v" cn-open-contact-nets>
 					<div flex ng-class="{'hText' : v.contactNetInfo}">{{v.description}}</div>
 					<span flex></span>
