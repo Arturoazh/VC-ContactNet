@@ -31,6 +31,7 @@
 		scope.getVoices = getVoices;
 		scope.getOutGoing = getOutGoing;
 		scope.getOutGoingNumbering = getOutGoingNumbering;
+		scope.getSupervisors = getSupervisors;
 
 		/**
 		* @ngdoc method
@@ -51,7 +52,7 @@
 
 		function getById() {
 			var deferred = $q.defer();
-			console.log('ID Enviado', arguments[0]);
+			console.log('ID ContactNet Enviado', arguments[0]);
 
 			$http.post('/ivr/getcontactnetbyid', { id : arguments[0] }).then(function(){
 				deferred.resolve(arguments[0].data);
@@ -66,6 +67,16 @@
 			console.log(arguments[0]);
 			//OPCIONAL con comas type audio
 			$http.post('/ivr/getspeech', {type : 'MOH'}).then(function(){
+				deferred.resolve(arguments[0].data);
+			});
+
+			return deferred.promise;
+		}
+
+		function getSupervisors() {
+			var deferred = $q.defer();
+			
+			$http.get('/ivr/getsupervisors').then(function () {
 				deferred.resolve(arguments[0].data);
 			});
 

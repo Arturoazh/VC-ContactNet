@@ -6,12 +6,13 @@
         .directive('cnSupervisorsConfig', directive);
 
     /* @ngInject */
-    function directive($cnContactNets, $http) {
+    function directive($cnContactNets) {
     	
     	var directive = {
 	        restrict: 'EA',
 	        scope : {
-	        	contactnet : '='	        },
+	        	contactnet : '='
+	        },
 	        link: link,
 	        templateUrl: '/contactNetConfig/modules/core/directives/cnSupervisorsConfig/cnSupervisorsConfig.html',
         	controller: controller
@@ -21,16 +22,16 @@
 
 
 	    function link(scope, element, attr, ctrl) {
+	    	$cnContactNets.getSupervisors().then(function () {
+	    		console.log('getSupervisors', arguments[0]);
+			    scope.contactnet.contactNetInfo.supervisors = arguments[0];
+	    	});
 	    }
 
 	    /* @ngInject */
 	    function controller ($scope) {
 	    	console.log('cnSupervisorsConfig', $scope);
 
-	    	$http.get('/ivr/getsupervisors').then(function () {
-		    	console.log('getsupervisors', arguments[0]);
-		    	$scope.contactnet.contactNetInfo.supervisors = arguments[0].data;
-		    });
 	    }
     }
 

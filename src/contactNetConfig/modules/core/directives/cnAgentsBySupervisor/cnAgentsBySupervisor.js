@@ -25,30 +25,29 @@
 
 	    function link(scope, element, attr, ctrl) {
 
-
-
-	    }
-
-	    /* @ngInject */
-	    function controller ($scope) {
-	    	console.log('cnSupervisorsConfig', $scope);
-	    	$scope.filterSelected = true
-	    	$scope.querySearch = querySearch;
-	    	$scope.filterAgents = [];
+	    	console.log('cnSupervisorsConfig', scope);
+	    	scope.filterSelected = true
+	    	scope.querySearch = querySearch;
+	    	scope.filterAgents = [];
 
 	    	function querySearch () {
 		      
 	    		// console.log('Texto Query', arguments[0]);
 	    		var result = [];
-	    		for (var i = 0; i < $scope.agents.length; i++) {
-	    			if (~$scope.agents[i].name.indexOf(arguments[0])) {
-	    				result.push($scope.agents[i]);
+	    		for (var i = 0; i < scope.agents.length; i++) {
+	    			if (~scope.agents[i].name.indexOf(arguments[0])) {
+	    				result.push(scope.agents[i]);
 	    			};
 	    		};
 
 		      return result;
 		    }
 	    }
+
+	    /* @ngInject */
+	    function controller ($scope) {
+	    }
+
     }
 
  

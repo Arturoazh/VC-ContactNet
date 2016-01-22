@@ -9,7 +9,7 @@
 				</div>
 			</md-whiteframe>
 
-			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets | filter:filterSearch" ng-class="{'open-item': v.openCard}" ng-init="step=2">
+			<div ng-if="contactNetsService.contactNets.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in contactNetsService.contactNets | filter:filterSearch" ng-class="{'open-item': v.openCard}" ng-init="step=1">
 				<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-contact-net-info="v" cn-open-contact-nets>
 					<div flex ng-class="{'hText' : v.contactNetInfo}">{{v.description}}</div>
 					<span flex></span>
@@ -69,10 +69,7 @@
 				      </div>
 						</div>
 						<div ng-if="step == 1">
-							<div cn-contact-net-voice-card-channel-configuration contactnet="v" ng-model="voiceCard" class="md-item md-whiteframe-z1" ng-class="{'openInnerCard md-whiteframe-z3': voiceCard.openCard}"></div>
-							<div cn-contact-net-chat-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetChatCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetChatCardChannelConfiguration.openCard}"></div>
-							<div cn-contact-net-mail-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetMailCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetMailCardChannelConfiguration.openCard}"></div>
-							<div cn-contact-net-twitter-card-channel-configuration class="md-item md-whiteframe-z1" ng-model="cnContactNetTwitterCardChannelConfiguration.openCard" ng-class="{'openInnerCard md-whiteframe-z3': cnContactNetTwitterCardChannelConfiguration.openCard}"></div>
+							<div cn-contact-net-channels-config contactnet="v" layout="column"></div>
 						</div>
 						<div ng-if="step == 2">
 							<div cn-supervisors-config contactnet="v" layout="column"></div>

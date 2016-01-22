@@ -27,12 +27,12 @@
 					<div layout="row" flex layout-wrap layout-align="strech">
 						<md-input-container flex="33">
 			        <label>Música en espera</label>
-			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.moh" ng-change="onSpeechChange(contactnet.contactNetInfo.voiceChannelParams.moh)">
-			        	<md-option ng-repeat="(kk,vv) in contactnet.contactNetInfo.voiceChannelParams.speechs track by $index" value="{{vv.id}}">{{vv.description}}</md-option>
+			        <md-select ng-model="contactnet.voiceChannelParams.moh" ng-change="onSpeechChange(contactnet.voiceChannelParams.moh)">
+			        	<md-option ng-repeat="(kk,vv) in contactnet.voiceChannelParams.speechs track by $index" value="{{vv.id}}">{{vv.description}}</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <div flex="33" layout-align="center center" layout="row">
-			      	<div class="audioPlayer" cn-audio src="contactnet.contactNetInfo.voiceChannelParams.moh" layout-align="center center" layout="row" flex="70"></div>
+			      	<div class="audioPlayer" cn-audio src="contactnet.voiceChannelParams.moh" layout-align="center center" layout="row" flex="70"></div>
 			      	<!-- <audio ng-src="/home/stream/streamspeech?id="></audio> -->
 			      </div>
 			      <!-- <md-input-container flex="33"> -->
@@ -42,16 +42,16 @@
 			      <md-input-container flex="33">
 			        <label>Regla</label>
 			        <md-select ng-model="v.rules">
-			        	<md-option ng-repeat="(kk,vv) in contactnet.contactNetInfo.voiceChannelParams.strategies track by $index" value="{{vv.value}}">{{vv.value}}</md-option>
+			        	<md-option ng-repeat="(kk,vv) in contactnet.voiceChannelParams.strategies track by $index" value="{{vv.value}}">{{vv.value}}</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Tiempo Administrativo</label>
-			        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.wrapupTime">
+			        <input type="number" ng-model="contactnet.voiceChannelParams.wrapupTime">
 			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Tiempo medio</label>
-			        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.averageTalkingTime">
+			        <input type="number" ng-model="contactnet.voiceChannelParams.averageTalkingTime">
 			      </md-input-container>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 						<div flex="50">
 							<md-input-container flex layout="row">
 				        <label>Comportamiento según disponibilidad</label>
-				        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.joinEmpty" flex>
+				        <md-select ng-model="contactnet.voiceChannelParams.joinEmpty" flex>
 				        	<md-option value="YES">Si</md-option>
 				        	<md-option value="NO">No</md-option>
 				        	<md-option value="STRICT">Estricto</md-option>
@@ -72,27 +72,27 @@
 				      </md-input-container>
 						</div>
 			      <div layout="row" flex="50" layout-align="center center">
-			      	<md-checkbox layout="row" flex ng-model="contactnet.contactNetInfo.voiceChannelParams.canHangUp" ng-change="">
+			      	<md-checkbox layout="row" flex ng-model="contactnet.voiceChannelParams.canHangUp" ng-change="">
 				      	Puede colgar la llamada
 				      </md-checkbox>
 			      </div>
 			      <!-- ng-true-value="1" ng-false-value="0" -->
 			      <div layout="row" flex="100" layout-align="center center">
-			      	<md-checkbox layout="row" flex ng-model="contactnet.contactNetInfo.voiceChannelParams.automaticQueueBuffer" ng-change="">
+			      	<md-checkbox layout="row" flex ng-model="contactnet.voiceChannelParams.automaticQueueBuffer" ng-change="">
   							TimeOut Dinámico
   						</md-checkbox>
 			      </div>
-			      <div flex="100" layout="row" ng-show="contactnet.contactNetInfo.voiceChannelParams.automaticQueueBuffer" layout-padding>
+			      <div flex="100" layout="row" ng-show="contactnet.voiceChannelParams.automaticQueueBuffer" layout-padding>
 			      	<div flex layout="row">
 				      	<md-input-container flex>
 					        <label>Timeout (seg)</label>
-					        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.timeOut">
+					        <input type="number" ng-model="contactnet.voiceChannelParams.timeOut">
 					      </md-input-container>
 				      </div>
 				      <div flex layout="row">
 				      	<md-input-container flex>
 					        <label>Máximo número</label>
-					        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.maxlength">
+					        <input type="number" ng-model="contactnet.voiceChannelParams.maxlength">
 					      </md-input-container>
 				      </div>
 			      </div>
@@ -104,10 +104,10 @@
 					      <div flex="100" layout="row">
 					      	<md-input-container flex>
 						        <label>Frecuencia de aviso</label>
-						        <input type="number" ng-model="contactnet.contactNetInfo.voiceChannelParams.advertFrequency">
+						        <input type="number" ng-model="contactnet.voiceChannelParams.advertFrequency">
 						      </md-input-container>
 					      </div>
-					      <div ng-repeat="(kk, vv) in contactnet.contactNetInfo.voiceChannelParams.notifications track by $index" style="border:1px solid rgba(0,0,0,0.3);" layout-margin layout="row" layout-align="center strech" ng-init="v.order = kk">
+					      <div ng-repeat="(kk, vv) in contactnet.voiceChannelParams.notifications track by $index" style="border:1px solid rgba(0,0,0,0.3);" layout-margin layout="row" layout-align="center strech" ng-init="v.order = kk">
 						      <div flex="30" layout="row">
 										<md-input-container flex>
 							        <label>Tipo de notificación</label>
@@ -131,10 +131,10 @@
 						      	<!-- <audio ng-src="/home/stream/streamspeech?id="></audio> -->
 						      </div>
 						      <div flex="10" layout="row">
-										<md-icon ng-click="contactnet.contactNetInfo.voiceChannelParams.notifications.splice(kk, 1)" md-svg-icon="delete" aria-label="delete notification" class="md-hue-3"></md-icon>
+										<md-icon ng-click="contactnet.voiceChannelParams.notifications.splice(kk, 1)" md-svg-icon="delete" aria-label="delete notification" class="md-hue-3"></md-icon>
 						      </div>
 					      </div>
-					      <p class="md-caption blueVC-color" ng-click="contactnet.contactNetInfo.voiceChannelParams.notifications.push({})">
+					      <p class="md-caption blueVC-color" ng-click="contactnet.voiceChannelParams.notifications.push({})">
 										Añadir notificación
 								</p>
 				      </div>
@@ -148,31 +148,31 @@
 					<div layout="row" flex layout-wrap>
 						<md-input-container flex="50">
 			        <label>Seleccionar ANI</label>
-			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.ani">
-			        	<md-option ng-repeat="(k9, v9) in contactnet.contactNetInfo.voiceChannelParams.ani" value="{{v9.label}}">{{v9.label}}</md-option>
+			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.ani">
+			        	<md-option ng-repeat="(k9, v9) in contactnet.voiceChannelParams.ani" value="{{v9.label}}">{{v9.label}}</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Llamar primero</label>
-        			<md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.agentFirst">
+        			<md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.agentFirst">
 			        	<md-option value="1">Agente</md-option>
 			        	<md-option value="0">Call Center</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50" layout-padding layout-align="center center">
 			        <label>Grabación de llamadas</label>
-			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.voiceRecording.mode">
+			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.voiceRecording.mode">
 			        	<md-option value="1">Al descolgar</md-option>
 			        	<md-option value="2">Bajo demanda</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <md-input-container flex="50" layout-align="center center">
 			        <label>Porcentaje de llamadas a grabar</label>
-        			<md-select ng-model="v.percentCalls">
-			        	<md-option value="1">10%</md-option>
-			        	<md-option value="2">25%</md-option>
-			        	<md-option value="3">50%</md-option>
-			        	<md-option value="4">100%</md-option>
+        			<md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.voiceRecording.percentage">
+			        	<md-option value="10">10%</md-option>
+			        	<md-option value="25">25%</md-option>
+			        	<md-option value="50">50%</md-option>
+			        	<md-option value="100">100%</md-option>
 			        </md-select>
 			      </md-input-container>
 		      	<md-checkbox layout="row" flex="100" ng-model="v.comunity" ng-change="" layout-padding>
@@ -180,7 +180,7 @@
 			      </md-checkbox>
 		        <md-input-container flex="50" layout-padding layout-align="center center">
 			        <label>Selecciona comunidad</label>
-			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.id">
+			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.id">
 			        	<md-option value="1">Madrid</md-option>
 			        	<md-option value="2">Barcelona</md-option>
 			        	<md-option value="3">Sevilla</md-option>
@@ -189,33 +189,33 @@
 			      </md-input-container>
 			      <md-input-container flex="50">
 			        <label>Música en espera</label>
-			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.moh" ng-change="onSpeechChange(contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.moh)">
-			        	<md-option ng-repeat="(kk,vv) in contactnet.contactNetInfo.voiceChannelParams.speechs track by $index" value="{{vv.id}}">{{vv.description}}</md-option>
+			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.moh" ng-change="onSpeechChange(contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.moh)">
+			        	<md-option ng-repeat="(kk,vv) in contactnet.voiceChannelParams.speechs track by $index" value="{{vv.id}}">{{vv.description}}</md-option>
 			        </md-select>
 			      </md-input-container>
 			      <div flex="50" layout-align="center center" layout="row">
-			      	<div class="audioPlayer" cn-audio src="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.moh" layout-align="center center" layout="row" flex="70"></div>
+			      	<div class="audioPlayer" cn-audio src="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.moh" layout-align="center center" layout="row" flex="70"></div>
 			      	<!-- <audio ng-src="/home/stream/streamspeech?id="></audio> -->
 			      </div>
 			      <md-input-container flex="50" layout-padding layout-align="center center">
 			        <label>Transferencia</label>
-			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.type">
+			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig.shortNumbering.type">
 			        	<md-option value="BLIND">Ciega</md-option>
 			        	<md-option value="ATTENDED">Atendida</md-option>
 			        	<md-option value="BOTH">Ambas</md-option>
 			        </md-select>
 			      </md-input-container>
-<!-- 			      <div ng-repeat="(k4, v4) in contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration.outgoingConfig">
+<!-- 			      <div ng-repeat="(k4, v4) in contactnet.voiceChannelParams.outgoingConfiguration.outgoingConfig">
 			      	<md-input-container flex="100" layout-padding ng-if="v4.ConfigName == 'SERVICETYPE'">
 				        <label>Tipos de numeración</label>
 				        <md-select ng-init="v4.ConfigName = 'SERVICETYPE'" ng-model="v4.ConfigValue">
-				        	<md-option ng-repeat="(k5, v5) in contactnet.contactNetInfo.voiceChannelParams.outGoing" value="{{v5.id}}">{{v5.label}}</md-option>
+				        	<md-option ng-repeat="(k5, v5) in contactnet.voiceChannelParams.outGoing" value="{{v5.id}}">{{v5.label}}</md-option>
 				        </md-select>
 				      </md-input-container>	
 			      </div> -->
 <!-- 			      <md-input-container flex="100" layout-padding>
 			        <label>Tipos de numeración</label>
-			        <md-select ng-model="contactnet.contactNetInfo.voiceChannelParams.outgoingConfiguration">
+			        <md-select ng-model="contactnet.voiceChannelParams.outgoingConfiguration">
 			        	<md-option value="1">Móvil</md-option>
 			        </md-select>
 			      </md-input-container> -->
