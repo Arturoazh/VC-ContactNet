@@ -1,113 +1,124 @@
 <!-- <div class="md-item md-whiteframe-z1" ng-model="yo.openCard" ng-class="{'openInnerCard md-whiteframe-z3': yo.openCard}"> -->
 <!-- ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard" -->
-	<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="cnContactNetChatCardChannelConfiguration.openCard = !cnContactNetChatCardChannelConfiguration.openCard" ng-class="{'disable-hover' : !data.cb2}">
+	<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="ngModel.openCard = !ngModel.openCard" ng-class="{'disable-hover' : !data.cb2}">
 		<md-icon md-svg-icon="message" aria-label="Open Chat" class="md-hue-3"></md-icon>
 		<span layout-margin flex>Chat</span>
-		<md-switch class="md-secondary enable-hover" ng-model="data.cb2" aria-label="Switch 1" ng-show="!cnContactNetChatCardChannelConfiguration.openCard">
+		<md-switch class="md-secondary enable-hover" ng-model="data.cb2" aria-label="Switch 1" ng-show="!ngModel.openCard">
 	  </md-switch>
 
 	</md-list-item>
 
-	<div class="item-card" ng-if="cnContactNetChatCardChannelConfiguration.openCard" layout="column" layout-fill>
+	<div class="item-card" ng-if="ngModel.openCard" layout="column" layout-fill>
 		<div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="!loadingCards.length">
 
 			<div flex layout="column" layout-align="space-between">
 
 					<div layout layout="row">
-						<md-input-container flex>
-			        <label>Curso del tráfico</label>
-			        <input ng-model="v.trafic">
+			      <md-input-container flex>
+			        <label>Regla</label>
+			        <md-select ng-model="contactnet.chatChannelParams.strategy">
+			        	<md-option ng-repeat="(k,v) in channels" value="{{v.multimediaId}}">{{v.multimedia}}</md-option>
+
+			        </md-select>
+			      </md-input-container>
+			      <md-input-container flex>
+			        <label>Tiempo medio en responder al 1º chat</label>
+			        <input type="number" ng-model="contactnet.chatChannelParams.tmFirstMessage">
+			      </md-input-container>
+			      <md-input-container flex>
+			        <label>Tiempo medio en responder al resto de chat</label>
+			        <input type="number" ng-model="contactnet.chatChannelParams.tmNextMessage">
 			      </md-input-container>
 					</div>
+					
 					<div layout="column">
-						<h4>Tráfico entrante</h4>
-						<div layout="row" flex layout-wrap>
-							<md-input-container flex="33" layout-padding>
-				        <label>Música en espera</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Simulate Audio</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Regla</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Tiempo Administrativo</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Tiempo medio</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Máximo número</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
+						<h4 layout="row" ng-click="advancedConfig = !advancedConfig" layout-align="start center" class="dropdownClick md-body-2">
+							Configuración avanzada
+							<div ng-class="{'arrowDown': advancedConfig, 'arrowUp' : !advancedConfig}"></div>
+						</h4>
+						<div layout="row" flex layout-wrap ng-show="advancedConfig">
+							<div flex="50">
+								<md-input-container flex layout="row">
+					        <label>Comportamiento según disponibilidad</label>
+					        <md-select ng-model="contactnet.chatChannelParams.joinEmpty" flex>
+					        	<md-option value="YES">Si</md-option>
+					        	<md-option value="NO">No</md-option>
+					        	<md-option value="STRICT">Estricto</md-option>
+					        </md-select>
+					      </md-input-container>
+							</div>
+
+							<div flex="100" layout="column">
+				      	<md-checkbox layout="row" flex ng-model="survey" ng-change="">
+					      	Activar encuesta
+					      </md-checkbox>
+					      <div flex="100" layout="column" ng-show="survey">
+						      <div ng-repeat="(k, v) in contactnet.chatChannelParams.survey track by $index" style="border:1px solid rgba(0,0,0,0.3);" layout-margin layout="row" layout-align="center strech" ng-init="v.order = k">
+							      <div flex="60" layout="row">
+											<md-input-container flex>
+							        <label>Pregunta a realizar</label>
+								        <input ng-model="v.question">
+								      </md-input-container>
+										</div>
+							      <div flex="15" layout="row">
+											<md-input-container flex>
+							        <label>Valoración</label>
+								        <input type="number" ng-model="v.message">
+								      </md-input-container>
+										</div>
+										<div flex="15" layout="row">
+											<md-input-container flex>
+							        <label>Valoración</label>
+								        <input type="number" ng-model="v.message">
+								      </md-input-container>
+										</div>
+							      <div flex="10" layout="row">
+											<md-icon ng-click="contactnet.chatChannelParams.survey.splice(k, 1)" md-svg-icon="delete" aria-label="delete autoReply" class="md-hue-3"></md-icon>
+							      </div>
+						      </div>
+						      <p class="md-caption blueVC-color" ng-click="contactnet.chatChannelParams.survey.push({})">
+											Añadir autorespuesta
+									</p>
+					      </div>
+					    </div>
+
+					    <div flex="100" layout="column">
+				      	<md-checkbox layout="row" flex ng-model="autoReplies" ng-change="">
+					      	Activar autorespuesta
+					      </md-checkbox>
+					      <div flex="100" layout="column" ng-show="autoReplies">
+						      <div ng-repeat="(k, v) in contactnet.chatChannelParams.autoReplies track by $index" style="border:1px solid rgba(0,0,0,0.3);" layout-margin layout="row" layout-align="center strech" ng-init="v.order = k">
+							      <div flex="30" layout="row">
+											<md-input-container flex>
+							        <label>Etiqueta de autorespuesta</label>
+								        <input ng-model="v.description">
+								      </md-input-container>
+										</div>
+							      <div flex="60" layout="row">
+											<md-input-container flex>
+							        <label>Texto de autorespuesta</label>
+								        <input ng-model="v.message">
+								      </md-input-container>
+										</div>
+							      <div flex="10" layout="row">
+											<md-icon ng-click="contactnet.chatChannelParams.autoReplies.splice(k, 1)" md-svg-icon="delete" aria-label="delete autoReply" class="md-hue-3"></md-icon>
+							      </div>
+						      </div>
+						      <p class="md-caption blueVC-color" ng-click="contactnet.chatChannelParams.autoReplies.push({})">
+											Añadir autorespuesta
+									</p>
+					      </div>
+					    </div>
+
+
 						</div>
+
+						
+
 					</div>
-					<div layout="column">
-						<h4>Configuración avanzada del tráfico entrante</h4>
-						<div layout="row" flex layout-wrap>
-							<md-input-container flex="33" layout-padding>
-				        <label>Música en espera</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Simulate Audio</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Regla</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Tiempo Administrativo</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Tiempo medio</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Máximo número</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-						</div>
-					</div>
-					<div layout="column">
-						<h4>Tráfico saliente</h4>
-						<div layout="row" flex layout-wrap>
-							<md-input-container flex="33" layout-padding>
-				        <label>Música en espera</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Simulate Audio</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Regla</label>
-				        <input ng-model="v.music">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Tiempo Administrativo</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Tiempo medio</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-				      <md-input-container flex="33" layout-padding>
-				        <label>Máximo número</label>
-				        <input type="number" ng-model="v.time">
-				      </md-input-container>
-						</div>
-					</div>
+
 					<div layout layout-align="end">
-						<md-button ng-click="cnContactNetChatCardChannelConfiguration.openCard = false;" class="md-accent md-hue-2">Cancelar</md-button>
+						<md-button ng-click="ngModel.openCard = false;" class="md-accent md-hue-2">Cancelar</md-button>
 						<md-button class="md-accent md-raised md-hue-2">Guardar</md-button>
 					</div>
 

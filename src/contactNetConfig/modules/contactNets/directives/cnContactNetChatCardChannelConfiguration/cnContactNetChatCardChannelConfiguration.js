@@ -10,7 +10,10 @@
     	
     	var directive = {
 	        restrict: 'EA',
-	        scope: false,
+	        scope : {
+	        	contactnet : '=',
+	        	ngModel: '='
+	        },
 	        link: link,
 	        templateUrl: '/contactNetConfig/modules/contactNets/directives/cnContactNetChatCardChannelConfiguration/cnContactNetChatCardChannelConfiguration.html',
         	controller: controller
@@ -24,10 +27,15 @@
 	    }
 
 	    /* @ngInject */
-	    function controller ($scope) {
+	    function controller ($scope, $cnChannels, $filter) {
+	    	console.warn($scope.contactnet);
+	    	$scope.channels = [];
+	    	$scope.survey = $scope.contactnet.chatChannelParams.survey ? true : false;
+	    	$scope.autoReplies = $scope.contactnet.chatChannelParams.autoReplies.length ? true : false;
 
-	    	// $scope = $scope.$parent;
-	    	// console.log($scope);
+	    	$cnChannels.get().then(function(){
+	    		$scope.channels = $filter('filter')(arguments[0], {channelId: 2});
+	    	});
 
 	    }
     }
