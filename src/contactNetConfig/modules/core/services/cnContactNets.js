@@ -32,6 +32,7 @@
 		scope.getOutGoing = getOutGoing;
 		scope.getOutGoingNumbering = getOutGoingNumbering;
 		scope.getSupervisors = getSupervisors;
+		scope.getAgents = getAgents;
 
 		/**
 		* @ngdoc method
@@ -77,6 +78,16 @@
 			var deferred = $q.defer();
 			
 			$http.get('/ivr/getsupervisors').then(function () {
+				deferred.resolve(arguments[0].data);
+			});
+
+			return deferred.promise;
+		}
+
+		function getAgents() {
+			var deferred = $q.defer();
+			
+			$http.get('/ivr/getagents').then(function () {
 				deferred.resolve(arguments[0].data);
 			});
 

@@ -7,12 +7,12 @@
   </md-input-container>
   <span flex></span>
   <span flex="20" layout-align="center center" layout>
-  	{{prueba || '25'}} de {{agents.length}} seleccionados
+  	{{prueba || 'N'}} de {{agents.length}} seleccionados
   </span>
-  <p class="md-caption blueVC-color" flex="10" layout-align="center center" layout>
+  <p class="md-caption blueVC-color" flex="10" layout-align="center center" layout ng-click="selectDeselectAll(true)">
 			Todos
 	</p>
-	<p class="md-caption blueVC-color" flex="10" layout-align="center center" layout>
+	<p class="md-caption blueVC-color" flex="10" layout-align="center center" layout ng-click="selectDeselectAll(false)">
 			Ninguno
 	</p>
 </div>

@@ -1,5 +1,5 @@
 <div 
-	ng-repeat="(k,v) in contactnet.contactNetInfo.supervisors" 
+	ng-repeat="(k,v) in contactnet.contactNetInfo.supervisors | limitTo:10" 
 	class="chipsAgentsBySupervisors md-item md-whiteframe-z1"
 	ng-class="{'openInnerCard md-whiteframe-z3': agentCard.openCard}"
 	ng-open-card="agentCard"
