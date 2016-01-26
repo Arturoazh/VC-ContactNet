@@ -14,7 +14,7 @@ $cnBackgroundCards : #FFF;
   width: 100%;
   margin: 1em 0;
   z-index: 1;
-  background-color: rgba(255,255,255,0.1);
+  
   top: 0;
   left: 0;
   // -webkit-transition: all 0.2s ease-in-out;
@@ -34,6 +34,9 @@ $cnBackgroundCards : #FFF;
 
   &:not(.filterSearchExpanded){
     >div {
+      margin: 0.5em 1em;
+      padding: 0;
+      border-bottom: 1px solid white;
       md-icon{
         color: white !important;
       }
@@ -49,6 +52,7 @@ $cnBackgroundCards : #FFF;
   margin: 0;
   background: #FFF;
   z-index: 2;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
 
   >div {
     max-width: 75%;
