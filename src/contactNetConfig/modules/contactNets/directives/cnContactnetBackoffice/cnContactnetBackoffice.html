@@ -1,0 +1,32 @@
+<div id="repos" layout="row" layout-fill layout flex layout-align="center">
+
+  <section flex>
+
+    <div ng-repeat="(k,v) in repos" class="md-item md-whiteframe-z1" ng-class="{'open-item': v.openCard}">
+      <md-list-item class="item" flex aria-label="row" md-ink-ripple class="md-clickable" ng-click="open(k)">
+        <md-icon md-svg-icon="{{v.icon}}" aria-label="Open Chat" class="startIcon"></md-icon>
+        <div flex ng-class="{'hText' : v.downloadedData}">{{v.title}}</div>
+        <span flex></span>
+      </md-list-item>
+
+      <md-progress-linear md-mode="indeterminate" ng-if="v.openCard && !v.downloadedData"></md-progress-linear>
+
+      <div class="item-card" ng-if="v.openCard"  layout="column" layout-fill>
+        <div layout-xs="column" layout-gt-xs="row" layout-padding ng-show="v.downloadedData">
+
+          <cn-contactnet-qualifications flex ng-if="k === 'qualifications'" ng-model="contactnet.contactNetInfo.qualifications" card="v" downloaded-data="v.downloadedData"></cn-contactnet-qualifications>
+          <cn-contactnet-skills flex ng-if="k === 'skills'" ng-model="contactnet.contactNetInfo.skills" card="v" downloaded-data="v.downloadedData"></cn-contactnet-skills>
+          <cn-contactnet-categorizations flex ng-if="k === 'categorizations'" ng-model="contactnet.contactNetInfo.categories" card="v" downloaded-data="v.downloadedData"></cn-contactnet-categorizations>
+          <cn-contactnet-pause-states flex ng-if="k === 'pause_states'" ng-model="contactnet.contactNetInfo.status" card="v" downloaded-data="v.downloadedData"></cn-contactnet-pause-states>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+</div>

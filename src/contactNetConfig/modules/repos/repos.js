@@ -6,39 +6,19 @@
     .controller('reposController', controller);
 
   /* ngInject */
-	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter){
+	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter, $cnRepos){
 
-		$scope.repos = {
-			'qualifications': {
-				icon: 'school',
-				title: 'Cualificaciones de casos',
-				openCard: false,
-				downloadedData: false
-			},
-			'categorizations': {
-				icon: 'local_offer',
-				title: 'Categorización de casos',
-				openCard: false,
-				downloadedData: false
-			},
-			'pause_states': {
-				icon: 'pause_state',
-				title: 'Estados de pausa',
-				openCard: false,
-				downloadedData: false
-			},
-			'skills': {
-				icon: 'skills',
-				title: 'Skills de agentes',
-				openCard: false,
-				downloadedData: false
-			}
-		};
+		$scope.repos = {};
 
 		$scope.save = save;
 		$scope.open = open;
 
 		$rootScope.fab.hide = true;
+
+    $cnRepos.get().then(function(){
+      $scope.repos = arguments[0];
+    });
+
  	
   	function open(){
   		$scope.repos[arguments[0]].downloadedData = false;

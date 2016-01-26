@@ -1,9 +1,9 @@
 <!-- <div class="md-item md-whiteframe-z1" ng-model="yo.openCard" ng-class="{'openInnerCard md-whiteframe-z3': yo.openCard}"> -->
 <!-- ng-click="cnContactNetVoiceCardChannelConfiguration.openCard = !cnContactNetVoiceCardChannelConfiguration.openCard" -->
-	<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="ngModel.openCard = !ngModel.openCard" ng-class="{'disable-hover' : !data.cb2}">
+	<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="ngModel.openCard = !ngModel.openCard" ng-class="{'disable-hover' : !contactnet.channels[3]}">
 		<md-icon md-svg-icon="message" aria-label="Open Mail" class="md-hue-3"></md-icon>
 		<span layout-margin flex>Mail</span>
-		<md-switch class="md-secondary enable-hover" ng-model="data.cb2" aria-label="Switch 1" ng-show="!ngModel.openCard">
+		<md-switch class="md-secondary enable-hover" ng-model="contactnet.channels[3]" aria-label="Switch 1" ng-show="!ngModel.openCard">
 	  </md-switch>
 
 	</md-list-item>
@@ -48,7 +48,7 @@
 					      </md-input-container>
 							</div>
 
-							<div flex="100" layout="column">
+							<!-- <div flex="100" layout="column">
 				      	<md-checkbox layout="row" flex ng-model="survey" ng-change="">
 					      	Activar encuesta
 					      </md-checkbox>
@@ -80,7 +80,7 @@
 											Añadir autorespuesta
 									</p>
 					      </div>
-					    </div>
+					    </div> -->
 
 					    <div flex="100" layout="column">
 				      	<md-checkbox layout="row" flex ng-model="autoReplies" ng-change="">

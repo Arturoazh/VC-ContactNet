@@ -1,8 +1,14 @@
 <div id="sectionRules" class="cardsLayout" layout="row" layout-fill layout flex layout-align="center">
 
 	<section flex>
+    <md-whiteframe class="md-whiteframe-z2 filterSearch" flex layout cn-scroll>
+      <div flex layout="row" layout-align="center center">
+        <md-icon md-svg-icon="search" aria-label="search"></md-icon>
+        <input type="text" ng-model="filterSearch.description" placeholder="Buscar" flex/>
+      </div>
+    </md-whiteframe>
 
-		<div ng-if="$cnRules.rules.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in $cnRules.rules track by $index" ng-class="{'open-item': v.openCard}">
+		<div ng-if="$cnRules.rules.length" class="md-item md-whiteframe-z1" ng-repeat="(k, v) in $cnRules.rules | filter:{name: filterSearch.description}" ng-class="{'open-item': v.openCard}">
 			<md-list-item ng-show="v.id" class="item" flex aria-label="row" md-ink-ripple class="md-clickable" cn-rule-info="v" cn-open-rules>
 				<div flex ng-class="{'hText' : v.downloadedData}">{{v.name}}</div>
 				<span flex></span>

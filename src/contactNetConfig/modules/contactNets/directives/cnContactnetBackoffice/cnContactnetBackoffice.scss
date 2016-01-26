@@ -1,0 +1,11 @@
+[cn-contactnet-backoffice], .cn-contactnet-backoffice, cn-contactnet-backoffice{
+  .md-chips{
+    font-size: 12px;
+  }
+  .md-item{
+
+    &.open-item{
+          margin: 10px -6px;
+    }
+  }
+}

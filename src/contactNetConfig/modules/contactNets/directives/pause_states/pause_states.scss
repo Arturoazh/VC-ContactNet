@@ -1,0 +1,14 @@
+cn-contactnet-pause-states{
+  md-list-item{
+    border-radius: 6px;
+    border: 1px solid #bbb;
+
+    &.disabled{
+      background-color: #bbb;
+      *{
+        color: #888 !important;  
+      }
+    }
+
+  }
+}

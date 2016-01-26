@@ -1,7 +1,7 @@
-<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="ngModel.openCard = !ngModel.openCard" ng-class="{'disable-hover' : !data.cb1}">
+<md-list-item class="item md-no-style md-clickable" aria-label="row" ng-click="ngModel.openCard = !ngModel.openCard" ng-class="{'disable-hover' : !contactnet.channels[1]}">
 	<md-icon md-svg-icon="phone" aria-label="Open Chat" class="md-hue-3"></md-icon>
 	<span layout-margin flex>Voz</span>
-	<md-switch class="md-secondary enable-hover" ng-model="data.cb1" aria-label="Switch 1" ng-show="!ngModel.openCard">
+	<md-switch class="md-secondary enable-hover" ng-model="contactnet.channels[1]" aria-label="Switch 1" ng-show="!ngModel.openCard">
   </md-switch>
 
 </md-list-item>

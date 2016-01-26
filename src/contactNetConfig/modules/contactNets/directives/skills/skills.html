@@ -1,0 +1,41 @@
+<div layout="row" layout-align="center center">
+  <md-input-container flex="45" layout-align="center center" layout="row">
+    <label>Filtrar por nombre de skill</label>
+    <input type="text" ng-model="filterText">
+  </md-input-container>
+  <span flex></span>
+  <span flex="20" layout-align="center center" layout>
+    {{ngModel.length}} de {{skills.length}} seleccionados
+  </span>
+  <p class="md-caption blueVC-color" flex="10" layout-align="center center" layout ng-click="toogleAll(true)">
+      Todos
+  </p>
+  <p class="md-caption blueVC-color" flex="10" layout-align="center center" layout ng-click="toogleAll(false)">
+      Ninguno
+  </p>
+</div>
+<md-content>
+  <div class="rowAnimated" flex layout="row" ng-repeat="(k,v) in skills | orderBy: '-selected' | filter:{ label: filterText }">
+    <md-list-item  flex="80">
+      <md-checkbox ng-model="v.selected" ng-change="select(v)"></md-checkbox>
+      <p>{{v.label}}</p>
+      <span flex></span>
+    </md-list-item>
+     <md-input-container flex layout-align="center strech">
+      <label>Peso</label>
+      <md-select ng-model="v.weight">
+        <md-option value="1">1</md-option>
+        <md-option value="2">2</md-option>
+        <md-option value="3">3</md-option>
+        <md-option value="4">4</md-option>
+        <md-option value="5">5</md-option>
+        <md-option value="6">6</md-option>
+        <md-option value="7">7</md-option>
+        <md-option value="8">8</md-option>
+        <md-option value="9">9</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+    
+
+</md-content>

@@ -10,24 +10,37 @@ $cnBackgroundCards : #FFF;
 }
 
 .filterSearch {
+
   width: 100%;
   margin: 1em 0;
   z-index: 1;
-  background: #FFF;
+  background-color: rgba(255,255,255,0.1);
   top: 0;
   left: 0;
   // -webkit-transition: all 0.2s ease-in-out;
   // -moz-transition: all 0.2s ease-in-out;
   // -o-transition: all 0.2s ease-in-out;
   // transition: all 0.2s ease-in-out;
-  transition-property: width, top;
+  // transition-property: width, top;
+  transition: all 100ms ease;
   >div {
     padding: 0.5em 1em;
     >input {
-      // width: 100%;
       outline: 0;
       border: 0;
       padding: 0.5em 0.5em;
+    }
+  }
+
+  &:not(.filterSearchExpanded){
+    >div {
+      md-icon{
+        color: white !important;
+      }
+      >input {
+        color: white;
+        background-color: transparent;
+      }
     }
   }
 }
@@ -36,6 +49,7 @@ $cnBackgroundCards : #FFF;
   margin: 0;
   background: #FFF;
   z-index: 2;
+
   >div {
     max-width: 75%;
     margin: 0 auto;
