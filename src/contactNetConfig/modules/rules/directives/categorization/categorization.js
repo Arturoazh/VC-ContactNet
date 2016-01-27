@@ -1,37 +1,33 @@
 (function() {
 	'use strict';
 
-	angular
-        .module('virtual-center')
-        .directive('cnCategorization', directive);
+  /* @ngInject */
+  module.exports = function ($cnLanguages, $filter) {
 
-    /* @ngInject */
-    function directive($cnLanguages, $filter) {
+  	var directive = {
+        restrict: 'EA',
+        scope: {
+        	rule: '=cnRule',
+					vocabulary: '=cnVocabulary'
+        },
+        templateUrl: '/contactNetConfig/modules/rules/directives/categorization/categorization.html',
+        link: link
+    };
 
-    	var directive = {
-	        restrict: 'EA',
-	        scope: {
-	        	rule: '=cnRule',
-						vocabulary: '=cnVocabulary'
-	        },
-	        templateUrl: '/contactNetConfig/modules/rules/directives/categorization/categorization.html',
-	        link: link
-	    };
-
-	    return directive;
+    return directive;
 
 
-	    function link(scope, element, attr, ctrl) {
+    function link(scope, element, attr, ctrl) {
 
-	    	function init(){
+    	function init(){
 
-	    			console.log(attr);
+    			console.log(attr);
 
-	    	}
+    	}
 
-	    	init();
+    	init();
 
-	    }
     }
+  }
 
 }());

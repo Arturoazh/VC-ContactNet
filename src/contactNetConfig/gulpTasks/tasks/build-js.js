@@ -5,9 +5,9 @@ var gulp       = require('gulp');
 var jshint     = require('gulp-jshint');
 var concat     = require('gulp-concat');
 var notify     = require('gulp-notify');
+var sftp       = require('gulp-sftp');
 var ngAnnotate = require('gulp-ng-annotate');
 var uglify 		 = require('gulp-uglify');
-var sftp       = require('gulp-sftp');
 
 
 module.exports = function(gulp, appPrefix) {

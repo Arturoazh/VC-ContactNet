@@ -1,12 +1,8 @@
 (function() {
 	'use strict';
 
-	angular
-    .module('virtual-center')
-    .directive('cnContactnetPauseStates', directive);
-
   /* @ngInject */
-  function directive() {
+  module.exports = function () {
 
   	var directiveObj = {
         restrict: 'EA',

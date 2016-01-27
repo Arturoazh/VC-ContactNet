@@ -1,11 +1,9 @@
 (function () {
+
   'use strict';
-  angular.
-    module("virtual-center").
-    directive("cnCopy", copyClipboardDirective);
 
   /* @ngInject */
-  function copyClipboardDirective() {
+  module.exports = function () {
     var clip;
     function link(scope, element) {
       function clipboardSimulator() {

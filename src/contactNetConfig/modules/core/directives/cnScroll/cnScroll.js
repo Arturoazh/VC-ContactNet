@@ -1,12 +1,8 @@
 (function() {
     'use strict';
 
-    angular
-        .module('virtual-center')
-        .directive('cnScroll', directive);
-
     /* @ngInject */
-    function directive($timeout, $document) {
+    module.exports = function ($timeout, $document) {
         
         var directive = {
             restrict: 'EA',

@@ -1,12 +1,8 @@
 (function(){
 	"use strict";
 
-  angular
-  	.module('virtual-center')
-    .config(config);
-
-  /* ngInject */
-  function config($mdThemingProvider, $mdIconProvider){
+	/* @ngInject */
+  module.exports = function ($mdThemingProvider, $mdIconProvider){
 
 		var blueVCmap = $mdThemingProvider.extendPalette('blue', {
 			'100': '#E0F2FA',
@@ -28,7 +24,8 @@
 		$mdThemingProvider.theme('default')
 	    .primaryPalette('grey')
 	    .accentPalette('blueVC')
-	    .warnPalette('red');
+	    .warnPalette('red')
+	    ;
 
 
 	  $mdIconProvider
@@ -54,7 +51,8 @@
 			.icon('pause_state', '/contactNetConfig/assets/icons/pause_state.svg')
 			.icon('school', '/contactNetConfig/assets/icons/school.svg')
 			.icon('local_offer', '/contactNetConfig/assets/icons/local_offer.svg')
-			.icon('content_copy', '/contactNetConfig/assets/icons/content_copy.svg');
+			.icon('content_copy', '/contactNetConfig/assets/icons/content_copy.svg')
+			;
 
   }
 

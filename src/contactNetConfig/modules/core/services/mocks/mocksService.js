@@ -11,12 +11,8 @@
    *
    */
 
-  angular
-  	.module('virtual-center')
-    .service('$cnMocks', service);
-
-  /* ngInject */
-  function service($http, $q, $timeout){
+  /* @ngInject */
+  module.exports = function ($http, $q, $timeout){
 
   	var listJsons = ['menu', 'listContactNets', 'contactNetId', 'channels', 'rules', 'rulesId', 'languages', 'channels', 'channelsId'];
 		var scope = this;

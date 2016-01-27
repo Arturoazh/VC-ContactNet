@@ -1,12 +1,9 @@
 (function(){
+	
 	"use strict";
 
-  angular
-  	.module('virtual-center')
-    .config(config);
-
-  /* ngInject */
-  function config($stateProvider, $urlRouterProvider){
+  /* @ngInject */
+  module.exports = function ($stateProvider, $urlRouterProvider){
 
 		$stateProvider
 			.state('contactnets', {
@@ -40,4 +37,4 @@
 			
   }
 
-})();
+}());

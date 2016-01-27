@@ -1,13 +1,10 @@
-(function(){
+(function(){	
 	"use strict";
 
-  angular
-  	.module('virtual-center')
-    .controller('appController', controller);
+	/* @ngInject*/ 
+  module.exports = function ($rootScope, $scope, $timeout, $mdSidenav, $cnMenu, $cnNavigate, $location, $interval, $window) {
 
-  /* ngInject */
-  function controller($rootScope, $scope, $timeout, $mdSidenav, $cnMenu, $cnNavigate, $location, $interval, $window){
-
+  	$scope.hola = 'hola';
 		$scope.toggleLeft = buildToggler('left');
 		$scope.menu = {};
 		$scope.cnNavigate = $cnNavigate;
@@ -69,4 +66,4 @@
 
   }
 
-})();
+}());

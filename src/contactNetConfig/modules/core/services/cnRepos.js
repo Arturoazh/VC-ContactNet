@@ -11,12 +11,8 @@
    *
    */
 
-  angular
-    .module('virtual-center')
-    .service('$cnRepos', service);
-
-  /* ngInject */
-  function service($q, $timeout){
+  /* @ngInject */
+  module.exports = function($q, $timeout){
 
     var scope = this;
 

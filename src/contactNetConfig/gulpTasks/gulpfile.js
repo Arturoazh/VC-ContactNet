@@ -5,7 +5,7 @@ var config = require('./config');
 module.exports = function (gulp, appPrefix, sharedPrefix) {
 
   require('./tasks/build-browserify')(gulp, appPrefix);
-  require('./tasks/build-js')(gulp, appPrefix);
+  //require('./tasks/build-js')(gulp, appPrefix);
   require('./tasks/build-css')(gulp, appPrefix);
   require('./tasks/build-html')(gulp, appPrefix);
   require('./tasks/copy-other')(gulp, appPrefix);
@@ -16,7 +16,7 @@ module.exports = function (gulp, appPrefix, sharedPrefix) {
     appPrefix + 'build-browserify',
     appPrefix + 'build-css',
     appPrefix + 'build-html',
-    appPrefix + 'build-js',
+    //appPrefix + 'build-js',
     appPrefix + 'copy-other',
     appPrefix + 'watch'
   ]);

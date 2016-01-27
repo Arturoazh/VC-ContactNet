@@ -13,12 +13,8 @@
    *
    */
 
-  angular
-  	.module('virtual-center')
-    .service('$cnContactNets', service);
-
-  /* ngInject */
-  function service($q, $cnMocks, $http){
+  /* @ngInject */
+  module.exports = function ($q, $cnMocks, $http){
 
 		var scope = this;
 

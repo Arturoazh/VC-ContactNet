@@ -1,12 +1,8 @@
 (function(){
 	'use strict';
 
-  angular
-  	.module('virtual-center')
-    .controller('channelsController', controller);
-
-  /* ngInject */
-	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter, $mdDialog){
+  /* @ngInject */
+	module.exports = function ($rootScope, $scope, $cnContactNets, $cnChannels, $filter, $mdDialog) {
 
   	$scope.contactNets = [];
   	$scope.colorOptions = ['FFFFFF', 'FF8A80', 'FFD180', 'FFFF8D', 'CFD8DC', '80D8FF', 'A7FFEB', 'CCFF90'];

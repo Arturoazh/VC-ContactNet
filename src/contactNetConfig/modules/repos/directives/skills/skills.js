@@ -1,12 +1,8 @@
 (function() {
 	'use strict';
 
-	angular
-    .module('virtual-center')
-    .directive('cnRepoSkills', directive);
-
   /* @ngInject */
-  function directive($timeout) {
+  module.exports = function ($timeout) {
 
   	var directiveObj = {
         restrict: 'EA',

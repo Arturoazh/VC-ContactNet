@@ -10,6 +10,9 @@ var keyConfigUser = {
   azarzalejo : 'azarzalejo'
 }
 
+var appPath = 'src/contactNetConfig';
+var gulpIgnore = ['!' + appPath + '/gulpTasks/**/*', '!' + appPath + '/assets/**/*.scss'];
+
 module.exports = {
   jsFiles: [
     'src/contactNetConfig/**/*.module.js',
@@ -26,6 +29,8 @@ module.exports = {
     'src/contactNetConfig/**/*.json',
     'src/contactNetConfig/**/*.svg'
   ],
+  appPath: appPath,
+  gulpIgnore : gulpIgnore,
   sourcePath: 'src/contactNetConfig/app.module.js',
   outputDir: 'dist/contactNetConfig',
 

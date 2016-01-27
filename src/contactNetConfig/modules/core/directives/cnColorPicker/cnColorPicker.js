@@ -1,12 +1,8 @@
 (function () {
   'use strict';
-  
-  angular.
-    module("virtual-center").
-    directive("cnColorPicker", directive);
 
   /* @ngInject */
-  function directive() {
+  module.exports = function () {
     return {
       restrict: 'E',
       templateUrl: '/contactNetConfig/modules/core/directives/cnColorPicker/cnColorPicker.html',

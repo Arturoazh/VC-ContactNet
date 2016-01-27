@@ -13,12 +13,8 @@
    *
    */
 
-  angular
-  	.module('virtual-center')
-    .service('$cnSkills', service);
-
-  /* ngInject */
-  function service($q, $http){
+  /* @ngInject */
+  module.exports = function ($q, $http){
 
 		var scope = this;
 

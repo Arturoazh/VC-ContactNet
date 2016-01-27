@@ -14,5 +14,3 @@ console.log(require('./src/contactNetConfig/gulpTasks/gulpfile')(gulp, contactNe
 //gulp.task('default', ['multichannel', 'shared']);
 
 gulp.task('contactNetApp', ['contactNetConfig']);
-
-console.log("hola", __dirname.split('/')[2]);

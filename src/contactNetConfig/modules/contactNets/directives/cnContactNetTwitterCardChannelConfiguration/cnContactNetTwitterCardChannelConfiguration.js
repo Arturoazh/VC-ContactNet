@@ -1,36 +1,32 @@
 (function() {
 	'use strict';
 
-	angular
-        .module('virtual-center')
-        .directive('cnContactNetTwitterCardChannelConfiguration', createContactNet);
+  /* @ngInject */
+  module.exports = function ($cnContactNets) {
+
+  	var directive = {
+        restrict: 'EA',
+        scope: false,
+        link: link,
+        templateUrl: '/contactNetConfig/modules/contactNets/directives/cnContactNetTwitterCardChannelConfiguration/cnContactNetTwitterCardChannelConfiguration.html',
+      	controller: controller
+    };
+
+    return directive;
+
+
+    function link(scope, element, attr, ctrl) {
+
+    }
 
     /* @ngInject */
-    function createContactNet($cnContactNets) {
+    function controller ($scope) {
 
-    	var directive = {
-	        restrict: 'EA',
-	        scope: false,
-	        link: link,
-	        templateUrl: '/contactNetConfig/modules/contactNets/directives/cnContactNetTwitterCardChannelConfiguration/cnContactNetTwitterCardChannelConfiguration.html',
-        	controller: controller
-	    };
+    	// $scope = $scope.$parent;
+    	// console.log($scope);
 
-	    return directive;
-
-
-	    function link(scope, element, attr, ctrl) {
-
-	    }
-
-	    /* @ngInject */
-	    function controller ($scope) {
-
-	    	// $scope = $scope.$parent;
-	    	// console.log($scope);
-
-	    }
     }
+  }
 
 
 }());

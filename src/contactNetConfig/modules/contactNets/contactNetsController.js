@@ -1,12 +1,9 @@
 (function(){
 	'use strict';
 
-  angular
-  	.module('virtual-center')
-    .controller('contactNetsController', controller);
 
-  /* ngInject */
-  function controller($rootScope, $scope, $cnContactNets, $cnCreateContactNet){
+  /* @ngInject */
+  module.exports = function ($rootScope, $scope, $cnContactNets, $cnCreateContactNet){
 
   	$scope.contactNetsService = $cnContactNets;
     $rootScope.fab.trigger.action = $cnCreateContactNet.createContactNet;

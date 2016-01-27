@@ -13,12 +13,8 @@
    *
    */
 
-  angular
-  	.module('virtual-center')
-    .service('$cnLanguages', service);
-
-  /* ngInject */
-  function service($q, $cnMocks){
+  /* @ngInject */
+  module.exports = function ($q, $cnMocks){
 
 		var scope = this;
 

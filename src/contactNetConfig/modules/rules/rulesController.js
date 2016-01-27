@@ -1,12 +1,8 @@
 (function(){
 	'use strict';
 
-  angular
-  	.module('virtual-center')
-    .controller('rulesController', controller);
-
-  /* ngInject */
-  function controller($rootScope, $scope, $cnContactNets, $cnRules, $filter, $cnChannels, $mdDialog){
+  /* @ngInject */
+  module.exports =  function ($rootScope, $scope, $cnContactNets, $cnRules, $filter, $cnChannels, $mdDialog){
 
   	$scope.contactNets = [];
     $scope.$cnRules = $cnRules;

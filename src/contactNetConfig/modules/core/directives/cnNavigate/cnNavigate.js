@@ -1,14 +1,8 @@
 (function() {
   'use strict';
 
-  angular
-    .module('virtual-center')
-    .directive('cnNavigate', directive)
-    .service('$cnNavigate', service);
-
-
   /* @ngInject */
-  function directive($cnNavigate) {
+  module.exports = function ($cnNavigate) {
     var directive = {
         restrict: 'A',
         scope: {
@@ -35,23 +29,6 @@
 
   }//End directive
 
-  /* @ngInject */
-  function service($location){
-
-    var scope = this;
-
-    scope.path = path;
-
-    function path(){
-      if(!arguments[0])
-        return;
-      // var body = document.body
-      // if(!body.classList.contains('disable-hover'))
-      //   body.classList.add('disable-hover');
-
-      $location.path(arguments[0]);      
-    } 
-
-  }
+  
 
 }());

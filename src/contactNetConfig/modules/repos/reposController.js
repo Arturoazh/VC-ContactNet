@@ -1,12 +1,8 @@
 (function(){
 	'use strict';
 
-  angular
-  	.module('virtual-center')
-    .controller('reposController', controller);
-
   /* ngInject */
-	function controller($rootScope, $scope, $cnContactNets, $cnChannels, $filter, $cnRepos){
+	module.exports = function($rootScope, $scope, $cnContactNets, $cnChannels, $filter, $cnRepos){
 
 		$scope.repos = {};
 
